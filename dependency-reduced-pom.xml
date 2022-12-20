@@ -27,10 +27,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M4</version>
-        <configuration>
-          <runOrder>alphabetical</runOrder>
-        </configuration>
+        <version>3.0.0-M5</version>
       </plugin>
       <plugin>
         <artifactId>maven-install-plugin</artifactId>
@@ -48,7 +45,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>IspwMavenLaptopWeb</mainClass>
+                  <mainClass>IspwFinale</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -99,13 +96,9 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.6.2</version>
+      <version>5.9.1</version>
       <scope>test</scope>
       <exclusions>
-        <exclusion>
-          <artifactId>apiguardian-api</artifactId>
-          <groupId>org.apiguardian</groupId>
-        </exclusion>
         <exclusion>
           <artifactId>opentest4j</artifactId>
           <groupId>org.opentest4j</groupId>
@@ -114,12 +107,16 @@
           <artifactId>junit-platform-commons</artifactId>
           <groupId>org.junit.platform</groupId>
         </exclusion>
+        <exclusion>
+          <artifactId>apiguardian-api</artifactId>
+          <groupId>org.apiguardian</groupId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.6.2</version>
+      <version>5.9.1</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -167,13 +164,15 @@
   <properties>
     <maven.compiler.release>${java.version}</maven.compiler.release>
     <maven.clean>3.1.0</maven.clean>
-    <junit>5.6.2</junit>
+    <junit>5.9.1</junit>
     <sonar.language>java</sonar.language>
     <java.version>11</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.organization>ilciro10</sonar.organization>
     <jacoco.version>0.8.8</jacoco.version>
-    <maven.compiler>3.8.1</maven.compiler>
     <maven.shade>3.2.2</maven.shade>
+    <maven.compiler>3.8.1</maven.compiler>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <maven.install>3.0.0-M1</maven.install>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>

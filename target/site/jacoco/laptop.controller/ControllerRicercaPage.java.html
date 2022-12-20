@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerRicercaPage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerRicercaPage.java</span></div><h1>ControllerRicercaPage.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+
+import javafx.collections.ObservableList;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Raccolta;
+
+
+public class ControllerRicercaPage {
+	
+	private LibroDao lD;
+	private GiornaleDao gD;
+	private RivistaDao rD;
+	public ControllerRicercaPage()
+<span class="fc" id="L18">	{</span>
+<span class="fc" id="L19">		lD = new LibroDao();</span>
+<span class="fc" id="L20">		gD = new GiornaleDao();</span>
+<span class="fc" id="L21">		rD =new RivistaDao();</span>
+<span class="fc" id="L22">		ControllerSystemState.getIstance().setIsSearch(true);</span>
+		
+<span class="fc" id="L24">	}</span>
+	
+	public ObservableList&lt;Raccolta&gt; cercaPerTipo (String s) throws SQLException
+	{
+<span class="fc" id="L28">		ObservableList&lt;Raccolta&gt; r = null;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+		{
+			//serach in libro dao
+<span class="fc" id="L32">			r= lD.getLibriByName(s);</span>
+		}
+<span class="fc bfc" id="L34" title="All 2 branches covered.">		 if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+		{
+			//search in giornale dao
+<span class="fc" id="L37">			r=  gD.getGiornaliByName(s);</span>
+		}
+<span class="fc bfc" id="L39" title="All 2 branches covered.">		 if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+		{
+			//search in rivista dao
+<span class="fc" id="L42">			r= rD.getRivisteByName(s);</span>
+		}
+		
+<span class="fc" id="L45">		return r;</span>
+		
+	}
+	
+	public String returnType()
+	{
+<span class="nc" id="L51">		return ControllerSystemState.getIstance().getType();</span>
+	}
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

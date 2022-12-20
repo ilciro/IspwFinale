@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="laptop.test.TestLaptop" time="18.935" tests="57" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="laptop.test.TestLaptop" time="47.33" tests="84" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="19"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\test-classes;C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\classes;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\Users\dani\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\dani\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.1\junit-jupiter-params-5.9.1.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\dani\.m2\repository\org\mybatis\mybatis\3.5.11\mybatis-3.5.11.jar;C:\Users\dani\.m2\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar;C:\Users\dani\.m2\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar;C:\Users\dani\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\dani\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\2.0.0\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\2.0.0\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\dani\.m2\repository\jakarta\el\jakarta.el-api\4.0.0\jakarta.el-api-4.0.0.jar;C:\Users\dani\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar;C:\Users\dani\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-java\4.6.0\selenium-java-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-api\4.6.0\selenium-api-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v105\4.6.0\selenium-devtools-v105-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v106\4.6.0\selenium-devtools-v106-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v107\4.6.0\selenium-devtools-v107-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.6.0\selenium-devtools-v85-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.6.0\selenium-edge-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.6.0\selenium-firefox-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.6.0\selenium-ie-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.6.0\selenium-remote-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\dani\.m2\repository\io\netty\netty-buffer\4.1.84.Final\netty-buffer-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-http\4.1.84.Final\netty-codec-http-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec\4.1.84.Final\netty-codec-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler\4.1.84.Final\netty-handler-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-common\4.1.84.Final\netty-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.84.Final\netty-transport-classes-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.84.Final\netty-transport-classes-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.84.Final\netty-transport-native-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.84.Final\netty-transport-native-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.84.Final\netty-transport-native-unix-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport\4.1.84.Final\netty-transport-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-resolver\4.1.84.Final\netty-resolver-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api\1.19.0\opentelemetry-api-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-context\1.19.0\opentelemetry-context-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.19.0\opentelemetry-exporter-logging-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.19.0\opentelemetry-sdk-metrics-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.19.0-alpha\opentelemetry-sdk-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.19.0-alpha\opentelemetry-api-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.19.0\opentelemetry-sdk-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.19.0\opentelemetry-sdk-extension-autoconfigure-spi-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.19.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.19.0\opentelemetry-exporter-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.19.0\opentelemetry-sdk-trace-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.19.0\opentelemetry-sdk-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.19.0-alpha\opentelemetry-semconv-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\dani\.m2\repository\net\bytebuddy\byte-buddy\1.12.18\byte-buddy-1.12.18.jar;C:\Users\dani\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\dani\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\dani\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\dani\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-http\4.6.0\selenium-http-4.6.0.jar;C:\Users\dani\.m2\repository\dev\failsafe\failsafe\3.3.0\failsafe-3.3.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.6.0\selenium-manager-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.6.0\selenium-safari-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-support\4.6.0\selenium-support-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.6.0\selenium-chrome-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\dani\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\dani\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dani\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dani\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\dani\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\dani\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.6.0\selenium-chromium-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-json\4.6.0\selenium-json-4.6.0.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-catalina\10.1.4\tomcat-catalina-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-servlet-api\10.1.4\tomcat-servlet-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jsp-api\10.1.4\tomcat-jsp-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-el-api\10.1.4\tomcat-el-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-juli\10.1.4\tomcat-juli-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-annotations-api\10.1.4\tomcat-annotations-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-api\10.1.4\tomcat-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jni\10.1.4\tomcat-jni-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-coyote\10.1.4\tomcat-coyote-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util\10.1.4\tomcat-util-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util-scan\10.1.4\tomcat-util-scan-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jaspic-api\10.1.4\tomcat-jaspic-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.8\jacoco-maven-plugin-0.8.8.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact\2.0.2\maven-artifact-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.2\maven-artifact-manager-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.2\maven-repository-metadata-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\dani\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\dani\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\dani\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\dani\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.agent\0.8.8\org.jacoco.agent-0.8.8-runtime.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.core\0.8.8\org.jacoco.core-0.8.8.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm\9.2\asm-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-commons\9.2\asm-commons-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-analysis\9.2\asm-analysis-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-tree\9.2\asm-tree-9.2.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.report\0.8.8\org.jacoco.report-0.8.8.jar;"/>
+    <property name="sun.awt.enableExtraMouseButtons" value="true"/>
+    <property name="java.class.path" value="C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\test-classes;C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\classes;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\dani\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\dani\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.1\junit-jupiter-params-5.9.1.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\dani\.m2\repository\org\mybatis\mybatis\3.5.11\mybatis-3.5.11.jar;C:\Users\dani\.m2\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar;C:\Users\dani\.m2\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar;C:\Users\dani\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\dani\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\2.0.0\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\2.0.0\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\dani\.m2\repository\jakarta\el\jakarta.el-api\4.0.0\jakarta.el-api-4.0.0.jar;C:\Users\dani\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar;C:\Users\dani\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-java\4.6.0\selenium-java-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-api\4.6.0\selenium-api-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v105\4.6.0\selenium-devtools-v105-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v106\4.6.0\selenium-devtools-v106-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v107\4.6.0\selenium-devtools-v107-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.6.0\selenium-devtools-v85-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.6.0\selenium-edge-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.6.0\selenium-firefox-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.6.0\selenium-ie-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.6.0\selenium-remote-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\dani\.m2\repository\io\netty\netty-buffer\4.1.84.Final\netty-buffer-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-http\4.1.84.Final\netty-codec-http-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec\4.1.84.Final\netty-codec-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler\4.1.84.Final\netty-handler-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-common\4.1.84.Final\netty-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.84.Final\netty-transport-classes-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.84.Final\netty-transport-classes-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.84.Final\netty-transport-native-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.84.Final\netty-transport-native-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.84.Final\netty-transport-native-unix-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport\4.1.84.Final\netty-transport-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-resolver\4.1.84.Final\netty-resolver-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api\1.19.0\opentelemetry-api-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-context\1.19.0\opentelemetry-context-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.19.0\opentelemetry-exporter-logging-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.19.0\opentelemetry-sdk-metrics-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.19.0-alpha\opentelemetry-sdk-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.19.0-alpha\opentelemetry-api-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.19.0\opentelemetry-sdk-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.19.0\opentelemetry-sdk-extension-autoconfigure-spi-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.19.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.19.0\opentelemetry-exporter-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.19.0\opentelemetry-sdk-trace-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.19.0\opentelemetry-sdk-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.19.0-alpha\opentelemetry-semconv-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\dani\.m2\repository\net\bytebuddy\byte-buddy\1.12.18\byte-buddy-1.12.18.jar;C:\Users\dani\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\dani\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\dani\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\dani\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-http\4.6.0\selenium-http-4.6.0.jar;C:\Users\dani\.m2\repository\dev\failsafe\failsafe\3.3.0\failsafe-3.3.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.6.0\selenium-manager-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.6.0\selenium-safari-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-support\4.6.0\selenium-support-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.6.0\selenium-chrome-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\dani\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\dani\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dani\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dani\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\dani\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\dani\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.6.0\selenium-chromium-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-json\4.6.0\selenium-json-4.6.0.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-catalina\10.1.4\tomcat-catalina-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-servlet-api\10.1.4\tomcat-servlet-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jsp-api\10.1.4\tomcat-jsp-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-el-api\10.1.4\tomcat-el-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-juli\10.1.4\tomcat-juli-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-annotations-api\10.1.4\tomcat-annotations-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-api\10.1.4\tomcat-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jni\10.1.4\tomcat-jni-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-coyote\10.1.4\tomcat-coyote-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util\10.1.4\tomcat-util-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util-scan\10.1.4\tomcat-util-scan-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jaspic-api\10.1.4\tomcat-jaspic-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.8\jacoco-maven-plugin-0.8.8.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact\2.0.2\maven-artifact-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.2\maven-artifact-manager-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.2\maven-repository-metadata-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\dani\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\dani\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\dani\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\dani\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.agent\0.8.8\org.jacoco.agent-0.8.8-runtime.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.core\0.8.8\org.jacoco.core-0.8.8.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm\9.2\asm-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-commons\9.2\asm-commons-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-analysis\9.2\asm-analysis-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-tree\9.2\asm-tree-9.2.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.report\0.8.8\org.jacoco.report-0.8.8.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +16,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="C:\Users\dani\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_19.0.0.v20221005-1658\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\dani\AppData\Local\Temp\surefire1721395283653652804\surefirebooter6270654342223951999.jar C:\Users\dani\AppData\Local\Temp\surefire1721395283653652804 2022-12-20T17-57-36_714-jvmRun1 surefire13303582150554681352tmp surefire_07093232895783574209tmp"/>
+    <property name="sun.java.command" value="C:\Users\dani\AppData\Local\Temp\surefire12531737015554412350\surefirebooter1209680130416999368.jar C:\Users\dani\AppData\Local\Temp\surefire12531737015554412350 2022-12-20T19-34-39_775-jvmRun1 surefire15819765232526083153tmp surefire_016401878740886643906tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\test-classes;C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\classes;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\Users\dani\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\dani\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.1\junit-jupiter-params-5.9.1.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\dani\.m2\repository\org\mybatis\mybatis\3.5.11\mybatis-3.5.11.jar;C:\Users\dani\.m2\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar;C:\Users\dani\.m2\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar;C:\Users\dani\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\dani\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\2.0.0\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\2.0.0\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\dani\.m2\repository\jakarta\el\jakarta.el-api\4.0.0\jakarta.el-api-4.0.0.jar;C:\Users\dani\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar;C:\Users\dani\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-java\4.6.0\selenium-java-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-api\4.6.0\selenium-api-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v105\4.6.0\selenium-devtools-v105-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v106\4.6.0\selenium-devtools-v106-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v107\4.6.0\selenium-devtools-v107-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.6.0\selenium-devtools-v85-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.6.0\selenium-edge-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.6.0\selenium-firefox-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.6.0\selenium-ie-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.6.0\selenium-remote-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\dani\.m2\repository\io\netty\netty-buffer\4.1.84.Final\netty-buffer-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-http\4.1.84.Final\netty-codec-http-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec\4.1.84.Final\netty-codec-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler\4.1.84.Final\netty-handler-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-common\4.1.84.Final\netty-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.84.Final\netty-transport-classes-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.84.Final\netty-transport-classes-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.84.Final\netty-transport-native-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.84.Final\netty-transport-native-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.84.Final\netty-transport-native-unix-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport\4.1.84.Final\netty-transport-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-resolver\4.1.84.Final\netty-resolver-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api\1.19.0\opentelemetry-api-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-context\1.19.0\opentelemetry-context-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.19.0\opentelemetry-exporter-logging-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.19.0\opentelemetry-sdk-metrics-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.19.0-alpha\opentelemetry-sdk-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.19.0-alpha\opentelemetry-api-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.19.0\opentelemetry-sdk-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.19.0\opentelemetry-sdk-extension-autoconfigure-spi-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.19.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.19.0\opentelemetry-exporter-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.19.0\opentelemetry-sdk-trace-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.19.0\opentelemetry-sdk-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.19.0-alpha\opentelemetry-semconv-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\dani\.m2\repository\net\bytebuddy\byte-buddy\1.12.18\byte-buddy-1.12.18.jar;C:\Users\dani\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\dani\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\dani\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\dani\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-http\4.6.0\selenium-http-4.6.0.jar;C:\Users\dani\.m2\repository\dev\failsafe\failsafe\3.3.0\failsafe-3.3.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.6.0\selenium-manager-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.6.0\selenium-safari-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-support\4.6.0\selenium-support-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.6.0\selenium-chrome-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\dani\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\dani\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dani\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dani\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\dani\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\dani\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.6.0\selenium-chromium-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-json\4.6.0\selenium-json-4.6.0.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-catalina\10.1.4\tomcat-catalina-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-servlet-api\10.1.4\tomcat-servlet-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jsp-api\10.1.4\tomcat-jsp-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-el-api\10.1.4\tomcat-el-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-juli\10.1.4\tomcat-juli-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-annotations-api\10.1.4\tomcat-annotations-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-api\10.1.4\tomcat-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jni\10.1.4\tomcat-jni-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-coyote\10.1.4\tomcat-coyote-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util\10.1.4\tomcat-util-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util-scan\10.1.4\tomcat-util-scan-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jaspic-api\10.1.4\tomcat-jaspic-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.8\jacoco-maven-plugin-0.8.8.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact\2.0.2\maven-artifact-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.2\maven-artifact-manager-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.2\maven-repository-metadata-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\dani\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\dani\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\dani\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\dani\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.agent\0.8.8\org.jacoco.agent-0.8.8-runtime.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.core\0.8.8\org.jacoco.core-0.8.8.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm\9.2\asm-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-commons\9.2\asm-commons-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-analysis\9.2\asm-analysis-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-tree\9.2\asm-tree-9.2.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.report\0.8.8\org.jacoco.report-0.8.8.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\test-classes;C:\Users\dani\eclipse-workspace\2022\IspwFinale\target\classes;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\dani\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\dani\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\dani\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\dani\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.1\junit-jupiter-params-5.9.1.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-graphics\11\javafx-graphics-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-base\11\javafx-base-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-fxml\11\javafx-fxml-11-win.jar;C:\Users\dani\.m2\repository\org\openjfx\javafx-controls\11\javafx-controls-11.jar;C:\Users\dani\.m2\repository\org\mybatis\mybatis\3.5.11\mybatis-3.5.11.jar;C:\Users\dani\.m2\repository\com\mysql\mysql-connector-j\8.0.31\mysql-connector-j-8.0.31.jar;C:\Users\dani\.m2\repository\com\google\protobuf\protobuf-java\3.19.4\protobuf-java-3.19.4.jar;C:\Users\dani\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\dani\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\2.0.0\jakarta.servlet.jsp.jstl-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\2.0.0\jakarta.servlet.jsp.jstl-api-2.0.0.jar;C:\Users\dani\.m2\repository\jakarta\servlet\jakarta.servlet-api\5.0.0\jakarta.servlet-api-5.0.0.jar;C:\Users\dani\.m2\repository\jakarta\el\jakarta.el-api\4.0.0\jakarta.el-api-4.0.0.jar;C:\Users\dani\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\3.0.0\jakarta.xml.bind-api-3.0.0.jar;C:\Users\dani\.m2\repository\com\sun\activation\jakarta.activation\2.0.0\jakarta.activation-2.0.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-java\4.6.0\selenium-java-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-api\4.6.0\selenium-api-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v105\4.6.0\selenium-devtools-v105-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v106\4.6.0\selenium-devtools-v106-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v107\4.6.0\selenium-devtools-v107-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.6.0\selenium-devtools-v85-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.6.0\selenium-edge-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.6.0\selenium-firefox-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.6.0\selenium-ie-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.6.0\selenium-remote-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\dani\.m2\repository\io\netty\netty-buffer\4.1.84.Final\netty-buffer-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-http\4.1.84.Final\netty-codec-http-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec\4.1.84.Final\netty-codec-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler\4.1.84.Final\netty-handler-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-common\4.1.84.Final\netty-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.84.Final\netty-transport-classes-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.84.Final\netty-transport-classes-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.84.Final\netty-transport-native-epoll-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.84.Final\netty-transport-native-kqueue-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.84.Final\netty-transport-native-unix-common-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport\4.1.84.Final\netty-transport-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-resolver\4.1.84.Final\netty-resolver-4.1.84.Final.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api\1.19.0\opentelemetry-api-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-context\1.19.0\opentelemetry-context-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.19.0\opentelemetry-exporter-logging-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.19.0\opentelemetry-sdk-metrics-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.19.0-alpha\opentelemetry-sdk-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.19.0-alpha\opentelemetry-api-logs-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.19.0\opentelemetry-sdk-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.19.0\opentelemetry-sdk-extension-autoconfigure-spi-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.19.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.19.0\opentelemetry-exporter-common-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.19.0\opentelemetry-sdk-trace-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.19.0\opentelemetry-sdk-1.19.0.jar;C:\Users\dani\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.19.0-alpha\opentelemetry-semconv-1.19.0-alpha.jar;C:\Users\dani\.m2\repository\io\ous\jtoml\2.0.0\jtoml-2.0.0.jar;C:\Users\dani\.m2\repository\net\bytebuddy\byte-buddy\1.12.18\byte-buddy-1.12.18.jar;C:\Users\dani\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\dani\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\dani\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\dani\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\dani\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\dani\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\dani\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-http\4.6.0\selenium-http-4.6.0.jar;C:\Users\dani\.m2\repository\dev\failsafe\failsafe\3.3.0\failsafe-3.3.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.6.0\selenium-manager-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.6.0\selenium-safari-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-support\4.6.0\selenium-support-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.6.0\selenium-chrome-driver-4.6.0.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\dani\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\dani\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\dani\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dani\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dani\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\dani\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\dani\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.6.0\selenium-chromium-driver-4.6.0.jar;C:\Users\dani\.m2\repository\org\seleniumhq\selenium\selenium-json\4.6.0\selenium-json-4.6.0.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-catalina\10.1.4\tomcat-catalina-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-servlet-api\10.1.4\tomcat-servlet-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jsp-api\10.1.4\tomcat-jsp-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-el-api\10.1.4\tomcat-el-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-juli\10.1.4\tomcat-juli-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-annotations-api\10.1.4\tomcat-annotations-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-api\10.1.4\tomcat-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jni\10.1.4\tomcat-jni-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-coyote\10.1.4\tomcat-coyote-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util\10.1.4\tomcat-util-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-util-scan\10.1.4\tomcat-util-scan-10.1.4.jar;C:\Users\dani\.m2\repository\org\apache\tomcat\tomcat-jaspic-api\10.1.4\tomcat-jaspic-api-10.1.4.jar;C:\Users\dani\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.8\jacoco-maven-plugin-0.8.8.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-plugin-api\2.0.6\maven-plugin-api-2.0.6.jar;C:\Users\dani\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact\2.0.2\maven-artifact-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-artifact-manager\2.0.2\maven-artifact-manager-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\maven-repository-metadata\2.0.2\maven-repository-metadata-2.0.2.jar;C:\Users\dani\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\dani\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\dani\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\dani\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\dani\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\dani\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.agent\0.8.8\org.jacoco.agent-0.8.8-runtime.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.core\0.8.8\org.jacoco.core-0.8.8.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm\9.2\asm-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-commons\9.2\asm-commons-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-analysis\9.2\asm-analysis-9.2.jar;C:\Users\dani\.m2\repository\org\ow2\asm\asm-tree\9.2\asm-tree-9.2.jar;C:\Users\dani\.m2\repository\org\jacoco\org.jacoco.report\0.8.8\org.jacoco.report-0.8.8.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\dani"/>
     <property name="user.language" value="it"/>
@@ -31,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\dani\AppData\Local\Temp\surefire1721395283653652804\surefirebooter6270654342223951999.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\dani\AppData\Local\Temp\surefire12531737015554412350\surefirebooter1209680130416999368.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="19+36"/>
@@ -60,61 +61,1594 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="63.0"/>
   </properties>
-  <testcase name="testAggiorna" classname="laptop.test.TestLaptop" time="0.413"/>
-  <testcase name="testAggiornaTot" classname="laptop.test.TestLaptop" time="0.469"/>
-  <testcase name="testGetRivistaById" classname="laptop.test.TestLaptop" time="0.195"/>
-  <testcase name="testGetGiornali" classname="laptop.test.TestLaptop" time="0.241"/>
-  <testcase name="testGetDispG" classname="laptop.test.TestLaptop" time="0.094"/>
-  <testcase name="testGetDispL" classname="laptop.test.TestLaptop" time="0.131"/>
-  <testcase name="testGetDispR" classname="laptop.test.TestLaptop" time="0.084"/>
-  <testcase name="testGetLibri" classname="laptop.test.TestLaptop" time="0.125"/>
-  <testcase name="testLogoutSE" classname="laptop.test.TestLaptop" time="0.01"/>
-  <testcase name="testTotaleG" classname="laptop.test.TestLaptop" time="0.464"/>
-  <testcase name="testTotaleR" classname="laptop.test.TestLaptop" time="0.688"/>
-  <testcase name="testGetNomeById" classname="laptop.test.TestLaptop" time="0.101"/>
-  <testcase name="testGetNomeUser" classname="laptop.test.TestLaptop" time="0.003"/>
-  <testcase name="testDisponibilitaLibro" classname="laptop.test.TestLaptop" time="0.071"/>
-  <testcase name="testCheckDataG" classname="laptop.test.TestLaptop" time="0.27"/>
-  <testcase name="testCheckDataL" classname="laptop.test.TestLaptop" time="0.269"/>
-  <testcase name="testCheckDataR" classname="laptop.test.TestLaptop" time="0.28"/>
-  <testcase name="testAnnullaOrdine" classname="laptop.test.TestLaptop" time="0.239"/>
-  <testcase name="testDisponibilitaRivista" classname="laptop.test.TestLaptop" time="0.068"/>
-  <testcase name="testGetRuoloTempUSer" classname="laptop.test.TestLaptop" time="0.104"/>
-  <testcase name="testDisponibilitaGiornale" classname="laptop.test.TestLaptop" time="0.067"/>
-  <testcase name="testGetGiornaliById" classname="laptop.test.TestLaptop" time="0.066"/>
-  <testcase name="testGetTipo" classname="laptop.test.TestLaptop" time="0.003"/>
-  <testcase name="testGetNumeroCC" classname="laptop.test.TestLaptop" time="0.003"/>
-  <testcase name="testCheckDataGM" classname="laptop.test.TestLaptop" time="0.23"/>
-  <testcase name="testCheckDataRM" classname="laptop.test.TestLaptop" time="0.207"/>
-  <testcase name="testGetAmmontare" classname="laptop.test.TestLaptop" time="0.002"/>
-  <testcase name="testControllaG" classname="laptop.test.TestLaptop" time="0.625"/>
-  <testcase name="testControllaL" classname="laptop.test.TestLaptop" time="0.702"/>
-  <testcase name="testControllaR" classname="laptop.test.TestLaptop" time="0.543"/>
-  <testcase name="testLogoutE" classname="laptop.test.TestLaptop" time="0.068"/>
-  <testcase name="testGetPrezzoTransazine" classname="laptop.test.TestLaptop" time="0.002"/>
-  <testcase name="testGetCognomeUser" classname="laptop.test.TestLaptop" time="0.003"/>
-  <testcase name="testControlla" classname="laptop.test.TestLaptop" time="0.17"/>
-  <testcase name="testGetRivistaS" classname="laptop.test.TestLaptop" time="0.099"/>
-  <testcase name="testGetScadenza" classname="laptop.test.TestLaptop" time="0.006"/>
-  <testcase name="testGetNomeByIdG" classname="laptop.test.TestLaptop" time="0.073"/>
-  <testcase name="testGetNomeByIdR" classname="laptop.test.TestLaptop" time="0.078"/>
-  <testcase name="testAnnullaOrdineG" classname="laptop.test.TestLaptop" time="1.508"/>
-  <testcase name="testAnnullaOrdineL" classname="laptop.test.TestLaptop" time="1.45"/>
-  <testcase name="testAnnullaOrdineR" classname="laptop.test.TestLaptop" time="0.766"/>
-  <testcase name="testGetGiornaleS" classname="laptop.test.TestLaptop" time="0.078"/>
-  <testcase name="testGetCostoG" classname="laptop.test.TestLaptop" time="0.059"/>
-  <testcase name="testGetCostoL" classname="laptop.test.TestLaptop" time="0.062"/>
-  <testcase name="testGetCostoR" classname="laptop.test.TestLaptop" time="0.064"/>
-  <testcase name="testCheckData" classname="laptop.test.TestLaptop" time="0.161"/>
-  <testcase name="testCancellaG" classname="laptop.test.TestLaptop" time="0.35"/>
-  <testcase name="testCancellaL" classname="laptop.test.TestLaptop" time="0.33"/>
-  <testcase name="testCancellaR" classname="laptop.test.TestLaptop" time="0.211"/>
-  <testcase name="testGetLibroS" classname="laptop.test.TestLaptop" time="0.053"/>
-  <testcase name="testGetLimite" classname="laptop.test.TestLaptop" time="0.002"/>
-  <testcase name="testGetCiv" classname="laptop.test.TestLaptop" time="0.002"/>
-  <testcase name="testLogout" classname="laptop.test.TestLaptop" time="0.006"/>
-  <testcase name="testGetRiviste" classname="laptop.test.TestLaptop" time="0.055"/>
-  <testcase name="testPrendi" classname="laptop.test.TestLaptop" time="0.05"/>
-  <testcase name="testTotale" classname="laptop.test.TestLaptop" time="0.163"/>
-  <testcase name="testGetLibriById" classname="laptop.test.TestLaptop" time="0.067"/>
+  <testcase name="testAggiorna" classname="laptop.test.TestLaptop" time="0.757">
+    <system-out><![CDATA[INSERT INTO `ispw`.`libro`
+(`titolo`,`numeroPagine`,`Cod_isbn`,`editore`,`autore`,`lingua`,`categoria`,
+`dataPubblicazione`,`recensione`,`copieVendute`,`breveDescrizione`,`disp`,
+`prezzo`,`copieRimanenti`)
+VALUES
+("Apocalypse town: Cronache dalla fine della civilta' urbana",239,"0000000001","Laterza",
+"Alessandro Coppola","Iataliano","LIBRI_UNIVERSITARI","2012-05-18"," urbanistica della contemporaneita' :Il libro esplora una condizione limite delle citta' americane in decrescita, aprendo una prospettiva ed una riflessione sul futuro prossimo del territorio urbano europeo.
+Da leggere assolutamente ",600,"Dalle praterie urbane di Youngstown, dove l'amministrazione comunale si è ormai ridotta a pianificare con zelo l'autodistruzione della citta', all'industria del riciclo e della decostruzione di Buffalo, in cui attivisti visionari smontano con dovizia e con amore cio' che resta della citta'; dai deserti alimentari di Detroit e Philadelphia, dove sono scomparsi negozi e supermercati e gli abitanti si organizzano con geniali intraprese agricole"
+,1,7.99,5571),#1
+("Dobbiamo restituire fiducia ai mercati Falso! ",152,"0000000002","Editori Laterza","Andrea Baranes ",
+"Italiano","ECONOMIA","2014-03-01"," Contro i falsi miti : Andrea Baranes spiega con semplicita' perchè quello dei mercati è un falso problema. Un libro agile e compresibile a tutti. "
+,100,"Oggi la speculazione domina la finanza. La finanza controlla l'ECONOMIA. L'ECONOMIA determina le scelte politiche. La politica impatta sulla vita delle persone. Quello che dobbiamo fare è semplicemente ribaltare l'attuale scala di valori e leggere al contrario le frasi precedenti."
+,1,5.99,540),#2
+("Il libro dello splendore",102,"8877107324","SE "," Ariel Toaff","Italiano",
+"LETTERATURA_NARRATIVA","2008-02-28"," Un libretto utilissimo : Leggere questo libro per me che mi sto avvicinando alla Cabala è stato davvero importante. La prefazione di Elio Toaff è straordinaria e capisco anche la grandezza di questo rabbino nei decenni scorsi. Premetto che io non sono di religione ebraica ma proprio questo libro mi ha introdotto dentro una filosofia veramente fondamentale."
+,500,"Il testo classico della Cabbala è lo Zohar (II libro dello splendore), per secoli considerato sacro all'ebraismo e ancor oggi venerato nei circoli mistici, al pari della Bibbia e del Talmud. Attribuito dai cabbalisti a Rabbi Shim on bar Yochai, celebre dottore della Mishna, e ambientato nella Palestina della seconda meta' del II secolo dell era volgare.",
+1,14.90,48),#3
+("Come i servizi segreti usano i media",240,"0000000003","Ponte alle grazie","Aldo Giannuli","Italiano","LETTERATURA_NARRATIVA",
+"2012-11-22"," Male: Nonostante l'avessi trovato inutilmente lungo, non mi era dispiaciuto il precedente libro di Giannuli Come funzionano i servizi segreti. Con questo volume invece non posso che segnalare un notevole passo indietro dell'autore. Il capitolo dedicato all'OSINT, che dovrebbe costituire il cuore del libro, e' decisamente scarso e per fonti utilizzate (il tutto e' basato quasi esclusivamente su un singolo documento tecnico NATO datato 2002!) e per capacita' di comprensione dell'autore, la quale appare oltremodo limitata (non da' fondamentalmente mai l'idea di capire cosa sia effettivamente l'OSINT e oserei dire piu' in generale l'attivita' di intelligence). Davvero terribili, cosi' come nel volume precedente, tutti i riferimenti fatti alla tecnologia per l'intelligence. Inutile ed assolutamente campata per aria la sezione conclusiva Brioche, cappuccino e intelligence, che sembra soltanto un modo con il quale l'autore riesce a riciclare materiale preparato in altre sedi. Insomma, lettura decisamente deludente."
+,40,"Dopo il grande successo di Come funzionano i servizi segreti, Aldo Giannuli torna a scrivere d’intelligence, affrontando uno degli aspetti meno conosciuti e piu' controversi dell’attivita' dei servizi: il modo in cui manipolano e utilizzano l’informazione."
+,1,6.49,100),#4
+("Sulla vertia'",180,"0000000004","laterza","Donand Davidson","italiano","LETTERATURA_NARRATIVA","1705-01-01","NO",4,"",0,41,0),#5
+("Erasgon Vol 1",592,"8817061622","RIZZOLI","Christopher Paolini","Italiano","FANTASCIENZA_FANTASY","2012-10-03",
+"Ottimo inizio: Il libro e' arrivato nei tempi previsti ed in ottime condizioni. Come si puo' leggere anche sulla presentazione, il libro e' stato scritto quando l'autore aveva 15 anni, fattore che si nota subito. Ha uno stile ancora immaturo, poco sviluppato nei dialoghi e nelle descrizioni.
+Nonostante cio', la lettura e' scorrevole e interessante per chi ama il genere.",40000,"Quando Eragon trova una liscia pietra blu nella foresta, è convinto che gli sia toccata una grande fortuna: potra' venderla e nutrire la sua famiglia per tutto l'inverno. Ma la pietra in realta' e' un uovo. Quando si schiude rivelando il suo straordinario contenuto, un cucciolo di drago, Eragon scopre che gli e' toccato in sorte un'eredita' antica come l'Impero. Forte di una spada magica e dei consigli di un vecchio cantastorie, dovra' cavarsela in un universo denso di magia, mistero e insidie, imparare a distinguere l'amico dal nemico, dimostrare di essere il degno erede dei Cavalieri dei Draghi."
+,1,12.00,1000),#6
+("Scritti inediti di linguistica generale",146,"8842068276","Laterza","Ferdinand de Saussure","Italiano","LINGUISTICA_SCRITTURA","2005-04-14",
+"",0,"",0,0,0),#7
+("Alchimia e kabbalah",107,"8867231553","SE","Alchimia e kabbalah","italiano","ALTRO","2012-07-02","",100,"",1,17,40),#8
+("EXCEL le 10 cose che devi conoscere del foglio elettronico",61,"1520510888","Independently published","Giampietro Lanzanova","Italiano","INFORMATICA","2017-02-02",
+"Utile compendio : Utile compendio per chi non e' molto pratico di excel. Ho comprato anche il libro seguente e non me ne sono pentita. Certo, per maggiori approfondimenti forse serve un corso piu' ampio"
+,40,"Il percorso formativo dell’apprendimento in genere e' sempre piuttosto lungo, ma andare subito al sodo della questione puo' consentire di fare un salto qualitativo rapido delle proprie conoscenze, ed e' proprio lo scopo di questo libro"
+,1,9.99,500),#9
+(" Dungeons & Dragons - 5a Edizione - Manuale del Giocatore",315,"0000000005","Asmodee","Wizard of the coast",
+"italiano","ALTRO","2018-01-01","Ottimo MAnulae: Ottimo manuale per chi vuole iniziare a giocare di ruolo",
+23000,"",1,45,1000),#10
+("Grammatica italiana",123,"0000000006","Garzanti","Redazioni Garzanti","italiano","ALTRO","2012-10-31","",550,"",1,5,40000),#11
+("Kobane calling. Oggi:",312,"8832734591","Bao Publishing","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2020-05-14","assurdo",2000,"compralo",1,22,10),#♥11
+("A babbo morto. Una storia di Natale ",0,"8832735512","Bao Publishing","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2020-11-12","ottimo",100,"compralo",1,11,10),#12
+("Scheletri",240,"8832734893","Bao Publishing","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2020-10-15","ottimo",1000,"compralo",1,20,15),#13
+("La scuola di pizze in faccia del professor Calcare",298 ,"8832733250","Bao Publishing","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2019-10-21","ottimo",1070,"compralo",1,20,48),#14
+("Dodici",95,"8865431806","Bao Publishing","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2013-10-17","ottimo",1000,"compralo",1,11,11),#15
+("Tecniche proibite di persuasione, manipolazione e influenza utilizzando schemi di linguaggio e tecniche di PNL",
+226 ,"1722235608","CreateSpace Independent Publishing Platform","Zerocalcare","Italiana","FUMETTI_MANGA",
+"2018-07-01","ottimo",1000,"compralo se vuoi vievere da re",1,15.40,3),#16
+("CiccioGamer89 Presenta Fortnite. Trucchi e Segreti",135,"8893675056","Magazzini Salani","CiccioGamer89","Italiana","COMPUTER_GIOCHI",
+"2018-09-27","evita dai ",10,"non compralo",1,11,2),#17
+("In cucina con ciccio",120 ,"8893678683","Magazzini Salani","Cicciogamer89","Italiana","FUMETTI_MANGA",
+"2013-10-17","ottimo",1,"compralo",1,16.50,20);#18
+
+
+INSERT INTO `ispw`.`giornale`
+(`titolo`,`tipologia`,`lingua`,`editore`,`dataPubblicazione`,`copiRim`,`disp`,`prezzo`)
+VALUES
+("La Republica1","Quotidiano","Italiano","La Republica","2021-01-31",0,0,2.0),
+("La Republica2","Quotidiano","Italiano","La Republica","2021-01-30",0,0,3.0),
+("La Republica3","Quotidiano","Italiano","La Republica","2021-02-01",10,1,2.0),
+("La Republica4","Quotidiano","Italiano","La Republica","2021-02-02",14,1,2.0),
+("La Republica5","Quotidiano","Italiano","La Republica","2021-02-03",10,1,2.0),
+("La Republica6","Quotidiano","Italiano","La Republica","2021-02-04",15,1,2.0),
+("Il Fatto Quotidiano1","Quotidiano","Italiano","Il Fatto Quotidiano","2021-01-31",0,0,2.0),
+("Il Fatto Quotidiano2","Quotidiano","Italiano","Il Fatto Quotidiano","2021-01-30",0,0,2.0),
+("Il Fatto Quotidiano3","Quotidiano","Italiano","Il Fatto Quotidiano","2021-02-01",0,0,2.0),
+("Il Fatto Quotidiano4","Quotidiano","Italiano","Il Fatto Quotidiano","2021-02-02",15,1,2.0),
+("Il Fatto Quotidiano5","Quotidiano","Italiano","Il Fatto Quotidiano","2021-02-03",16,1,2.0),
+("La gazzetta del profeta","Quotidiano","Italiano", "Hoepli","2022-05-05",20,1,0.85);
+
+
+
+INSERT INTO `ispw`.`rivista`
+(`titolo`,`tipologia`,`autore`,`lingua`,`editore`,`Descrizione`,
+`dataPubblicazione`,`disp`,`prezzo`,`copieRimanenti`)
+VALUES
+("Focus","MENSILE","Focus","Italiano","Bao Publishing","Ogni tanto qualcosa e' simpatica ufo a parte e l'articolo di come combattere uno squalo e' meraviglioso","2021-01-13",
+1,5,123),
+("Focus Junior","MENSILE","Focus","Italiano","Bao Publishing","Carino magari qualche bambino sviluppa interesse per il complottismo","2021-01-21",1,2,1234),
+("Tv Sorrisi e canzoni","SETTIMANALE","Panorama","Italiano","Bao Publishing","ok","2021-02-02",0,4,0),
+("Rivista A","SPORTIVO","Bao Publishing","Italiano","Bao Publishing","okok ","1970-01-01",1,2,121),
+("Rivista B","SPORTIVO","Bao Publishing","Italiano","Bao Publishing","testo casuale","1970-01-01",1,2,321);
+
+INSERT INTO `ispw`.`users`
+(`idRuolo`,`Nome`,`Cognome`,`Email`,`pwd`,`DataDiNascita`)
+VALUES
+("A","admin","admin","admin@admin.com","Admin871","1980-10-26"),
+("A","Gianni","Morandi","giannni@gmail.com","BigHand21","1940-10-18"),
+("U","gino","zaia","gino@zaia.eu","25041995Gz","1995-04-25"),
+("U","Giulia","Conforto","giuliaConforto@gmail.eu","12345678Gc","1998-09-05"),
+("W","Zerocalcare","Zerocalcare","zerocalcare@gmail.com","Zerocalcare21","1980-05-20"),
+("E","Bao Publishing","Bao Publishing","baoPublishing@gmail.com","BaoPub2021","1960-11-21");
+
+
+INSERT INTO `ispw`.`negozio`
+(`nome`,`via`,`isValid`,`isOpen`)
+VALUES
+("Negozio A","via A",true,false),
+("Negozio B","via B",true,true),
+("Negozio C","via C",false,true),
+("Negozio D","via D",false,false);
+
+
+
+
+]]></system-out>
+    <system-err><![CDATA[dic 20, 2022 7:34:45 PM laptop.utilities.ConnToDb initailConnection
+INFORMAZIONI: Connesso initial.....
+
+dic 20, 2022 7:34:45 PM laptop.utilities.ConnToDb initailConnection
+INFORMAZIONI: Connesso initial.....
+
+dic 20, 2022 7:34:45 PM laptop.utilities.ConnToDb connection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:34:45 PM laptop.utilities.ConnToDb connection
+INFORMAZIONI: Errore in mysql..........\n
+java.sql.SQLSyntaxErrorException: Unknown database 'ispw'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at laptop.utilities.ConnToDb.connection(ConnToDb.java:76)
+	at laptop.utilities.CreateDefaultDB.createDefaultDB(CreateDefaultDB.java:89)
+	at laptop.test.TestLaptop.creaDB(TestLaptop.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:70)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$13(ClassBasedTestDescriptor.java:411)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:409)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:215)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:84)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:188)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:154)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:128)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+dic 20, 2022 7:34:59 PM laptop.utilities.CreateDefaultDB createDefaultDB
+INFORMAZIONI: Connesso a mysql workbench, ma non ho torvato il database 'ispw'
+Database creato tabelle create
+
+dic 20, 2022 7:34:59 PM laptop.utilities.PopulateDefaultDb createLibri
+INFORMAZIONI: ---------Chiamo stored insLibri---------
+
+
+dic 20, 2022 7:34:59 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:34:59 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:00 PM laptop.utilities.PopulateDefaultDb createGiornale
+INFORMAZIONI: ---------Chiamo stored insGiornali---------
+
+
+dic 20, 2022 7:35:00 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:00 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:00 PM laptop.utilities.PopulateDefaultDb createRivista
+INFORMAZIONI: ---------Chiamo stored insRiviste---------
+
+
+dic 20, 2022 7:35:00 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:00 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:01 PM laptop.utilities.PopulateDefaultDb createUser
+INFORMAZIONI: ---------Chiamo stored insUsers---------
+
+
+dic 20, 2022 7:35:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:01 PM laptop.utilities.PopulateDefaultDb createNegozio
+INFORMAZIONI: ---------Chiamo stored insNegozi---------
+
+
+dic 20, 2022 7:35:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:01 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.utilities.CreateDefaultDB createDefaultDB
+INFORMAZIONI: tabella popolata valori default
+dic 20, 2022 7:35:02 PM laptop.utilities.CreateDefaultDB createDefaultDB
+INFORMAZIONI: trovato db e connesso.. buon proseguimento
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:02 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testAggiornaTot" classname="laptop.test.TestLaptop" time="0.636">
+    <system-err><![CDATA[dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:03 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:03 PM laptop.database.UsersDao pickData
+INFORMAZIONI: errore in mysql :
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetRivistaById" classname="laptop.test.TestLaptop" time="0.248">
+    <system-err><![CDATA[dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:03 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:03 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetGiornali" classname="laptop.test.TestLaptop" time="0.082">
+    <system-err><![CDATA[dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:04 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[1]" classname="laptop.test.TestLaptop" time="3.153">
+    <system-err><![CDATA[dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:04 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:04 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[2]" classname="laptop.test.TestLaptop" time="0.674">
+    <system-err><![CDATA[dic 20, 2022 7:35:07 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:08 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:08 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[3]" classname="laptop.test.TestLaptop" time="0.426">
+    <system-err><![CDATA[dic 20, 2022 7:35:08 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:08 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:08 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[4]" classname="laptop.test.TestLaptop" time="0.454">
+    <system-err><![CDATA[dic 20, 2022 7:35:09 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:09 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:09 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[5]" classname="laptop.test.TestLaptop" time="0.371">
+    <system-err><![CDATA[dic 20, 2022 7:35:09 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:09 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:09 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[6]" classname="laptop.test.TestLaptop" time="0.31">
+    <system-err><![CDATA[dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:10 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[7]" classname="laptop.test.TestLaptop" time="0.12">
+    <system-err><![CDATA[dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:10 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[8]" classname="laptop.test.TestLaptop" time="0.264">
+    <system-err><![CDATA[dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:10 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:10 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[9]" classname="laptop.test.TestLaptop" time="0.203">
+    <system-err><![CDATA[dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:11 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[10]" classname="laptop.test.TestLaptop" time="0.313">
+    <system-err><![CDATA[dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:11 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[11]" classname="laptop.test.TestLaptop" time="0.309">
+    <system-err><![CDATA[dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:11 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:11 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaLibro(int)[12]" classname="laptop.test.TestLaptop" time="0.44">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testGetDispG" classname="laptop.test.TestLaptop" time="0.043">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetDispL" classname="laptop.test.TestLaptop" time="0.098">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetDispR" classname="laptop.test.TestLaptop" time="0.028">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetLibri" classname="laptop.test.TestLaptop" time="0.042">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testLogoutSE" classname="laptop.test.TestLaptop" time="0.004">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerHomePageAfterLoginSE logout
+INFORMAZIONI: stai sloggando come Bao Publishing
+dic 20, 2022 7:35:12 PM laptop.controller.ControllerHomePageAfterLoginSE logout
+INFORMAZIONI: logout utente null
+]]></system-err>
+  </testcase>
+  <testcase name="testTotaleG" classname="laptop.test.TestLaptop" time="0.35">
+    <system-err><![CDATA[dic 20, 2022 7:35:12 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testTotaleR" classname="laptop.test.TestLaptop" time="0.394">
+    <system-err><![CDATA[dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.database.RivistaDao daiPrivilegi
+INFORMAZIONI: rivistaDao dai privilegi
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNomeById" classname="laptop.test.TestLaptop" time="0.033">
+    <system-err><![CDATA[dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNomeUser" classname="laptop.test.TestLaptop" time="0.002">
+    <system-err><![CDATA[dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testDisponibilitaLibro" classname="laptop.test.TestLaptop" time="0.041">
+    <system-err><![CDATA[dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:13 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:13 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:14 PM laptop.database.LibroDao checkDisp
+INFORMAZIONI: libro disponibile
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckDataG" classname="laptop.test.TestLaptop" time="0.212">
+    <system-err><![CDATA[dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:14 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckDataL" classname="laptop.test.TestLaptop" time="0.347">
+    <system-err><![CDATA[dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:14 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:14 PM laptop.database.LibroDao aggiornaLibro
+INFORMAZIONI: row affected 1
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckDataR" classname="laptop.test.TestLaptop" time="0.301">
+    <system-err><![CDATA[dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:14 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testAnnullaOrdine" classname="laptop.test.TestLaptop" time="0.302">
+    <system-err><![CDATA[dic 20, 2022 7:35:14 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testDisponibilitaRivista" classname="laptop.test.TestLaptop" time="0.029">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetRuoloTempUSer" classname="laptop.test.TestLaptop" time="0.136">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testDisponibilitaGiornale" classname="laptop.test.TestLaptop" time="0.028">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.database.GiornaleDao checkDisp
+INFORMAZIONI: giornale Trovato
+]]></system-err>
+  </testcase>
+  <testcase name="testGetGiornaliById" classname="laptop.test.TestLaptop" time="0.034">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.database.GiornaleDao getGiornaliSingoloById
+INFORMAZIONI: catalogo [laptop.model.raccolta.Giornale@29a50a11]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetTipo" classname="laptop.test.TestLaptop" time="0.001">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNumeroCC" classname="laptop.test.TestLaptop" time="0.001">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckDataGM" classname="laptop.test.TestLaptop" time="0.15">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.database.GiornaleDao aggiornaGiornale
+INFORMAZIONI:  rows aggiornalte 1
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckDataRM" classname="laptop.test.TestLaptop" time="0.181">
+    <system-err><![CDATA[dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:15 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:15 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.database.RivistaDao aggiornaRivista
+INFORMAZIONI: rows afffected1
+]]></system-err>
+  </testcase>
+  <testcase name="testGetAmmontare" classname="laptop.test.TestLaptop" time="0.002">
+    <system-err><![CDATA[dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testControllaG" classname="laptop.test.TestLaptop" time="0.544">
+    <system-err><![CDATA[dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testControllaL" classname="laptop.test.TestLaptop" time="0.574">
+    <system-err><![CDATA[dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:16 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testControllaR" classname="laptop.test.TestLaptop" time="0.454">
+    <system-err><![CDATA[dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testLogoutE" classname="laptop.test.TestLaptop" time="0.009">
+    <system-err><![CDATA[dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerHomePageAfterLogin logout
+INFORMAZIONI: stai sloggando come null
+]]></system-err>
+  </testcase>
+  <testcase name="testGetPrezzoTransazine" classname="laptop.test.TestLaptop" time="0.001">
+    <system-err><![CDATA[dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCognomeUser" classname="laptop.test.TestLaptop" time="0.001">
+    <system-err><![CDATA[dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testControlla" classname="laptop.test.TestLaptop" time="0.081">
+    <system-err><![CDATA[dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.database.UsersDao checkUser
+INFORMAZIONI: idUser zerocalcare@gmail.com
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:17 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.database.UsersDao pickData
+INFORMAZIONI: errore in mysql :
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerLogin controlla
+INFORMAZIONI: loggato come W
+]]></system-err>
+  </testcase>
+  <testcase name="testGetRivistaS" classname="laptop.test.TestLaptop" time="0.028">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetScadenza" classname="laptop.test.TestLaptop" time="0.001">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[1]" classname="laptop.test.TestLaptop" time="0.054">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[2]" classname="laptop.test.TestLaptop" time="0.038">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[3]" classname="laptop.test.TestLaptop" time="0.039">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[4]" classname="laptop.test.TestLaptop" time="0.044">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[5]" classname="laptop.test.TestLaptop" time="0.049">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaRivista(int)[6]" classname="laptop.test.TestLaptop" time="0.174">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNomeByIdG" classname="laptop.test.TestLaptop" time="0.025">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetNomeByIdR" classname="laptop.test.TestLaptop" time="0.029">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testAnnullaOrdineG" classname="laptop.test.TestLaptop" time="3.521">
+    <system-err><![CDATA[dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:18 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:19 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:20 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:20 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:20 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:20 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:21 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:21 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testAnnullaOrdineL" classname="laptop.test.TestLaptop" time="3.607">
+    <system-err><![CDATA[dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:22 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:22 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:23 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:23 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:23 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:23 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:23 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:24 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:24 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:24 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testAnnullaOrdineR" classname="laptop.test.TestLaptop" time="1.088">
+    <system-err><![CDATA[dic 20, 2022 7:35:25 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:26 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetGiornaleS" classname="laptop.test.TestLaptop" time="0.063">
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:27 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCostoG" classname="laptop.test.TestLaptop" time="0.054">
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:27 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCostoL" classname="laptop.test.TestLaptop" time="0.089">
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:27 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCostoR" classname="laptop.test.TestLaptop" time="0.059">
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:27 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testCheckData" classname="laptop.test.TestLaptop" time="0.33">
+    <system-out><![CDATA[stato nel libro :true
+]]></system-out>
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:27 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testRetTipoUser(String)[1]" classname="laptop.test.TestLaptop" time="0.008">
+    <system-err><![CDATA[dic 20, 2022 7:35:27 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testRetTipoUser(String)[2]" classname="laptop.test.TestLaptop" time="0.003">
+    <system-err><![CDATA[dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testRetTipoUser(String)[3]" classname="laptop.test.TestLaptop" time="0.004">
+    <system-err><![CDATA[dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testCancellaG" classname="laptop.test.TestLaptop" time="0.351">
+    <system-err><![CDATA[dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.database.GiornaleDao cancella
+INFORMAZIONI: 
+ rows affcted 1
+]]></system-err>
+  </testcase>
+  <testcase name="testCancellaL" classname="laptop.test.TestLaptop" time="0.373">
+    <system-err><![CDATA[dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:28 PM laptop.database.LibroDao cancella
+INFORMAZIONI: libro cancellato 1
+]]></system-err>
+  </testcase>
+  <testcase name="testCancellaR" classname="laptop.test.TestLaptop" time="0.335">
+    <system-err><![CDATA[dic 20, 2022 7:35:28 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.database.RivistaDao cancella
+INFORMAZIONI: row delected1
+]]></system-err>
+  </testcase>
+  <testcase name="testGetLibroS" classname="laptop.test.TestLaptop" time="0.055">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.database.LibroDao getLibroSingolo
+INFORMAZIONI: ctalogo [laptop.model.raccolta.Libro@5b634e24, laptop.model.raccolta.Libro@7b0dfa91, laptop.model.raccolta.Libro@642f8b7f, laptop.model.raccolta.Libro@3321fb65, laptop.model.raccolta.Libro@7272914b, laptop.model.raccolta.Libro@663f24e6, laptop.model.raccolta.Libro@7e532f2d, laptop.model.raccolta.Libro@42150951, laptop.model.raccolta.Libro@248b2091, laptop.model.raccolta.Libro@3b0c38f2, laptop.model.raccolta.Libro@5cc152f9, laptop.model.raccolta.Libro@36f497b1, laptop.model.raccolta.Libro@4b86a656, laptop.model.raccolta.Libro@1117cc7c, laptop.model.raccolta.Libro@4797023d, laptop.model.raccolta.Libro@55cc4c61, laptop.model.raccolta.Libro@2b06f498, laptop.model.raccolta.Libro@4ddb9a8, laptop.model.raccolta.Libro@7b24d5e4]
+]]></system-err>
+  </testcase>
+  <testcase name="testGetLimite" classname="laptop.test.TestLaptop" time="0.002">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testGetCiv" classname="laptop.test.TestLaptop" time="0.002">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testLogout" classname="laptop.test.TestLaptop" time="0.003">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerHomePageAfterLogin logout
+INFORMAZIONI: stai sloggando come Zerocalcare
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerHomePageAfterLogin logout
+INFORMAZIONI: stai sloggando null
+]]></system-err>
+  </testcase>
+  <testcase name="testGetRiviste" classname="laptop.test.TestLaptop" time="0.042">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testPrendi" classname="laptop.test.TestLaptop" time="0.035">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.database.UsersDao pickData
+INFORMAZIONI: errore in mysql :
+]]></system-err>
+  </testcase>
+  <testcase name="testTotale" classname="laptop.test.TestLaptop" time="0.094">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+]]></system-err>
+  </testcase>
+  <testcase name="testGetLibriById" classname="laptop.test.TestLaptop" time="0.036">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.database.LibroDao getLibriSingoloById
+INFORMAZIONI: catalogo trovato
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[1]" classname="laptop.test.TestLaptop" time="0.185">
+    <system-err><![CDATA[dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:29 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:29 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[2]" classname="laptop.test.TestLaptop" time="0.125">
+    <system-err><![CDATA[dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:30 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[3]" classname="laptop.test.TestLaptop" time="0.091">
+    <system-err><![CDATA[dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:30 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[4]" classname="laptop.test.TestLaptop" time="0.074">
+    <system-err><![CDATA[dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:30 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[5]" classname="laptop.test.TestLaptop" time="0.307">
+    <system-err><![CDATA[dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:30 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
+  <testcase name="testScaricaGiornale(int)[6]" classname="laptop.test.TestLaptop" time="0.343">
+    <system-err><![CDATA[dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Tentativo di conessione al server..........\\n
+dic 20, 2022 7:35:30 PM laptop.utilities.ConnToDb generalConnection
+INFORMAZIONI: Connesso standard ........
+
+dic 20, 2022 7:35:30 PM laptop.controller.ControllerModificaUtente <init>
+INFORMAZIONI: Costruttore ControllerModificaUtente
+]]></system-err>
+  </testcase>
 </testsuite>

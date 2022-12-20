@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerModifPage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerModifPage.java</span></div><h1>ControllerModifPage.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+import javafx.collections.ObservableList;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+
+public class ControllerModifPage {
+	private LibroDao ld;
+	private Libro l;
+	private Giornale g;
+	private GiornaleDao gD;
+	private Rivista r;
+	private RivistaDao rD;
+	
+	
+	public ObservableList&lt;Libro&gt; getLibriById(int id) throws SQLException {
+<span class="fc" id="L24">		l.setId(id);</span>
+<span class="fc" id="L25">		return ld.getLibriSingoloById(l);</span>
+	}
+	
+	public ObservableList&lt;Giornale&gt; getGiornaliById(int id) throws SQLException   {
+<span class="fc" id="L29">		g.setId(id);</span>
+<span class="fc" id="L30">		return gD.getGiornaliSingoloById(g);</span>
+	}
+	
+		
+		public void checkDataG(String[] info, LocalDate d, int dispo, float prezzo,
+				int copie) throws SQLException  {
+			
+
+<span class="fc" id="L38">			g.setTitolo(info[0]);</span>
+<span class="fc" id="L39">			g.setTipologia(info[1]);</span>
+<span class="fc" id="L40">			g.setEditore(info[2]);</span>
+<span class="fc" id="L41">			g.setLingua(info[3]);</span>
+<span class="fc" id="L42">			g.setDataPubb(d);</span>
+<span class="fc" id="L43">			g.setDisponibilita(dispo);</span>
+<span class="fc" id="L44">			g.setPrezzo(prezzo);</span>
+<span class="fc" id="L45">			g.setCopieRimanenti(copie);</span>
+			
+<span class="fc" id="L47">						gD.aggiornaGiornale(g);</span>
+			
+<span class="fc" id="L49">		}</span>
+		public ObservableList&lt;Rivista&gt; getRivistaById(int id) throws SQLException {
+<span class="fc" id="L51">			r.setId(id);</span>
+<span class="fc" id="L52">			return rD.getRivistaSingoloById(r);</span>
+		}
+		
+		
+
+		public void checkDataR(String [] info, LocalDate d,
+				int dispo, float prezzo, int copie, int id, String desc) throws SQLException {
+			
+<span class="fc" id="L60">			r.setTitolo(info[0]);</span>
+<span class="fc" id="L61">			r.setTipologia(info[1]);</span>
+<span class="fc" id="L62">			r.setAutore(info[2]);</span>
+<span class="fc" id="L63">			r.setLingua(info[3]);</span>
+<span class="fc" id="L64">			r.setEditore(info[4]);</span>
+<span class="fc" id="L65">			r.setDescrizione(desc);</span>
+<span class="fc" id="L66">			r.setDataPubb(d);</span>
+<span class="fc" id="L67">			r.setDisp(dispo);</span>
+<span class="fc" id="L68">			r.setPrezzo(prezzo);</span>
+<span class="fc" id="L69">			r.setCopieRim(copie);</span>
+<span class="fc" id="L70">			r.setId(id);</span>
+			
+<span class="fc" id="L72">			rD.aggiornaRivista(r);</span>
+			
+			
+<span class="fc" id="L75">		}</span>
+		
+	
+	
+	public ControllerModifPage()
+<span class="fc" id="L80">	{</span>
+<span class="fc" id="L81">		ld=new LibroDao();</span>
+<span class="fc" id="L82">		l=new Libro();</span>
+<span class="fc" id="L83">		g=new Giornale();</span>
+<span class="fc" id="L84">		gD=new GiornaleDao();</span>
+<span class="fc" id="L85">		r=new Rivista();</span>
+<span class="fc" id="L86">		rD=new RivistaDao();</span>
+<span class="fc" id="L87">	}</span>
+	
+	
+	public void checkDataL(String []info,String recensione,String descrizione,LocalDate data,String[] infoCosti) throws NullPointerException, SQLException 
+	{
+		
+		
+	
+<span class="fc" id="L95">		l.setTitolo(info[0]);</span>
+<span class="fc" id="L96">		l.setNumeroPagine(Integer.parseInt(infoCosti[0]));</span>
+<span class="fc" id="L97">		l.setCodIsbn(infoCosti[1]);</span>
+<span class="fc" id="L98">		l.setEditore(info[4]);</span>
+<span class="fc" id="L99">		l.setAutore(info[2]);</span>
+<span class="fc" id="L100">		l.setLingua(info[3]);</span>
+<span class="fc" id="L101">		l.setCategoria(info[5]);</span>
+<span class="fc" id="L102">		l.setDataPubb(data);</span>
+<span class="fc" id="L103">		l.setRecensione(recensione);</span>
+<span class="fc" id="L104">		l.setDesc(descrizione);</span>
+<span class="fc" id="L105">		l.setDisponibilita(Integer.parseInt(infoCosti[3]));</span>
+<span class="fc" id="L106">		l.setPrezzo(Float.parseFloat(infoCosti[4]));</span>
+<span class="fc" id="L107">		l.setNrCopie(Integer.parseInt(infoCosti[5]));</span>
+		
+		
+<span class="fc" id="L110">		ld.aggiornaLibro(l);</span>
+<span class="fc" id="L111">	}</span>
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

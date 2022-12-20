@@ -274,11 +274,11 @@ class TestLaptop2 {
 		assertNotEquals(0,UsersDao.maxIdUSer());
 	}
 	@ParameterizedTest
-	@ValueSource(strings={"baoPublishing@gmail.com","alfredino@hotmail.com"},ints= {1,-1} )
-	void testCheckTempUser(String strings,int ints) throws SQLException
+	@ValueSource(strings={"baoPublishing@gmail.com","giannni@gmail.com"} )
+	void testCheckTempUser(String strings) throws SQLException
 	{
 		tu.setEmail(strings);
-		assertEquals(ints,UsersDao.checkTempUser(tu));
+		assertEquals(-1,UsersDao.checkTempUser(tu));
 	}
 	
 	@Test

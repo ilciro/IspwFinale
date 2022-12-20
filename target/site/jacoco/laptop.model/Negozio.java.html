@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Negozio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.model</a> &gt; <span class="el_source">Negozio.java</span></div><h1>Negozio.java</h1><pre class="source lang-java linenums">package laptop.model;
+
+
+public class Negozio {
+	
+	private String nome;
+	private String via;
+	private Boolean isValid;
+	private Boolean isOpen;	
+	
+	public Negozio(String nome, String via, Boolean isValid, Boolean isOpen) {
+<span class="fc" id="L12">		super();</span>
+<span class="fc" id="L13">		this.nome = nome;</span>
+<span class="fc" id="L14">		this.via = via;</span>
+<span class="fc" id="L15">		this.isValid = isValid;</span>
+<span class="fc" id="L16">		this.isOpen = isOpen;</span>
+<span class="fc" id="L17">	}</span>
+	
+	public Negozio() {
+<span class="fc" id="L20">		this(null,null,null,null);</span>
+<span class="fc" id="L21">	}</span>
+
+	public String getNome() {
+<span class="fc" id="L24">		return nome;</span>
+	}
+	public void setNome(String nome) {
+<span class="fc" id="L27">		this.nome = nome;</span>
+<span class="fc" id="L28">	}</span>
+	public String getVia() {
+<span class="fc" id="L30">		return via;</span>
+	}
+	public void setVia(String via) {
+<span class="fc" id="L33">		this.via = via;</span>
+<span class="fc" id="L34">	}</span>
+	public Boolean getIsValid() {
+<span class="fc" id="L36">		return isValid;</span>
+	}
+	public void setIsValid(Boolean isValid) {
+<span class="fc" id="L39">		this.isValid = isValid;</span>
+<span class="fc" id="L40">	}</span>
+	public Boolean getIsOpen() {
+<span class="fc" id="L42">		return isOpen;</span>
+	}
+	public void setIsOpen(Boolean isOpen) {
+<span class="fc" id="L45">		this.isOpen = isOpen;</span>
+<span class="fc" id="L46">	}</span>
+
+	
+	
+	@Override
+	public String toString() {
+<span class="nc" id="L52">		return &quot;Negozio [nome=&quot; + nome + &quot;, via=&quot; + via + &quot;, isOpen=&quot; + isOpen + &quot;]&quot;;</span>
+	}
+
+	
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

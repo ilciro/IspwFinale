@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PagamentoDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.database</a> &gt; <span class="el_source">PagamentoDao.java</span></div><h1>PagamentoDao.java</h1><pre class="source lang-java linenums">package laptop.database;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import laptop.model.Pagamento;
+import laptop.model.User;
+import laptop.utilities.ConnToDb;
+
+<span class="fc" id="L15">public class PagamentoDao {</span>
+	private String query;
+<span class="fc" id="L17">	private static String eccezione=&quot;eccezione ottenuta:&quot;;</span>
+
+	
+
+	
+	
+
+		
+
+	public void inserisciPagamento(Pagamento p) throws SQLException {
+		
+
+		
+		
+
+<span class="fc" id="L32">		query=&quot;INSERT INTO ispw.pagamento(metodo,esito,nomeUtente,spesaTotale,eMail,tipoAcquisto,idProd) values (?,?,?,?,?,?,?)&quot;;</span>
+
+<span class="fc" id="L34">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L35">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+			
+			
+<span class="fc" id="L39">			prepQ.setString(1,p.getMetodo()); // </span>
+<span class="fc" id="L40">			prepQ.setInt(2,p.getEsito());</span>
+<span class="fc" id="L41">			prepQ.setString(3,p.getNomeUtente());</span>
+<span class="fc" id="L42">			prepQ.setFloat(4,p.getAmmontare());</span>
+<span class="fc" id="L43">			prepQ.setString(5, User.getInstance().getEmail());</span>
+<span class="fc" id="L44">			prepQ.setString(6,p.getTipo());</span>
+<span class="fc" id="L45">			prepQ.setInt(7, p.getId());</span>
+<span class="fc" id="L46">			prepQ.executeUpdate();</span>
+<span class="fc" id="L47">		}catch(SQLException e)</span>
+		{
+<span class="fc" id="L49">						java.util.logging.Logger.getLogger(&quot;insert pagamento&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L50">		}</span>
+		
+		
+<span class="fc" id="L53">		}</span>
+		
+	public void daiPrivilegi() throws SQLException 
+	{
+
+		
+<span class="fc" id="L59">		query=&quot;set sql_safe_updates=?&quot;;</span>
+<span class="fc" id="L60">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L61">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L63">			prepQ.setInt(1,0);</span>
+
+<span class="fc" id="L65">			prepQ.executeUpdate();</span>
+
+<span class="nc" id="L67">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L69">			java.util.logging.Logger.getLogger(&quot;dai pribvilegi&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L70">		}</span>
+
+
+<span class="fc" id="L73">	}</span>
+	public ObservableList&lt;Pagamento&gt; getPagamenti() throws SQLException  {
+
+<span class="fc" id="L76">			ObservableList&lt;Pagamento&gt; catalogo=FXCollections.observableArrayList();</span>
+<span class="fc" id="L77">			query=&quot;SELECT id_op,metodo,esito,nomeUtente,spesaTotale,tipoAcquisto,idProd from ispw.pagamento where eMail=?&quot;;</span>
+<span class="fc" id="L78">			try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L79">					PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+			{
+<span class="fc" id="L81">				prepQ.setString(1, User.getInstance().getEmail());</span>
+<span class="fc" id="L82">				ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">			while(rs.next())</span>
+			{
+
+
+<span class="fc" id="L87">				catalogo.add(new Pagamento (rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getString(4),rs.getFloat(5),rs.getString(6)));</span>
+
+			}
+<span class="nc" id="L90">			}catch(SQLException e)</span>
+			{
+<span class="nc" id="L92">							java.util.logging.Logger.getLogger(&quot;lista pagamenti&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L93">			}</span>
+		
+<span class="fc" id="L95">		return catalogo;</span>
+	}
+	
+	
+
+	
+		
+	public int retUltimoOrdine() throws SQLException 
+	{
+<span class="fc" id="L104">		int id=0;</span>
+<span class="fc" id="L105">		query=&quot;select count(*) as massimo from pagamento&quot;;</span>
+<span class="fc" id="L106">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L107">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L109">			ResultSet rs=prepQ.executeQuery();</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">			while ( rs.next() ) {</span>
+<span class="fc" id="L111">				id=rs.getInt(&quot;massimo&quot;);</span>
+
+			}
+<span class="nc" id="L114">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L116">						java.util.logging.Logger.getLogger(&quot;ultimo ordine&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L117">		}</span>
+				
+<span class="fc" id="L119">		return id;</span>
+		
+	}
+
+	public boolean annullaOrdine(int idC) throws SQLException
+	{
+<span class="fc" id="L125">		boolean state=false;</span>
+<span class="fc" id="L126">		int row=0;</span>
+		
+<span class="fc" id="L128">		query=&quot;delete from pagamento where id_op=?&quot;;</span>
+<span class="fc" id="L129">		try(Connection conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L130">				PreparedStatement prepQ=conn.prepareStatement(query);)</span>
+		{
+<span class="fc" id="L132">			prepQ.setInt(1,idC);</span>
+<span class="fc" id="L133">			row=prepQ.executeUpdate();</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">			if(row==1)</span>
+<span class="fc" id="L135">				state=true;</span>
+<span class="nc" id="L136">		}catch(SQLException e)</span>
+		{
+<span class="nc" id="L138">						java.util.logging.Logger.getLogger(&quot;annulla ordine&quot;).log(Level.INFO, eccezione, e);</span>
+<span class="fc" id="L139">		}</span>
+			
+<span class="fc" id="L141">			return state;</span>
+
+		}
+		
+
+	
+
+
+}
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

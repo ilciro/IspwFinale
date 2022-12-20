@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerVisualizza.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerVisualizza.java</span></div><h1>ControllerVisualizza.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+
+
+public class ControllerVisualizza {
+	
+	private LibroDao lD;
+	private Libro l;
+	private Giornale g;
+	private Rivista r;
+	private RivistaDao rD;
+	private GiornaleDao gD;
+	
+<span class="fc" id="L23">	private ControllerSystemState vis = ControllerSystemState.getIstance() ;</span>
+	
+	public ControllerVisualizza()
+<span class="fc" id="L26">	{</span>
+<span class="fc" id="L27">		l = new Libro();</span>
+<span class="fc" id="L28">		g=new Giornale();</span>
+<span class="fc" id="L29">		r=new Rivista();</span>
+<span class="fc" id="L30">		lD=new LibroDao();</span>
+<span class="fc" id="L31">		gD=new GiornaleDao();</span>
+<span class="fc" id="L32">		rD=new RivistaDao();</span>
+<span class="fc" id="L33">	}</span>
+	public void setID(String i)
+	{		
+		
+<span class="nc" id="L37">		vis.setId(Integer.parseInt(i));</span>
+<span class="nc" id="L38">	}</span>
+	public int getID()
+	{
+<span class="nc" id="L41">		java.util.logging.Logger.getLogger(&quot;Test getId&quot;).log(Level.INFO, &quot;id {0}&quot;,vis.getId());</span>
+
+<span class="nc" id="L43">		return vis.getId();</span>
+	}
+	public Libro getDataL(int i) throws SQLException
+	{
+		// imposto che è un libro nel controller
+<span class="fc" id="L48">		vis.setId(i);</span>
+<span class="fc" id="L49">		l.setId(vis.getId());</span>
+<span class="fc" id="L50">		return  lD.getLibro(l);</span>
+	}
+	public Giornale getDataG(int i) throws SQLException
+	{
+		// imposto che è un libro nel controller
+<span class="fc" id="L55">		vis.setId(i);</span>
+<span class="fc" id="L56">		g.setId(vis.getId());</span>
+<span class="fc" id="L57">		return  gD.getGiornale(g);</span>
+	}
+	public Rivista getDataR(int i) throws SQLException
+	{
+		// imposto che è un libro nel controller
+<span class="fc" id="L62">		vis.setId(i);</span>
+<span class="fc" id="L63">		r.setId(vis.getId());</span>
+<span class="fc" id="L64">		return  rD.getRivista(r);</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

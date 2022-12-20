@@ -35,14 +35,15 @@ class TestLaptop3 {
 
 
 	@ParameterizedTest
-	@ValueSource(strings={"cash","cCredito"},ints= {0,1},floats= {(float) 1.36,(float) 2.36})
-	void testInserisciPagamento(String strings,int ints,float floats) throws SQLException {
+	@ValueSource(strings={"cash","cCredito"})
+	void testInserisciPagamento(String strings) throws SQLException {
 		
+		p=new Pagamento();
 		p.setTipo(strings);
-		p.setEsito(ints);
+		p.setEsito(0);
 		
 		p.setNomeUtente("franco");
-		p.setAmmontare(floats);
+		p.setAmmontare((float) 1.36);
 		
 		User.getInstance().setEmail("franco.rossi@gmail.com");
 		

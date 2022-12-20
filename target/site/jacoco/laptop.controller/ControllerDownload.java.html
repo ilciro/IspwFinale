@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerDownload.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerDownload.java</span></div><h1>ControllerDownload.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.UUID;
+
+import com.itextpdf.text.DocumentException;
+
+import laptop.database.ContrassegnoDao;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.PagamentoDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+
+
+
+public class ControllerDownload {
+	private String nrOrdine;
+<span class="fc" id="L22">	private ControllerSystemState vis=ControllerSystemState.getIstance();</span>
+	private ContrassegnoDao cDao;
+	private PagamentoDao pDao;
+	private LibroDao lD;
+	private Giornale g;
+	private GiornaleDao gD;
+	private RivistaDao rD;
+	private Rivista r;
+	
+	private  Libro l;
+	public void scaricaLibro() throws DocumentException, IOException {
+<span class="fc" id="L33">		l.setId(vis.getId());		</span>
+<span class="fc" id="L34">		l.scarica();		</span>
+<span class="fc" id="L35">		l.leggi(vis.getId());</span>
+<span class="fc" id="L36">	}</span>
+	
+	
+	
+
+	public void annullaOrdine() throws SQLException {
+		/*
+		 * MEtodo usato per cancellare pafamento e fatture.. ma con una query di ritardo
+		 */
+<span class="fc" id="L45">		boolean statusF=false;</span>
+<span class="fc" id="L46">		boolean statusP=false;</span>
+<span class="fc" id="L47">		String typeP=vis.getMetodoP(); //tipo pagamento</span>
+<span class="fc" id="L48">		String typeO=vis.getType(); //tipo oggetto</span>
+		
+<span class="fc" id="L50">		int idF=cDao.retUltimoOrdine(); //ultimo elemento (preso con count)</span>
+<span class="fc" id="L51">		statusF=cDao.annullaOrdine(idF);</span>
+		
+<span class="fc" id="L53">		int idP=pDao.retUltimoOrdine();</span>
+<span class="fc" id="L54">		statusP=pDao.annullaOrdine(idP);</span>
+		
+		
+<span class="pc bpc" id="L57" title="2 of 6 branches missed.">		if(typeP.equals(&quot;cash&quot;) &amp;&amp;(statusF &amp;&amp; statusP))</span>
+			{
+				//aggiorno disponibilita
+				
+<span class="pc bpc" id="L61" title="2 of 4 branches missed.">				switch(typeO)</span>
+				{
+					case &quot;libro&quot;:
+					{
+<span class="fc" id="L65">						l.setId(vis.getId());</span>
+<span class="fc" id="L66">						lD.incrementaDisponibilita(l);</span>
+<span class="fc" id="L67">						break;</span>
+					}
+					case &quot;giornale&quot;:
+					{
+<span class="fc" id="L71">						g.setId(vis.getId());</span>
+<span class="fc" id="L72">						gD.incrementaDisponibilita(g);</span>
+<span class="fc" id="L73">						break;</span>
+					}
+					case &quot;rivista&quot;:
+					{
+<span class="nc" id="L77">						r.setId(vis.getId());</span>
+<span class="nc" id="L78">						rD.incrementaDisponibilita(r);</span>
+<span class="nc" id="L79">						break;</span>
+					}
+					default :
+						break;
+				}
+				
+			
+			
+			
+		}
+<span class="pc bpc" id="L89" title="1 of 4 branches missed.">		 if(typeP.equals(&quot;cCredito&quot;) &amp;&amp; statusP)</span>
+		{
+			
+				//aggiorno disponibilita
+<span class="pc bpc" id="L93" title="3 of 4 branches missed.">				switch(typeO)</span>
+				{
+					case &quot;libro&quot;:
+					{
+<span class="nc" id="L97">						l.setId(vis.getId());</span>
+<span class="nc" id="L98">						lD.incrementaDisponibilita(l);</span>
+<span class="nc" id="L99">						break;</span>
+					}
+					case &quot;giornale&quot;:
+					{
+<span class="nc" id="L103">						g.setId(vis.getId());</span>
+<span class="nc" id="L104">						gD.incrementaDisponibilita(g);</span>
+<span class="nc" id="L105">						break;</span>
+					}
+					case &quot;rivista&quot;:
+					{
+<span class="fc" id="L109">						r.setId(vis.getId());</span>
+<span class="fc" id="L110">						rD.incrementaDisponibilita(r);</span>
+<span class="fc" id="L111">						break;</span>
+					}
+					default :
+						break;
+				}
+			
+				
+			}
+		
+		
+		
+		
+<span class="fc" id="L123">	}</span>
+
+<span class="fc" id="L125">	public ControllerDownload() {</span>
+<span class="fc" id="L126">		this.setNrOrdine(UUID.randomUUID().toString());</span>
+<span class="fc" id="L127">		l = new Libro();</span>
+<span class="fc" id="L128">		cDao=new ContrassegnoDao();</span>
+<span class="fc" id="L129">		pDao=new PagamentoDao();</span>
+<span class="fc" id="L130">		lD=new LibroDao();</span>
+<span class="fc" id="L131">		g=new Giornale();</span>
+<span class="fc" id="L132">		gD=new GiornaleDao();</span>
+<span class="fc" id="L133">		r=new Rivista();</span>
+<span class="fc" id="L134">		rD=new RivistaDao();</span>
+<span class="fc" id="L135">	}</span>
+
+	public void scaricaGiornale() throws IOException, DocumentException {
+<span class="fc" id="L138">		g.setId(vis.getId());		</span>
+<span class="fc" id="L139">		g.scarica();		</span>
+<span class="fc" id="L140">		g.leggi(vis.getId());</span>
+		
+<span class="fc" id="L142">	}</span>
+
+	public void scaricaRivista() throws DocumentException, IOException {
+<span class="fc" id="L145">		r.setId(vis.getId());</span>
+<span class="fc" id="L146">		r.scarica();</span>
+<span class="fc" id="L147">		r.leggi(vis.getId());</span>
+		
+<span class="fc" id="L149">	}</span>
+
+
+
+
+
+
+	public String getNrOrdine() {
+<span class="nc" id="L157">		return nrOrdine;</span>
+	}
+
+
+
+
+	public void setNrOrdine(String nrOrdine) {
+<span class="fc" id="L164">		this.nrOrdine = nrOrdine;</span>
+<span class="fc" id="L165">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

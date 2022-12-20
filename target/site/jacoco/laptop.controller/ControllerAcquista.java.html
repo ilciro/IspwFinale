@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerAcquista.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerAcquista.java</span></div><h1>ControllerAcquista.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.PagamentoDao;
+import laptop.database.RivistaDao;
+import laptop.exception.IdException;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Rivista;
+
+
+public class ControllerAcquista {
+	
+	// Levatoil agamento in quanto lo faccio dopo a seconda del tipo
+	 
+
+	private LibroDao lD;
+	private GiornaleDao gD;
+	private RivistaDao rD;
+	private PagamentoDao pagD;
+	private Libro l;
+	private Giornale g;
+	private Rivista r;
+<span class="fc" id="L28">	private static ControllerSystemState vis = ControllerSystemState.getIstance() ;</span>
+	private String name;
+	private int disp;
+	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
+<span class="fc" id="L32">	int rimanenza = 0;//usato per vedee nr copie </span>
+<span class="fc" id="L33">	private static String stringaErrore=&quot;errore nella quantita desiderata .&quot;;</span>
+	private static final String LIBRO = &quot;libro&quot;;  
+	private static final String RIVISTA=&quot;rivista&quot;;
+	private static final String GIORNALE=&quot;giornale&quot;;
+<span class="fc" id="L37">	private static String erroreId=&quot;id &lt; 0&quot;;</span>
+	
+
+	
+	public float totale(String titolo,int nrCopie, int quantita) throws SQLException {
+		
+<span class="fc" id="L43">			lD.daiPrivilegi();</span>
+<span class="fc" id="L44">			l.setTitolo(titolo);</span>
+<span class="fc" id="L45">			l.setNrCopie(nrCopie);</span>
+<span class="fc" id="L46">			vis.setQuantita(quantita);</span>
+		
+			
+<span class="fc" id="L49">			float x = lD.getCosto(l);</span>
+			
+			
+<span class="fc" id="L52">			lD.aggiornaDisponibilita(l);</span>
+			
+		
+<span class="fc" id="L55">		return x;</span>
+	}
+
+	public float totaleG(String titolo,int nrCopie, int disp) throws SQLException {
+		
+		
+<span class="fc" id="L61">		gD.daiPrivilegi();</span>
+<span class="fc" id="L62">		g.setTitolo(titolo);</span>
+<span class="fc" id="L63">		g.setId(vis.getId());</span>
+<span class="fc" id="L64">		g.setCopieRimanenti(nrCopie);</span>
+<span class="fc" id="L65">		vis.setQuantita(disp);</span>
+<span class="fc" id="L66">		float y = gD.getCosto(g);</span>
+<span class="fc" id="L67">		gD.aggiornaDisponibilita(g);</span>
+<span class="fc" id="L68">		return y;</span>
+
+	}
+
+	public float totaleR(String titolo, int nRC,int disp) throws SQLException {
+		
+<span class="fc" id="L74">		rD.daiPrivilegi();		</span>
+<span class="fc" id="L75">		r.setTitolo(titolo);</span>
+<span class="fc" id="L76">		r.setId(vis.getId());</span>
+<span class="fc" id="L77">		r.setCopieRim(nRC);</span>
+<span class="fc" id="L78">		vis.setQuantita(disp);</span>
+<span class="fc" id="L79">		float z= rD.getCosto(r);</span>
+<span class="fc" id="L80">		rD.aggiornaDisponibilita(r);</span>
+			
+		
+<span class="fc" id="L83">		return z;</span>
+
+	}
+
+<span class="fc" id="L87">	public ControllerAcquista()    {</span>
+<span class="fc" id="L88">		lD = new LibroDao();</span>
+<span class="fc" id="L89">		gD = new GiornaleDao();</span>
+<span class="fc" id="L90">		rD = new RivistaDao();</span>
+<span class="fc" id="L91">		l = new Libro();</span>
+<span class="fc" id="L92">		g = new Giornale();</span>
+<span class="fc" id="L93">		r = new Rivista();</span>
+<span class="fc" id="L94">		pagD = new PagamentoDao();</span>
+		
+		try {
+<span class="fc" id="L97">			pagD.daiPrivilegi();</span>
+<span class="nc" id="L98">		} catch (SQLException e) {</span>
+<span class="nc" id="L99">				java.util.logging.Logger.getLogger(&quot;Costruttore ControllerAcquista&quot;).log(Level.INFO, stringaErrore, e);</span>
+<span class="fc" id="L100">		}</span>
+		
+
+<span class="fc" id="L103">	}</span>
+
+	public int getIdL(String text) throws SQLException {
+<span class="nc" id="L106">		l.setCodIsbn(text);</span>
+<span class="nc" id="L107">		return lD.retId(l);</span>
+		
+		
+	}
+	
+	public String getTipL(String text) throws SQLException
+	{
+<span class="nc" id="L114">		l.setId(Integer.parseInt(text));</span>
+<span class="nc" id="L115">		return lD.retTip(l);</span>
+	}
+	
+	public int getIdG(String text) throws SQLException  {
+<span class="nc" id="L119">		g.setTitolo(text);</span>
+<span class="nc" id="L120">		return gD.retId( g);</span>
+		
+		
+	}
+	
+	public String getTipG(String text) throws SQLException 
+	{
+<span class="nc" id="L127">		g.setTitolo(text);	</span>
+<span class="nc" id="L128">		return gD.retTip(g);</span>
+	}
+	
+	public int getIdR(String text) throws SQLException {
+<span class="nc" id="L132">		r.setTitolo(text);</span>
+<span class="nc" id="L133">		return rD.retId( r);</span>
+		
+		
+	}
+	
+	public String getTipR(String text) throws SQLException
+	{
+<span class="nc" id="L140">		r.setTitolo(text);	</span>
+<span class="nc" id="L141">		return rD.retTip(r);</span>
+	}
+	
+	public void inserisciAmmontareL(int i) throws SQLException
+	{
+<span class="nc" id="L146">		l.setId(vis.getId());</span>
+		
+		
+<span class="nc" id="L149">			rimanenza=lD.getQuantita(l);</span>
+		
+<span class="nc bnc" id="L151" title="All 2 branches missed.">		if(rimanenza-i&lt;0)</span>
+		 {
+<span class="nc" id="L153">			java.util.logging.Logger.getLogger(&quot;get tipo R&quot;).log(Level.INFO, stringaErrore,new IdException(erroreId));</span>
+
+
+		}
+		
+		
+<span class="nc" id="L159">	}</span>
+	
+	public void inserisciAmmontareG(int i) throws SQLException 
+	{
+<span class="nc" id="L163">		g.setId(vis.getId());</span>
+<span class="nc" id="L164">		rimanenza=gD.getQuantita(g);</span>
+<span class="nc bnc" id="L165" title="All 2 branches missed.">		if(rimanenza-i&lt;0)</span>
+		
+		{
+<span class="nc" id="L168">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, stringaErrore,new IdException(erroreId));</span>
+
+		}
+
+
+			
+		
+<span class="nc" id="L175">	}</span>
+
+	public void inserisciAmmontareR(int i) throws SQLException
+	{
+<span class="nc" id="L179">		r.setId(vis.getId());</span>
+<span class="nc" id="L180">		rimanenza=rD.getQuantita(r);</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">		if(rimanenza-i&lt;0)</span>
+		{
+<span class="nc" id="L183">			java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, stringaErrore,new IdException(erroreId));</span>
+
+		}
+
+		
+
+<span class="nc" id="L189">	}</span>
+	
+	public String getType()
+	{
+		
+<span class="nc" id="L194">		return vis.getType();</span>
+	}
+
+	public String getNomeById() throws SQLException
+	{
+		
+<span class="fc" id="L200">		int id = vis.getId();</span>
+<span class="fc" id="L201">		String type =vis.getType();</span>
+<span class="fc bfc" id="L202" title="All 2 branches covered.">		if(type.equals(LIBRO))</span>
+		{
+<span class="fc" id="L204">			l.setId(id);</span>
+<span class="fc" id="L205">			name = lD.getNome(l);</span>
+		}
+<span class="fc bfc" id="L207" title="All 2 branches covered.">		else if(type.equals(GIORNALE)) {</span>
+<span class="fc" id="L208">			g.setId(id);</span>
+<span class="fc" id="L209">			name = gD.getNome(g);</span>
+		}
+<span class="pc bpc" id="L211" title="1 of 2 branches missed.">		else if(type.equals(RIVISTA))</span>
+		{
+<span class="fc" id="L213">			r.setId(id);</span>
+<span class="fc" id="L214">			name = rD.getNome(r);</span>
+			
+		}
+<span class="fc" id="L217">		return name ;</span>
+	}
+	
+	public int getDisp() throws SQLException
+	{
+<span class="fc" id="L222">		int id = vis.getId();</span>
+<span class="fc" id="L223">		String type =vis.getType();</span>
+<span class="fc bfc" id="L224" title="All 2 branches covered.">		if(type.equals(LIBRO))</span>
+		{
+		
+<span class="fc" id="L227">			l.setId(id);</span>
+<span class="fc" id="L228">			disp = lD.getQuantita(l);</span>
+		}
+<span class="fc bfc" id="L230" title="All 2 branches covered.">		 if(type.equals(GIORNALE)) {</span>
+<span class="fc" id="L231">			g.setId(id);</span>
+<span class="fc" id="L232">			disp = gD.getQuantita(g);</span>
+			
+		}
+<span class="fc bfc" id="L235" title="All 2 branches covered.">		 if(type.equals(RIVISTA))</span>
+		{
+<span class="fc" id="L237">			r.setId(id);</span>
+<span class="fc" id="L238">			disp = rD.getQuantita(r);</span>
+			
+		}
+<span class="fc" id="L241">		return disp ;</span>
+	}
+	/*
+	 * metodo aggiunto per stampare appena carica la schermata anche il costo di 
+	 * ogni singolo elemento(giornale,rivista o lbro)
+	 */
+	 
+	public float getCosto() throws SQLException
+	{
+<span class="fc" id="L250">		String type=vis.getType();</span>
+<span class="fc" id="L251">		int id = vis.getId();</span>
+
+<span class="fc bfc" id="L253" title="All 2 branches covered.">		if(type.equalsIgnoreCase(LIBRO))</span>
+		{
+<span class="fc" id="L255">			l.setId(id);</span>
+<span class="fc" id="L256">			costo=lD.getCosto(l);</span>
+
+		}
+<span class="fc bfc" id="L259" title="All 2 branches covered.">		 if(type.equalsIgnoreCase(GIORNALE))</span>
+		{
+<span class="fc" id="L261">			g.setId(id);</span>
+<span class="fc" id="L262">			costo=gD.getCosto(g);</span>
+			
+		}
+<span class="fc bfc" id="L265" title="All 2 branches covered.">		 if(type.equalsIgnoreCase(RIVISTA))</span>
+		{
+<span class="fc" id="L267">			r.setId(id);</span>
+<span class="fc" id="L268">			costo=rD.getCosto(r);</span>
+
+		}
+<span class="fc" id="L271">		return costo;</span>
+
+		
+	}
+	
+	
+	}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

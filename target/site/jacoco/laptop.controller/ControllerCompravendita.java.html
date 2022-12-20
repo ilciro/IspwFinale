@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerCompravendita.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerCompravendita.java</span></div><h1>ControllerCompravendita.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+
+import javafx.collections.ObservableList;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.User;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Raccolta;
+import laptop.model.raccolta.Rivista;
+
+
+
+public class ControllerCompravendita {
+	private LibroDao lD;
+<span class="fc" id="L19">	private User u=User.getInstance();</span>
+	private GiornaleDao gD;
+	private Giornale g;
+	private Libro l;
+	private Rivista r;
+	private RivistaDao rD;
+<span class="fc" id="L25">	private boolean status=false;</span>
+<span class="fc" id="L26">	private static String libro=&quot;libro&quot;;</span>
+<span class="fc" id="L27">	private static String rivista=&quot;rivista&quot;;</span>
+<span class="fc" id="L28">	private static String giornale=&quot;giornale&quot;;</span>
+	
+
+
+
+	public  boolean disponibilitaLibro(String i ) throws SQLException {
+	
+		
+		
+<span class="fc" id="L37">			 l.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L38">			 status=lD.checkDisp(l);</span>
+<span class="fc" id="L39">			 return status;</span>
+				
+	}
+	
+	public  boolean disponibilitaGiornale(String i ) throws SQLException {
+		
+			 
+<span class="fc" id="L46">			 g.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L47">			 status=gD.checkDisp(g);</span>
+<span class="fc" id="L48">			 return status;</span>
+				
+	}
+	
+public  boolean disponibilitaRivista(String i ) throws SQLException {
+		
+	
+	
+<span class="fc" id="L56">			 r.setId(Integer.parseInt(i));</span>
+<span class="fc" id="L57">			 status=rD.checkDisp(r);</span>
+<span class="fc" id="L58">			 return status;</span>
+				
+	}
+
+<span class="fc" id="L62">	public ControllerCompravendita() {</span>
+<span class="fc" id="L63">		lD = new LibroDao();</span>
+<span class="fc" id="L64">		gD=new GiornaleDao();</span>
+<span class="fc" id="L65">		g=new Giornale();</span>
+<span class="fc" id="L66">		r=new Rivista();</span>
+<span class="fc" id="L67">		l=new Libro();</span>
+<span class="fc" id="L68">		rD=new RivistaDao();</span>
+<span class="fc" id="L69">	}</span>
+
+	
+	public ObservableList&lt;Raccolta&gt; getLibri() throws SQLException {
+<span class="fc" id="L73">		return lD.getLibri();</span>
+	}
+	public ObservableList&lt;Raccolta&gt; getGiornali() throws SQLException {
+<span class="fc" id="L76">		return gD.getGiornali();</span>
+	}
+	public ObservableList&lt;Raccolta&gt; getRiviste() throws SQLException {
+<span class="fc" id="L79">		return rD.getRiviste();</span>
+	}
+	
+	
+	/*
+	 * Metodo udato per tornare tipo utente in base a se � loggato o no
+
+	 */
+	public String retTipoUser()
+	{
+<span class="nc" id="L89">		return u.getIdRuolo();</span>
+	}
+	//usato nel caso se non � loggato-&gt; &quot;utente&quot;
+	public void setTipoUser(String ruolo)
+	{
+<span class="nc" id="L94">		u.setIdRuolo(ruolo);	</span>
+<span class="nc" id="L95">	}</span>
+
+	public String ritornaMessaggio()
+	{
+<span class="nc" id="L99">		String s=null;</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="nc" id="L101">			s=&quot;Benvenuto... ecco la lista dei libri nel nostro catalogo...&quot;;</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
+<span class="nc" id="L103">			s=&quot;Benvenuto... ecco la lista dei giornali nel nostro catalogo...&quot;;</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
+<span class="nc" id="L105">			s=&quot;Benvenuto... ecco la lista dele riviste nel nostro catalogo...&quot;;</span>
+<span class="nc" id="L106">		return s;</span>
+	}
+	public String popolaBottoneV()
+	{
+<span class="nc" id="L110">		String s=null;</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="nc" id="L112">			s=&quot;Mostra Libro&quot;;</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
+<span class="nc" id="L114">			s=&quot;Mostra Giornale&quot;;</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
+<span class="nc" id="L116">			s=&quot;Mostra Rivista&quot;;</span>
+<span class="nc" id="L117">		return s;</span>
+	}
+	public String popolaBottoneA()
+	{
+<span class="nc" id="L121">		String s=null;</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(libro))</span>
+<span class="nc" id="L123">			s=&quot;Acquista Libro&quot;;</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(giornale))</span>
+<span class="nc" id="L125">			s=&quot;Acquista Giornale&quot;;</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(rivista))</span>
+<span class="nc" id="L127">			s=&quot;Acquista Rivista&quot;;</span>
+<span class="nc" id="L128">		return s;</span>
+	}
+
+
+
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

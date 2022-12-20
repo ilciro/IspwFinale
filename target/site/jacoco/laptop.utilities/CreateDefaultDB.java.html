@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CreateDefaultDB.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.utilities</a> &gt; <span class="el_source">CreateDefaultDB.java</span></div><h1>CreateDefaultDB.java</h1><pre class="source lang-java linenums">package laptop.utilities;
+
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+
+
+public class CreateDefaultDB 
+{
+
+<span class="fc" id="L12">	private static String creaEditore=&quot;Create table if not exists EDITORE(&quot;</span>
+			+ &quot;idEditor int primary key not null auto_increment,&quot;
+			+ &quot;idUser int, casaEditrice VARCHAR (200), &quot;
+			+ &quot;FOREIGN KEY (idUser) REFERENCES USERS(idUser));&quot;;
+<span class="fc" id="L16">	private static String creaScrittore=&quot;Create table  if not exists SCRITTORI(&quot;</span>
+			+ &quot;idScrittore int primary key not null auto_increment,&quot;
+			+ &quot;idUser int, editoreAssociato int, &quot;
+			+ &quot;FOREIGN KEY (editoreAssociato) REFERENCES EDITORE(idEditor) ,&quot;
+			+ &quot;FOREIGN KEY (idUser) REFERENCES USERS(idUser) );&quot;;
+<span class="fc" id="L21">	private static String creaGiornale=&quot;Create table if not exists GIORNALE(&quot;</span>
+			+ &quot;titolo VARCHAR(200),tipologia Varchar(60),&quot;
+			+ &quot;lingua varchar(10),&quot;
+			+ &quot;editore varchar(200) ,&quot;
+			+ &quot;dataPubblicazione date,&quot;
+			+ &quot;copiRim int, &quot;
+			+ &quot;disp int,&quot;
+			+ &quot;prezzo float,&quot;
+			+ &quot;id int primary key not null auto_increment);&quot;;
+<span class="fc" id="L30">	private static String creaRivista=&quot;Create table if not exists RIVISTA(&quot;</span>
+			+ &quot;titolo VARCHAR(200),tipologia Varchar(60),&quot;
+			+ &quot;autore varchar(200), lingua varchar(10),&quot;
+			+ &quot;editore varchar(200) ,&quot;
+			+ &quot;Descrizione text, dataPubblicazione date,&quot;
+			+ &quot;disp int,&quot;
+			+ &quot;prezzo float,&quot;
+			+ &quot;copieRimanenti int,&quot;
+			+ &quot;id int primary key not null auto_increment);&quot;;
+<span class="fc" id="L39">	private static String creaCartaCredito=&quot;Create table if not exists cartacredito ( &quot;</span>
+			+ &quot;nomeP VARCHAR(10),cognomeP  Varchar(20),&quot;
+			+ &quot;codiceCarta varchar(20),&quot;
+			+ &quot;scad date ,&quot;
+			+ &quot;codicePin varchar(5) ,&quot;
+			+ &quot;ammontare float );&quot;;
+<span class="fc" id="L45">	private static String creaFattura=&quot;Create table if not exists FATTURA(&quot;</span>
+			+ &quot;nome varchar(10),cognome varchar(10),&quot;
+			+ &quot;via varchar(50),&quot;
+			+ &quot;comunicazoni text,&quot;
+			+ &quot;id int auto_increment not null  primary key,&quot;
+			+ &quot;ammontare float);&quot;;
+<span class="fc" id="L51">	private static String creaAmministratore=&quot;Create table  if not exists AMMINISTRATORE(&quot;</span>
+			+ &quot;idAdmin int primary key not null auto_increment,&quot;
+			+ &quot;idUser int,&quot;
+			+ &quot;FOREIGN KEY (idUser) REFERENCES USERS(idUser));&quot;;
+<span class="fc" id="L55">	private static String creaLibro=&quot;Create table  if not exists LIBRO(&quot;</span>
+			+ &quot;titolo VARCHAR(200), numeroPagine int,&quot;
+			+ &quot;Cod_isbn varchar(10) not null unique,&quot;
+			+ &quot;editore varchar(200),&quot;
+			+ &quot;autore varchar(200), lingua varchar(10),&quot;
+			+ &quot;categoria Varchar(60), dataPubblicazione date,&quot;
+			+ &quot;recensione text, copieVendute int, breveDescrizione text,&quot;
+			+ &quot;disp int, prezzo float,&quot;
+			+ &quot;copieRimanenti int,&quot;
+			+ &quot;idProd int primary key auto_increment);&quot;;
+<span class="fc" id="L65">	private static String creaPagamento=&quot;create table if not exists pagamento(&quot;</span>
+			+ &quot;id_op int primary key auto_increment,&quot;
+			+ &quot;metodo varchar(10),esito int ,&quot;
+			+ &quot;nomeUtente varchar(10),spesaTotale float,&quot;
+			+ &quot;eMail varchar(100 ),&quot;
+			+ &quot;tipoAcquisto varchar(20),&quot;
+			+ &quot;idProd int )&quot;;
+
+
+	private CreateDefaultDB() 
+<span class="nc" id="L75">	{</span>
+<span class="nc" id="L76">		java.util.logging.Logger.getLogger(&quot;Test Costruttore&quot;).log(Level.INFO, &quot;creo db default&quot;);</span>
+		
+<span class="nc" id="L78">	}</span>
+
+	public static void createDefaultDB () throws SQLException, FileNotFoundException, ClassNotFoundException
+	{
+	    boolean status;
+	    
+	   
+
+
+	 
+		
+<span class="pc bpc" id="L89" title="2 of 4 branches missed.">			 status = ConnToDb.initailConnection() &amp;&amp; !ConnToDb.connection() ; </span>
+			 
+		
+			// status = 1 se c'e' workbench ma non il db 
+			// status = 0 se c'e' tutto
+			// Se non trovo il db chiamo questa funzione che lo crea
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">			if(status) </span>
+			{
+<span class="fc" id="L97">				try (Statement st=ConnToDb.conn.createStatement())</span>
+				{
+<span class="fc" id="L99">					st.execute(&quot;CREATE DATABASE IF NOT EXISTS ispw&quot;);</span>
+				}
+<span class="fc" id="L101">				try (Statement st=ConnToDb.conn.createStatement())</span>
+				{
+<span class="fc" id="L103">					st.execute(&quot;USE ISPW&quot;);</span>
+				}
+			
+				
+<span class="fc" id="L107">				try (Statement st=ConnToDb.conn.createStatement())</span>
+				{
+<span class="fc" id="L109">					st.execute(&quot;CREATE TABLE if not exists USERS(idUser INT primary key not null auto_increment,idRuolo VARCHAR(1) NOT NULL DEFAULT 'U',Nome VARCHAR(40),Cognome VARCHAR(40),Email VARCHAR(50) UNIQUE ,pwd VARCHAR(16),descrizione text,DataDiNascita date);&quot;</span>
+							+ &quot;&quot;);
+				}
+<span class="fc" id="L112">				try(Statement st=ConnToDb.conn.createStatement())</span>
+				{
+<span class="fc" id="L114">					st.execute(creaEditore);</span>
+<span class="fc" id="L115">					st.execute(creaAmministratore);</span>
+<span class="fc" id="L116">					st.execute(creaCartaCredito);</span>
+<span class="fc" id="L117">					st.execute(creaFattura);</span>
+<span class="fc" id="L118">					st.execute(creaGiornale);</span>
+<span class="fc" id="L119">					st.execute(creaLibro);</span>
+<span class="fc" id="L120">					st.execute(creaPagamento);</span>
+<span class="fc" id="L121">					st.execute(creaRivista);</span>
+<span class="fc" id="L122">					st.execute(creaScrittore);</span>
+				}
+				
+<span class="fc" id="L125">				try(Statement st=ConnToDb.conn.createStatement())</span>
+				{
+<span class="fc" id="L127">					st.execute(&quot;Create table if not exists NEGOZIO&quot;</span>
+							+ &quot;( idNegozio int not null auto_increment primary key, &quot;
+							+ &quot;nome VARCHAR(100) , via VARCHAR(100),&quot;
+							+ &quot;isValid boolean, isOpen BOOLEAN&quot;
+							+ &quot;)&quot;);
+				}
+				
+<span class="fc" id="L134">				java.util.logging.Logger.getLogger(&quot;Test create db&quot;).log(Level.INFO, &quot;Connesso a mysql workbench, ma non ho torvato il database 'ispw'\n&quot;</span>
+						+ &quot;Database creato &quot;+ &quot;tabelle create&quot; +&quot;\n&quot;);
+				
+				
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">				if (PopulateDefaultDb.populateDefaultDb()) {</span>
+<span class="fc" id="L139">					java.util.logging.Logger.getLogger(&quot;Test create db&quot;).log(Level.INFO, &quot;tabella popolata valori default&quot;);</span>
+
+					
+<span class="fc" id="L142">						ConnToDb.conn.close();</span>
+<span class="fc" id="L143">						java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.INFO, &quot;trovato db e connesso.. buon proseguimento&quot;);</span>
+
+					
+				}
+				else
+				{
+<span class="nc" id="L149">					java.util.logging.Logger.getLogger(&quot;Test popolamento db&quot;).log(Level.INFO, &quot;Ops ..! Qualcosa andato storto nel popolamento&quot;);</span>
+
+				}
+			}
+			// Se trovo tutto  chiudo la connesione e vado avanti con l'esecuzione del programma
+			// Se qualcosa non va chiudo la connessione e vado nel cacth
+			else 
+			{
+<span class="nc" id="L157">				java.util.logging.Logger.getLogger(&quot;Test Eccezione&quot;).log(Level.WARNING, &quot;Ops..! qualcosa è andato storto nella connesione al database!&quot;);</span>
+
+			}
+<span class="fc" id="L160">		}</span>
+		
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

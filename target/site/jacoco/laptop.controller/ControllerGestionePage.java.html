@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ControllerGestionePage.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.controller</a> &gt; <span class="el_source">ControllerGestionePage.java</span></div><h1>ControllerGestionePage.java</h1><pre class="source lang-java linenums">package laptop.controller;
+
+import java.sql.SQLException;
+
+import javafx.collections.ObservableList;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Giornale;
+import laptop.model.raccolta.Libro;
+import laptop.model.raccolta.Raccolta;
+import laptop.model.raccolta.Rivista;
+
+
+
+public class ControllerGestionePage {
+	private RivistaDao rD;
+	private LibroDao lD;
+	private GiornaleDao gD;
+	private Libro l;
+	private Giornale g;
+	private Rivista r;
+	
+	public void cancella(int id) throws  SQLException {
+<span class="fc bfc" id="L25" title="All 2 branches covered.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+		{
+<span class="fc" id="L27">			l.setId(id);</span>
+<span class="fc" id="L28">			lD.cancella(l);</span>
+		}
+<span class="fc bfc" id="L30" title="All 2 branches covered.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+		{
+<span class="fc" id="L32">			g.setId(id);</span>
+<span class="fc" id="L33">			gD.cancella(g);</span>
+		}
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+		{
+<span class="fc" id="L37">			r.setId(id);</span>
+<span class="fc" id="L38">			rD.cancella(r);</span>
+		}
+<span class="fc" id="L40">	}</span>
+	
+	public ObservableList&lt;Raccolta&gt; getRivistaS() throws SQLException {
+<span class="fc" id="L43">		return rD.getRivistaSingolo();</span>
+	}
+	
+	public ObservableList&lt;Raccolta&gt; getLibroS() throws SQLException {
+<span class="fc" id="L47">		return lD.getLibroSingolo();</span>
+	}
+	
+	public ObservableList&lt;Raccolta&gt; getGiornaleS() throws SQLException {
+<span class="fc" id="L51">		return gD.getGiornaleSingolo();</span>
+	}
+	
+	public ControllerGestionePage()
+<span class="fc" id="L55">	{</span>
+<span class="fc" id="L56">		rD=new RivistaDao();</span>
+<span class="fc" id="L57">		gD=new GiornaleDao();</span>
+<span class="fc" id="L58">		lD=new LibroDao();</span>
+<span class="fc" id="L59">		l=new Libro();</span>
+<span class="fc" id="L60">		g=new Giornale();</span>
+<span class="fc" id="L61">		r=new Rivista();</span>
+<span class="fc" id="L62">	}</span>
+	public String settaHeader()
+	{
+<span class="nc" id="L65">		String s=null;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		if(ControllerSystemState.getIstance().getType().equals(&quot;libro&quot;))</span>
+		{
+<span class="nc" id="L68">			s=&quot;Benvenuto nella schermata dei libri&quot;;</span>
+		}
+<span class="nc bnc" id="L70" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;giornale&quot;))</span>
+		{
+<span class="nc" id="L72">			s=&quot;Benvenuto nella schermata dei giornali&quot;;</span>
+		}
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		else if(ControllerSystemState.getIstance().getType().equals(&quot;rivista&quot;))</span>
+		{
+<span class="nc" id="L76">			s=&quot;Benvenuto nella schermata dele riviste&quot;;</span>
+		}
+<span class="nc" id="L78">		return s;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

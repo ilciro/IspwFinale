@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Giornale.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.model.raccolta</a> &gt; <span class="el_source">Giornale.java</span></div><h1>Giornale.java</h1><pre class="source lang-java linenums">	package laptop.model.raccolta;
+
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDate;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+
+
+public class Giornale implements Raccolta{
+
+	private String  titolo;
+	private String tipologia;
+	private String lingua;
+	private String editore;
+	private LocalDate dataPubb;
+	private int copieRimanenti;
+	private int disponibilita;
+	private float prezzo;
+	private int id;
+<span class="fc" id="L28">	private String url=&quot;C:\\libriScaricati&quot;;</span>
+<span class="fc" id="L29">	private String[] infoGenerali=new String[5];</span>
+
+	
+	public Giornale()
+	{
+<span class="fc" id="L34">		super();</span>
+<span class="fc" id="L35">	}</span>
+
+
+	public Giornale(String []info,LocalDate dataPubb,int nrCopie, int disponibilita, float prezzo, int id)
+<span class="fc" id="L39">	{</span>
+<span class="fc" id="L40">		this.infoGenerali=info;</span>
+<span class="fc" id="L41">		this.dataPubb=dataPubb;</span>
+<span class="fc" id="L42">		this.copieRimanenti=nrCopie;</span>
+<span class="fc" id="L43">		this.disponibilita=disponibilita;</span>
+<span class="fc" id="L44">		this.prezzo=prezzo;</span>
+<span class="fc" id="L45">		this.id=id;</span>
+<span class="fc" id="L46">		this.titolo=info[0];</span>
+<span class="fc" id="L47">		this.tipologia=info[1];</span>
+<span class="fc" id="L48">		this.editore=info[4];</span>
+<span class="fc" id="L49">		this.lingua=info[3];</span>
+		
+
+
+
+<span class="fc" id="L54">	}</span>
+
+	public String getTitolo() {
+<span class="fc" id="L57">		return titolo;</span>
+	}
+
+	public void setTitolo(String titolo) {
+<span class="fc" id="L61">		this.titolo = titolo;</span>
+<span class="fc" id="L62">	}</span>
+
+	public String getTipologia() {
+<span class="fc" id="L65">		return tipologia;</span>
+	}
+
+	public void setTipologia(String tipologia) {
+<span class="fc" id="L69">		this.tipologia = tipologia;</span>
+<span class="fc" id="L70">	}</span>
+
+	public String getLingua() {
+<span class="fc" id="L73">		return lingua;</span>
+	}
+
+	public void setLingua(String lingua) {
+<span class="fc" id="L77">		this.lingua = lingua;</span>
+<span class="fc" id="L78">	}</span>
+
+	public String getEditore() {
+<span class="fc" id="L81">		return editore;</span>
+	}
+
+	public void setEditore(String editore) {
+<span class="fc" id="L85">		this.editore = editore;</span>
+<span class="fc" id="L86">	}</span>
+
+	public LocalDate getDataPubb() {
+<span class="fc" id="L89">		return dataPubb;</span>
+	}
+
+	public void setDataPubb(LocalDate dataPubb) {
+<span class="fc" id="L93">		this.dataPubb = dataPubb;</span>
+<span class="fc" id="L94">	}</span>
+
+	public int getCopieRimanenti() {
+<span class="fc" id="L97">		return copieRimanenti;</span>
+	}
+
+	public void setCopieRimanenti(int copieRimanenti) {
+<span class="fc" id="L101">		this.copieRimanenti = copieRimanenti;</span>
+<span class="fc" id="L102">	}</span>
+
+	public int getDisponibilita() {
+<span class="fc" id="L105">		return this.disponibilita;</span>
+	}
+
+	public void setDisponibilita(int disponibilita) {
+<span class="fc" id="L109">		this.disponibilita = disponibilita;</span>
+<span class="fc" id="L110">	}</span>
+
+	public float getPrezzo() {
+<span class="fc" id="L113">		return prezzo;</span>
+	}
+
+	public void setPrezzo(float prezzo) {
+<span class="fc" id="L117">		this.prezzo = prezzo;</span>
+<span class="fc" id="L118">	}</span>
+
+
+	public int getId() {
+<span class="fc" id="L122">		return id;</span>
+	}
+
+	public void setId(int id) {
+<span class="fc" id="L126">		this.id = id;</span>
+<span class="fc" id="L127">	}</span>
+
+
+
+	@Override
+	public void scarica() throws IOException {
+<span class="fc" id="L133">		Desktop desktop=null;</span>
+<span class="fc" id="L134">		File dirToOpen=null;</span>
+		File file;
+
+
+<span class="fc" id="L138">		file = new File(url);</span>
+<span class="fc" id="L139">		file.mkdir();</span>
+
+
+<span class="fc" id="L142">		desktop = Desktop.getDesktop();</span>
+		
+<span class="fc" id="L144">			dirToOpen = new File(url);</span>
+
+<span class="fc" id="L146">			desktop.open(dirToOpen);</span>
+
+		
+
+
+
+<span class="fc" id="L152">	}</span>
+
+	@Override
+	public void leggi(int i) throws FileNotFoundException, DocumentException {
+<span class="fc" id="L156">		Document document=null;</span>
+		//definiamo il nome del nostro file di prova
+		// Creiamo un Document
+<span class="fc" id="L159">		document = new Document();</span>
+		// otteniamo una istanza di PdfWriter passando il document ed uno stream file
+<span class="fc" id="L161">			PdfWriter.getInstance(document, new FileOutputStream(&quot;C:\\libriScaricati\\giornale.pdf&quot;));</span>
+<span class="fc" id="L162">			document.open();</span>
+<span class="fc" id="L163">					document.add(new Paragraph(&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nisi non mi vulputate vestibulum. In hac habitasse platea dictumst. Aenean pellentesque est eget tortor blandit pulvinar. Donec in finibus ante. Phasellus molestie pretium magna, non cursus tortor. Ut malesuada consequat lectus, et laoreet dui eleifend vel. In sit amet luctus quam. Sed laoreet tellus at imperdiet pulvinar. Vestibulum ut erat et nunc aliquet interdum.\r\n&quot;</span>
+					+ &quot;\n&quot;
+					+ &quot;In commodo nisl velit, a egestas nunc consectetur vitae. Sed vulputate eros eget massa blandit ornare. Donec semper bibendum lacus, at pharetra enim pharetra sed. Mauris tempus tellus nec nulla molestie, faucibus semper nibh consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis purus nisi, vel volutpat sapien vulputate a. Aenean blandit non nibh in finibus. Integer ac tempus dui, laoreet gravida ex. Integer vitae orci vel nulla commodo cursus quis et nisi. Nulla sit amet nibh sed justo dapibus vulputate ut et nisi. Mauris efficitur commodo iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit urna eros, sed cursus mauris blandit ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n&quot;
+					+ &quot;\n&quot;
+					+ &quot;Vestibulum eros tellus, rhoncus vel fringilla nec, vehicula in velit. Nam malesuada eget tellus ut viverra. Aenean iaculis gravida urna, eu convallis leo dapibus vel. Nullam et suscipit diam. Sed tincidunt ipsum sed placerat consequat. Vestibulum lacinia lacinia commodo. Vestibulum lacus erat, pellentesque sed rhoncus id, tincidunt eget ante. Phasellus vulputate urna sit amet dolor rhoncus bibendum eu feugiat nisl. Proin ipsum libero, consectetur sit amet sagittis nec, feugiat nec quam. In dictum massa quis ligula semper, eget dignissim turpis blandit.\r\n&quot;
+					+ &quot;\n&quot;
+					+ &quot;Sed congue laoreet diam vel iaculis. Maecenas tempor convallis dolor nec laoreet. Quisque vitae dui vitae erat tempor volutpat aliquam ac ipsum. Nulla nulla erat, iaculis eu vulputate in, fermentum sed est. Ut ac enim ac felis molestie fringilla at a lectus. Donec porttitor a elit eget tempus. Morbi molestie libero lorem, et fringilla mi pharetra scelerisque. Fusce ut nunc sit amet odio dapibus tristique. Phasellus ultrices, nisl sit amet faucibus ultrices, odio nisl dictum enim, at sollicitudin arcu metus a risus. Duis suscipit, mi sed mollis euismod, erat justo pellentesque orci, vitae finibus nunc est vitae felis. Ut venenatis commodo eros sed fermentum. Fusce feugiat pellentesque justo. Ut finibus, lacus quis ornare consectetur, sapien urna placerat mauris, non ultricies justo nunc sed ante. Phasellus sodales dui a ex gravida, a tempor mi eleifend.\r\n&quot;
+					+ &quot;\n&quot;
+					+ &quot;Aenean pharetra tortor semper, laoreet dui sed, porta lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum purus cursus venenatis mollis. Donec venenatis bibendum ullamcorper. Phasellus porttitor, mauris eget placerat imperdiet, tellus purus aliquet mauris, eget laoreet quam nibh eget nisi. Nam volutpat urna vitae eros porttitor efficitur. Etiam mi velit, vulputate sed lacinia rutrum, viverra sed nulla. Sed sem mi, tempus ut lacus faucibus, congue dignissim dolor. Praesent sed quam feugiat, condimentum eros non, luctus dui.&quot;));
+				// chiudiamo il documento
+<span class="fc" id="L173">		document.close();</span>
+
+
+<span class="fc" id="L176">	}</span>
+
+	public String[] getInfoGenerali() {
+<span class="fc" id="L179">		return infoGenerali;</span>
+	}
+
+	public void setInfoGenerali(String[] infoGenerali) {
+<span class="fc" id="L183">		this.infoGenerali = infoGenerali;</span>
+<span class="fc" id="L184">	}</span>
+
+
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PopulateDefaultDb.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">IspwFinale Maven Webapp</a> &gt; <a href="index.source.html" class="el_package">laptop.utilities</a> &gt; <span class="el_source">PopulateDefaultDb.java</span></div><h1>PopulateDefaultDb.java</h1><pre class="source lang-java linenums">package laptop.utilities;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+import java.sql.Connection;
+import java.util.logging.Level;
+
+import org.apache.ibatis.jdbc.ScriptRunner;
+
+public class PopulateDefaultDb {
+
+	
+	private static Connection conn;
+	private static ScriptRunner sr;
+<span class="fc" id="L17">	private static boolean state=false;</span>
+
+	private PopulateDefaultDb()
+	{
+
+	}
+	
+	public static boolean populateDefaultDb() throws FileNotFoundException
+	{
+<span class="fc" id="L26">			createLibri();</span>
+<span class="fc" id="L27">			 createGiornale() ;</span>
+<span class="fc" id="L28">			  createRivista();</span>
+<span class="fc" id="L29">			   createUser(); </span>
+<span class="fc" id="L30">			   createNegozio();</span>
+		
+<span class="fc" id="L32">			state=true;</span>
+		
+<span class="fc" id="L34">		return state;</span>
+	}
+
+	public static boolean createLibri() throws FileNotFoundException
+	{
+<span class="fc" id="L39">		java.util.logging.Logger.getLogger(&quot;Test create libri&quot;).log(Level.INFO,&quot;---------Chiamo stored insLibri---------\n\n&quot;);</span>
+		
+<span class="fc" id="L41">			conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L42">			sr = new ScriptRunner(conn);</span>
+<span class="fc" id="L43">			sr.setSendFullScript(true);</span>
+<span class="fc" id="L44">			Reader reader = new BufferedReader(new FileReader(&quot;FileSql/storedInsLibri.sql&quot;));</span>
+			//Running the script
+<span class="fc" id="L46">			sr.runScript(reader);</span>
+<span class="fc" id="L47">			state=true;</span>
+
+			
+		
+<span class="fc" id="L51">		return state;</span>
+	}
+
+	public static boolean createGiornale() throws FileNotFoundException
+	{
+<span class="fc" id="L56">		java.util.logging.Logger.getLogger(&quot;Test create giornali&quot;).log(Level.INFO,&quot;---------Chiamo stored insGiornali---------\n\n&quot;);</span>
+
+		
+<span class="fc" id="L59">			conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L60">			sr = new ScriptRunner(conn);</span>
+<span class="fc" id="L61">			sr.setSendFullScript(true);</span>
+<span class="fc" id="L62">			Reader reader = new BufferedReader(new FileReader(&quot;FileSql/stroredInsGiornali.sql&quot;));</span>
+			//Running the script
+<span class="fc" id="L64">			sr.runScript(reader);</span>
+<span class="fc" id="L65">			state= true;</span>
+		
+<span class="fc" id="L67">		return state;</span>
+	}
+
+	private static boolean createRivista() throws FileNotFoundException
+	{
+<span class="fc" id="L72">		java.util.logging.Logger.getLogger(&quot;Test create riviste&quot;).log(Level.INFO,&quot;---------Chiamo stored insRiviste---------\n\n&quot;);</span>
+
+<span class="fc" id="L74">		conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L75">			sr = new ScriptRunner(conn);</span>
+<span class="fc" id="L76">			sr.setSendFullScript(true);</span>
+<span class="fc" id="L77">			Reader reader = new BufferedReader(new FileReader(&quot;FileSql/storedInsRiviste.sql&quot;));</span>
+			//Running the script
+<span class="fc" id="L79">			sr.runScript(reader);</span>
+<span class="fc" id="L80">				state=true;</span>
+		
+		
+<span class="fc" id="L83">		return state;</span>
+	}
+
+	public static boolean createUser() throws FileNotFoundException
+	{
+<span class="fc" id="L88">		java.util.logging.Logger.getLogger(&quot;Test create users&quot;).log(Level.INFO,&quot;---------Chiamo stored insUsers---------\n\n&quot;);</span>
+
+		
+<span class="fc" id="L91">			conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L92">			sr = new ScriptRunner(conn);</span>
+<span class="fc" id="L93">			sr.setSendFullScript(true);</span>
+<span class="fc" id="L94">			Reader 	reader = new BufferedReader(new FileReader(&quot;FileSql/storedInsUtenti.sql&quot;));</span>
+<span class="fc" id="L95">			sr.runScript(reader);</span>
+<span class="fc" id="L96">			state=true;</span>
+		
+<span class="fc" id="L98">		return state;</span>
+	}
+
+	public static boolean createNegozio() throws FileNotFoundException
+	{
+<span class="fc" id="L103">		java.util.logging.Logger.getLogger(&quot;Test create negozio&quot;).log(Level.INFO,&quot;---------Chiamo stored insNegozi---------\n\n&quot;);</span>
+
+		
+<span class="fc" id="L106">			conn=ConnToDb.generalConnection();</span>
+<span class="fc" id="L107">			sr = new ScriptRunner(conn);</span>
+<span class="fc" id="L108">			sr.setSendFullScript(true);</span>
+<span class="fc" id="L109">			Reader reader = new BufferedReader(new FileReader(&quot;FileSql/storedInsNegozio.sql&quot;));</span>
+<span class="fc" id="L110">			sr.runScript(reader);</span>
+<span class="fc" id="L111">			state=true;</span>
+<span class="fc" id="L112">	return state;</span>
+
+
+	}
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

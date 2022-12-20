@@ -83,6 +83,9 @@ public class Pagamento {
 	this.tipo = tipo;
 	this.idOggetto=idOggetto;
 }
+	public Pagamento() {
+		
+	}
 
 	
 	
