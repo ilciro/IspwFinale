@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-import laptop.model.Fattura;
 import laptop.utilities.ConnToDb;
+import laptop.model.Fattura;
 
 public class ContrassegnoDao {
 	

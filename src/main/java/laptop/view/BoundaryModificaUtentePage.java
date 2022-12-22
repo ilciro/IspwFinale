@@ -131,7 +131,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 
 	
 	@FXML
-	private void prendiDati()
+	private void prendiDati() throws SQLException
 	{
 		
 		utenteL.setText(cMU.prendi().getIdRuolo());

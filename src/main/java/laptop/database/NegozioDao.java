@@ -7,10 +7,10 @@ import java.sql.SQLException;
 
 import java.util.logging.Level;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import laptop.model.Negozio;
 import laptop.utilities.ConnToDb;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class NegozioDao {
 	

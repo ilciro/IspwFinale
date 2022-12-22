@@ -134,14 +134,9 @@ public class BoundaryModificaUtente implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
-				cMU=new ControllerModificaUtente();
+		cMU=new ControllerModificaUtente();
 
 	}
-	
-	
-	
-	
-	
-	
+
 	
 }

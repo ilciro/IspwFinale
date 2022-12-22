@@ -7,10 +7,10 @@ import java.util.logging.Level;
 import java.sql.Connection;
 import java.sql.Date;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import laptop.model.CartaDiCredito;
 import laptop.utilities.ConnToDb;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CartaCreditoDao {
 

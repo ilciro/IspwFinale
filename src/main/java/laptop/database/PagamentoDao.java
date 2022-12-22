@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
+import laptop.model.Pagamento;
+import laptop. model.User;
+import laptop.utilities.ConnToDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import laptop.model.Pagamento;
-import laptop.model.User;
-import laptop.utilities.ConnToDb;
 
 public class PagamentoDao {
 	private String query;
