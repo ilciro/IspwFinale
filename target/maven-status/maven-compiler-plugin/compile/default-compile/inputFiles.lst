@@ -1,3 +1,4 @@
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryModificaUtentePage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\raccolta\CategorieLibro.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerPagamentoCash.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryHomePageAfterLogin.java
@@ -19,6 +20,7 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\Bounda
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryRicercaPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\Pagamento.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\raccolta\Giornale.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryAggiungiUtente.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryAggiungiPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\Negozio.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerDownload.java
@@ -49,6 +51,8 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\Bounda
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryScegliNegozio.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryModificaUtente.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryPagamentoCC.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryUserPage.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerCancellaUser.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\utilities\PopulateDefaultDb.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerModifPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\raccolta\Raccolta.java
@@ -65,12 +69,14 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerReportPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerHomePageAfterLoginSE.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\exception\LogoutException.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerAggiungiUtente.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerVisualizzaOrdine.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerSystemState.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\User.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\database\ContrassegnoDao.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryAcquista.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerRicercaPerTipo.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerUserPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryReportPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerVisualizza.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerCompravendita.java

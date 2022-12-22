@@ -1,14 +1,18 @@
+laptop\view\BoundaryModificaUtentePage.class
 laptop\exception\IdException.class
 laptop\view\BoundaryResetPwd.class
+laptop\controller\ControllerUserPage.class
 laptop\view\BoundaryVisualizza.class
 laptop\view\BoundaryPagamentoCC.class
 laptop\view\BoundaryHomePageAfterLogin.class
 laptop\utilities\CreateDefaultDB.class
 laptop\model\raccolta\Factory.class
+laptop\view\BoundaryUserPage.class
 laptop\model\TempUser.class
 laptop\model\CartaDiCredito.class
 laptop\controller\ControllerPassword.class
 laptop\view\BoundaryLogin.class
+laptop\controller\ControllerCancellaUser.class
 laptop\controller\ControllerPagamentoCC.class
 laptop\controller\ControllerModificaUtente.class
 laptop\database\ContrassegnoDao.class
@@ -20,6 +24,7 @@ laptop\controller\ControllerCompravendita.class
 laptop\view\BoundaryVisualizzaOrdine.class
 laptop\controller\ControllerHomePageAfterLoginSE.class
 laptop\controller\ControllerReportRaccolta.class
+laptop\view\BoundaryAggiungiUtente.class
 laptop\view\BoundaryModificaUtente.class
 laptop\view\BoundaryGestionePage.class
 laptop\view\BoundaryScegliNegozio.class
@@ -50,6 +55,7 @@ laptop\controller\ControllerAcquista.class
 laptop\model\raccolta\MatchParam.class
 laptop\view\BoundaryReportPage.class
 laptop\view\BoundaryRicercaPerTipo.class
+laptop\controller\ControllerAggiungiUtente.class
 laptop\model\raccolta\CategorieRivista.class
 laptop\controller\ControllerRicercaPerTipo.class
 laptop\database\GiornaleDao.class

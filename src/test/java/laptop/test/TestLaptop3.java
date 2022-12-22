@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.logging.Level;
 
@@ -17,6 +18,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import com.itextpdf.text.DocumentException;
 
+import laptop.controller.ControllerAggiungiUtente;
+import laptop.controller.ControllerCancellaUser;
+import laptop.controller.ControllerModificaUtente;
+import laptop.controller.ControllerUserPage;
 import laptop.database.PagamentoDao;
 import laptop.database.RivistaDao;
 import laptop.model.Pagamento;
@@ -32,6 +37,10 @@ class TestLaptop3 {
 	private RivistaDao rD=new RivistaDao();
 	private TempUser tu=TempUser.getInstance();
 	private User u=User.getInstance();
+	private ControllerUserPage cUP=new ControllerUserPage();
+	private ControllerAggiungiUtente cAU=new ControllerAggiungiUtente();
+	private ControllerModificaUtente cMU=new ControllerModificaUtente();
+	private ControllerCancellaUser cCU=new ControllerCancellaUser();
 
 
 	@ParameterizedTest
@@ -298,7 +307,31 @@ class TestLaptop3 {
 		u.setIdRuolo("F");
 		assertEquals("UTENTE",u.getIdRuolo());
 		}
-		
+	@Test
+	void testGetUtenti() throws IOException, SQLException
+	{
+		String mex="prendo lista Utenti";
+		cUP.getUtenti();
+		assertEquals("prendo lista Utenti",mex);
+	}
+	@Test
+	void testCheckData() throws ParseException, SQLException
+	{
+		assertTrue(cAU.checkData("nome prova","cognome prova" ,"emailProva@gmail.com","prova452","1985/08/11"));
+	}
+	@Test
+	void testAggiornaTotale() throws SQLException
+	{
+		User.getInstance().setId(5);
+		User.getInstance().setDescrizione("utente aggiornato");
+		assertTrue(cMU.aggiornaTot("nomeU","cognomeU" ,"nomeCognomeU@gmail.com","nome52", User.getInstance().getDescrizione(), LocalDate.of(1963, 8,11),"EDITORE"));
+	}
+	@Test
+	void testCancellaUser() throws SQLException
+	{
+		User.getInstance().setId(5);
+		assertTrue(cCU.cancellaUser());
+	}
 	@AfterAll
 	static void testRimuoviDB()
 	{

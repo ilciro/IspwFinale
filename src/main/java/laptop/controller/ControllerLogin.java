@@ -15,7 +15,7 @@ public class ControllerLogin {
 	public boolean controlla(String m, String p) throws SQLException
 	{
 		
-		esito = false;
+		
 		
 			user.setEmail(m);
 			user.setPassword(p);
@@ -35,6 +35,9 @@ public class ControllerLogin {
 				ControllerSystemState.getIstance().setIsLogged(true);
 				 esito = true;
 			}
+			 else {
+				 esito=false;
+			 }
 			
 			return esito;
 

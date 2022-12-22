@@ -22,7 +22,7 @@ public class ControllerModificaUtente {
 
 
 
-	public User prendi() throws SQLException {
+	public User prendi() {
 
 		return UsersDao.pickData(User.getInstance());
 

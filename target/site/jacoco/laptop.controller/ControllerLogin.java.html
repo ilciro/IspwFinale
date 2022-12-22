@@ -15,7 +15,7 @@ import laptop.model.User;
 	public boolean controlla(String m, String p) throws SQLException
 	{
 		
-<span class="fc" id="L18">		esito = false;</span>
+		
 		
 <span class="fc" id="L20">			user.setEmail(m);</span>
 <span class="fc" id="L21">			user.setPassword(p);</span>
@@ -34,9 +34,12 @@ import laptop.model.User;
 
 <span class="fc" id="L35">				ControllerSystemState.getIstance().setIsLogged(true);</span>
 <span class="fc" id="L36">				 esito = true;</span>
-			}
+<span class="fc" id="L37">			}</span>
+			 else {
+<span class="nc" id="L39">				 esito=false;</span>
+			 }
 			
-<span class="fc" id="L39">			return esito;</span>
+<span class="fc" id="L42">			return esito;</span>
 
 		
 	}
@@ -44,11 +47,11 @@ import laptop.model.User;
 	public String getRuoloTempUSer(String email) throws SQLException
 	{
 		String ruolo;
-<span class="fc" id="L47">		user.setEmail(email);</span>
-<span class="fc" id="L48">		 ruolo= UsersDao.getRuolo(user);</span>
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">		 if(ruolo.equals(&quot;&quot;) )</span>
-<span class="nc" id="L50">			 throw new SQLException();</span>
-<span class="fc" id="L51">		 return ruolo;</span>
+<span class="fc" id="L50">		user.setEmail(email);</span>
+<span class="fc" id="L51">		 ruolo= UsersDao.getRuolo(user);</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">		 if(ruolo.equals(&quot;&quot;) )</span>
+<span class="nc" id="L53">			 throw new SQLException();</span>
+<span class="fc" id="L54">		 return ruolo;</span>
 		
 	}
 		

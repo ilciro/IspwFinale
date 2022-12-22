@@ -173,7 +173,7 @@
     <jacoco.version>0.8.8</jacoco.version>
     <maven.shade>3.2.2</maven.shade>
     <maven.compiler>3.8.1</maven.compiler>
-    <sonar.exclusions>src/main/java/laptop/view/**</sonar.exclusions>
+    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/**</sonar.exclusions>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <maven.install>3.0.0-M1</maven.install>
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>

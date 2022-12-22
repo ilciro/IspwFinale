@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.logging.Level;
 
+import laptop.controller.ControllerSystemState;
 import laptop.model.TempUser;
 import laptop.model.User;
 import laptop.utilities.ConnToDb;
@@ -22,7 +23,7 @@ public class UsersDao {
 	private static int max;
 	private static String r;
 	private static boolean state=false;
-	private static String eccezione="errore in mysql :";
+	private static String eccezione="errore in mysql : {0}.";
 	private static int row=0;
 
 
@@ -319,19 +320,23 @@ public class UsersDao {
 	// Con pickData prendo i dati dall'utente creato per il login
 	// per poi restituirlo in un nuovo oggetto di tipo User
 	// e poi il controller lo specializza nelle 4 classi 
-	public static User pickData(User u) throws SQLException
+	public static User pickData(User u) 
 	{
 		
 		
-			query="SELECT idRuolo,nome,cognome,Email,descrizione,dataDiNascita from ispw.users where Email=?";
+			query="SELECT idRuolo,nome,cognome,Email,descrizione,dataDiNascita from ispw.users where Email=? or idUser=?";
 			try(Connection conn=ConnToDb.generalConnection();
 					PreparedStatement prepQ=conn.prepareStatement(query);)
 			{
 				prepQ.setString(1, u.getEmail());
+				prepQ.setInt(2, ControllerSystemState.getIstance().getId());
+				
+				
 			
 			ResultSet rs = prepQ.executeQuery();
 			while(rs.next())
 			{
+				
 				// setto i vari dati 
 				u.setIdRuolo(rs.getString(1));
 				u.setNome(rs.getString(2));
@@ -345,11 +350,13 @@ public class UsersDao {
 			}
 			}catch(SQLException e)
 			{
-				java.util.logging.Logger.getLogger("pick data ").log(Level.INFO, eccezione, e);
+			
+				
+				java.util.logging.Logger.getLogger("pick data ").log(Level.INFO,eccezione , e.getMessage());
 
 			}
 
-			java.util.logging.Logger.getLogger("pick user data email").log(Level.INFO, eccezione, u.getEmail());
+			java.util.logging.Logger.getLogger("pick user data email").log(Level.INFO, "email :{0}.", u.getEmail());
 
 
 			
@@ -622,7 +629,7 @@ public class UsersDao {
 				TempUser.getInstance().setEmail(rs.getString(5));
 				TempUser.getInstance().setDescrizione(rs.getString(7));
 				TempUser.getInstance().setDataDiNascita(rs.getDate(8).toLocalDate());
-				b.write(""+TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNome()+"\t"+TempUser.getInstance().getCognome()+
+				b.write(TempUser.getInstance().getId()+"\t"+TempUser.getInstance().getIdRuolo()+"\t"+TempUser.getInstance().getNome()+"\t"+TempUser.getInstance().getCognome()+
 						"\t"+TempUser.getInstance().getEmail()+"\t"+TempUser.getInstance().getDescrizione()+"\t"+TempUser.getInstance().getDataDiNascita().toString()+"\n");
 				
 			}
@@ -676,7 +683,7 @@ public class UsersDao {
 
 		
 			
-			query="UPDATE ispw.users set idRuolo=?,Nome=?,Cognome=?,Email=?,pwd=?,descrizione=?,DataDiNascita=? where idUser=?";
+			query="UPDATE ispw.users set idRuolo=?,Nome=?,Cognome=?,Email=?,pwd=?,descrizione=?,DataDiNascita=? where idUser=? ";
 
 			try(Connection conn=ConnToDb.generalConnection();
 					PreparedStatement prepQ=conn.prepareStatement(query);)
