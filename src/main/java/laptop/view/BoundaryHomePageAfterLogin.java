@@ -49,6 +49,7 @@ private Button buttonC;
 protected String message;
 protected Scene scene;
 
+private static String compravendita="compravendita.fxml";
 
 @FXML
 private void getListaGiornali() throws IOException {
@@ -57,7 +58,7 @@ private void getListaGiornali() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource("compravendita.fxml"));
+	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
 	stage.setTitle("Benvenuto nella schermata del riepilogo dei giornali");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -72,7 +73,7 @@ private void getListaRiviste() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource("compravendita.fxml"));
+	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
 	stage.setTitle("Benvenuto nella schermata del riepilogo delle riviste");
 	scene = new Scene(root);
 	stage.setScene(scene);
@@ -87,7 +88,7 @@ private void getListaLibri() throws IOException {
 	Stage stage;
 	Parent root;
 	stage = (Stage) buttonL.getScene().getWindow();
-	root = FXMLLoader.load(getClass().getClassLoader().getResource("compravendita.fxml"));
+	root = FXMLLoader.load(getClass().getClassLoader().getResource(compravendita));
 	stage.setTitle("Benvenuto nella schermata del riepilogo dei libri");
 	scene = new Scene(root);
 	stage.setScene(scene);

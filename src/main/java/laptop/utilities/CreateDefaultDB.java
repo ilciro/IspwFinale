@@ -77,7 +77,7 @@ public class CreateDefaultDB
 		
 	}
 
-	public static void createDefaultDB () throws SQLException, FileNotFoundException, ClassNotFoundException
+	public static void createDefaultDB () throws SQLException, FileNotFoundException
 	{
 	    boolean status;
 	    

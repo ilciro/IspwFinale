@@ -27,6 +27,7 @@ public class NegozioServlet extends HttpServlet {
 	private static NegozioBean nB=new NegozioBean();
 	private static Negozio n=new Negozio();
 	private static String eccezione=" eccezione ottenuta";
+	private static String index="/index.jsp";
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,7 +51,7 @@ public class NegozioServlet extends HttpServlet {
 			
 			if(nB.isApertura() && nB.isDisponibile())
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 				view.forward(req,resp);
 			}
 			
@@ -67,7 +68,7 @@ public class NegozioServlet extends HttpServlet {
 			
 			if(nB.isApertura() && nB.isDisponibile())
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 				view.forward(req,resp);
 			}
 			
@@ -83,7 +84,7 @@ public class NegozioServlet extends HttpServlet {
 			
 			if(nB.isApertura() && nB.isDisponibile())
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 				view.forward(req,resp);
 			}
 			
@@ -99,7 +100,7 @@ public class NegozioServlet extends HttpServlet {
 			
 			if(nB.isApertura() && nB.isDisponibile())
 			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 				view.forward(req,resp);
 			}
 			
@@ -111,7 +112,8 @@ public class NegozioServlet extends HttpServlet {
 			view.forward(req,resp);
 		}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 		
 	}

@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import web.bean.FatturaBean;
 import web.bean.LibroBean;
@@ -75,7 +76,7 @@ public class FatturaServlet extends HttpServlet{
 				fD.inserisciFattura(f);
 				pD.inserisciPagamento(p);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
 			}
 		
 			if(SystemBean.getIstance().isNegozioSelezionato())

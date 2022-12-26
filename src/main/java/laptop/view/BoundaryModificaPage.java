@@ -349,28 +349,10 @@ public class BoundaryModificaPage implements Initializable {
 
 		} catch (SQLException   e) 	
 		{
-			java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e);
+			java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
 
 		} 
 		
-		/*
-		 * rivista
-		 * categoriaList.setItems(items);
-			items.add("SETTIMANALE");
-			items.add("BISETTIMANALE");
-			items.add("MENSILE");
-			items.add("BIMESTRALE");
-			items.add("TRIMESTRALE");
-			items.add("ANNUALE");
-			items.add("ESTIVO");
-			items.add("INVERNALE");
-			items.add("SPORTIVO");
-			items.add("CINEMATOGRAFIA");
-			items.add("GOSSIP");
-			items.add("TELEVISIVO");
-			items.add("MILITARE");
-			items.add("INFORMATICA");
-		 */
 		
 
 

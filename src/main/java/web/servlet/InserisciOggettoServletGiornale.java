@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
 
 import web.bean.GiornaleBean;
 import jakarta.servlet.RequestDispatcher;
@@ -101,7 +102,8 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 			}
 			
 		} catch (ParseException |SQLException |ServletException e) {
-	        e.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 	    
 		
 		}

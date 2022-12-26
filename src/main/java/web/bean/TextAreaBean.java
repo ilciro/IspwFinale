@@ -14,6 +14,8 @@ import laptop.utilities.ConnToDb;
 
 public class TextAreaBean {
 	private String scrivi;
+	private static String ricavoTotale="Ricavo totale :";
+	private static String titolo=" Titolo :";
 
 	public String getScrivi() {
 		return scrivi;
@@ -51,14 +53,14 @@ public class TextAreaBean {
 				rs.getFloat(3);
 
 
-				b.write("Titolo :"+rs.getString(1)+"\t"+"Ricavo totale :" +rs.getInt(2)*rs.getFloat(3)+"\n");
+				b.write(titolo+rs.getString(1)+"\t"+ricavoTotale +rs.getInt(2)*rs.getFloat(3)+"\n");
 
 				
-				s.append("titolo :");
+				s.append(titolo);
 				s.append("\t");
 				s.append(rs.getString(1));
 				s.append("\t");
-				s.append("Ricavo totale :");
+				s.append(ricavoTotale);
 				s.append("\t");
 				s.append(rs.getInt(2)*rs.getFloat(3));
 				s.append("\n");
@@ -70,7 +72,7 @@ public class TextAreaBean {
 
 		}catch(SQLException e)
 			   {
-					e.printStackTrace();
+			java.util.logging.Logger.getLogger("report l").log(Level.INFO, "report libri {0}.",e.toString());
 			   }
 			   return s.toString();
 		   }
@@ -106,14 +108,14 @@ public class TextAreaBean {
 								
 										
 				
-		        		b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\n");
+		        		b.write(titolo+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
 
 		     			b.flush();
 		     			
-		     			s.append("titolo :");
+		     			s.append(titolo);
 						s.append("\t");
 						s.append(rs.getString(1));
 						s.append("\t");
@@ -121,7 +123,7 @@ public class TextAreaBean {
 						s.append("\t");
 						s.append(rs.getString(2));
 						s.append("\t");
-						s.append("Ricavo totale :");
+						s.append(ricavoTotale);
 						s.append("\t");
 						s.append(rs.getInt(3)*rs.getFloat(4));
 						s.append("\n");
@@ -132,7 +134,7 @@ public class TextAreaBean {
 		            }
 		        	}catch(SQLException e)
 		        	{
-		        		e.printStackTrace();
+		    			java.util.logging.Logger.getLogger("report R").log(Level.INFO, "report riviste {0}.",e.toString());
 		        	}
 		        	return s.toString();
 		     
@@ -163,14 +165,14 @@ public class TextAreaBean {
 
 
 
-				b.write("Titolo :"+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+"Ricavo totale :" +rs.getInt(3)*rs.getFloat(4)+"\n");
+				b.write(titolo+rs.getString(1)+"\t"+"Editore :"+rs.getString(2)+"\t"+ricavoTotale +rs.getInt(3)*rs.getFloat(4)+"\n");
 
 
 
 
 				b.flush();
 				
-				s.append("titolo :");
+				s.append(titolo);
 				s.append("\t");
 				s.append(rs.getString(1));
 				s.append("\t");
@@ -178,7 +180,7 @@ public class TextAreaBean {
 				s.append("\t");
 				s.append(rs.getString(2));
 				s.append("\t");
-				s.append("Ricavo totale :");
+				s.append(ricavoTotale);
 				s.append("\t");
 				s.append(rs.getInt(3)*rs.getFloat(4));
 				s.append("\n");
@@ -191,7 +193,8 @@ public class TextAreaBean {
 
 			}catch(SQLException e)
 			   {
-				e.printStackTrace();
+				java.util.logging.Logger.getLogger("report g").log(Level.INFO, "report giornali {0}.",e.toString());
+
 			   }
 
 

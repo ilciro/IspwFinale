@@ -2,7 +2,6 @@ package laptop.model.raccolta;
 
 import java.time.LocalDate;
 
-//import exception.LibroNonTrovatoException;
 
 
 
@@ -108,7 +107,6 @@ public class Factory {
 		
 			default:
 				return null;
-				//return (Raccolta) new LibroNonTrovatoException("libro non trovato");
 		}
 	}
 	

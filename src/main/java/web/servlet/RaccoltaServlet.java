@@ -63,7 +63,8 @@ public class RaccoltaServlet extends HttpServlet {
 			
 		}
 		} catch (LogoutException e) {
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 			
 			

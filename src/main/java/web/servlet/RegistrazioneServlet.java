@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import web.bean.UserBean;
@@ -87,7 +88,8 @@ public class RegistrazioneServlet extends HttpServlet {
 		}
 	}catch(SQLException | ParseException|NullPointerException e)
 		{
-			e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 	}
 	

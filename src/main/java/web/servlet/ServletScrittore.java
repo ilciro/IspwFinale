@@ -1,7 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
-
+import java.util.logging.Level;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -71,7 +71,8 @@ public class ServletScrittore extends HttpServlet {
 		
 		
 	} catch ( ServletException | IOException e) {
-		e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 	}
 	
 	}

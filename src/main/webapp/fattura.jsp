@@ -20,6 +20,7 @@ ${aB.getTitolo() }
 
 <form action="FatturaServlet" method="post">
 <table>
+<caption>dettagli per fattura</caption>
 <tr>
 <th scope="col">
 </th>

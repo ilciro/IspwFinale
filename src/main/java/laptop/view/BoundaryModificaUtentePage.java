@@ -79,11 +79,7 @@ public class BoundaryModificaUtentePage implements Initializable {
 	
 	private ControllerModificaUtente cMU;
 	
-	/*
-	 * TODO 
-	 * 	fare controller
-	 *  
-	 */
+	
 	
 	@FXML
 	private void ritornaUtente()

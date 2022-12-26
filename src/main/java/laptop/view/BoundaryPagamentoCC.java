@@ -187,7 +187,7 @@ public class BoundaryPagamentoCC implements Initializable {
 		         utilDate = format.parse(d);
 		         sqlDate = new java.sql.Date(utilDate.getTime());
 		    } catch (ParseException e) {
-				java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e);
+				java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
 
 		    }
 		cPCC.aggiungiCartaDB(nome, cognome, codice, sqlDate, civ, (float) 0.0);

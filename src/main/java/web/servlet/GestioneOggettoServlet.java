@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import web.bean.GiornaleBean;
 import web.bean.LibroBean;
@@ -36,7 +37,8 @@ public class GestioneOggettoServlet extends HttpServlet {
 		if(SystemBean.getIstance().getType().equals(rivista))
 			mOB.setMiaLista(rD.getRiviste());
 		} catch (SQLException e) {
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("costruttore ").log(Level.INFO, "eccezione nel costruttore {0}.",e.toString());
+
 		}
 	}
 
@@ -139,7 +141,8 @@ public class GestioneOggettoServlet extends HttpServlet {
 		}
 		}catch(SQLException e)
 		{
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 	}
 	

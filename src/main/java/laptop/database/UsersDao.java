@@ -772,7 +772,8 @@ public class UsersDao {
 			}
 		}catch(SQLException e)
 		{
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("user list").log(Level.INFO, "user list {0}.",e.toString());
+
 		}
 		return s.toString();
 	}

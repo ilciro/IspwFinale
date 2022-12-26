@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
@@ -50,7 +51,7 @@ public class RicercaCatalogoServlet extends HttpServlet {
 				req.setAttribute(beanRicerca,rB);				
 				break;
 			case "rivista":
-				rB.setLista(rD.getRivistaSingoloLN());
+				rB.setLista(rD.getRivistaSingoloL());
 				req.setAttribute(beanRicerca, rB);
 				break;
 				default:break;
@@ -90,7 +91,8 @@ public class RicercaCatalogoServlet extends HttpServlet {
 		
 	}catch(SQLException e)
 		{
-		e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 	}
 	

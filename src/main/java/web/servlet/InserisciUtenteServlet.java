@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
 
 import laptop.database.UsersDao;
 import web.bean.UserBean;
@@ -73,7 +74,8 @@ public class InserisciUtenteServlet extends HttpServlet{
 			}
 		}catch(SQLException | ParseException  e)
 		{
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 		}
 		
 	}

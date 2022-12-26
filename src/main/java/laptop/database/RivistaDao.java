@@ -38,7 +38,7 @@ public class RivistaDao {
 
 	private static String eccezione="eccezione generata:";
 	private int disp;
-
+	private static String rivistaS="rivista singola";
 
 	
 	
@@ -418,7 +418,7 @@ public class RivistaDao {
         }
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("rivista singola").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger(rivistaS).log(Level.INFO, eccezione, e);
 		}
              return catalogo;
              
@@ -659,7 +659,7 @@ public class RivistaDao {
         }
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("rivista singola").log(Level.INFO, eccezione, e);
+			java.util.logging.Logger.getLogger(rivistaS).log(Level.INFO, eccezione, e);
 		}
              return catalogo;
              
@@ -668,31 +668,7 @@ public class RivistaDao {
 	}
 	
 	
-	public List<Raccolta> getRivistaSingoloLN() throws SQLException {
-		List<Raccolta> catalogo=new ArrayList<>();
-
-		query=riv;
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			
-		
-		ResultSet rs=prepQ.executeQuery();
-        while (rs.next())
-        {
-        	f.createRaccoltaFinale1(RIVISTA, rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
-			f.createRaccoltaFinale2(RIVISTA,0,null,0,rs.getInt(8),rs.getFloat(9),rs.getInt(10));
-			catalogo.add(f.createRaccoltaFinaleCompleta(RIVISTA, rs.getDate(7).toLocalDate(), null, rs.getString(6),rs.getInt(11)));
-        }
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("rivista singola").log(Level.INFO, eccezione, e);
-		}
-             return catalogo;
-             
-		
-		
-	}
+	
 	
 	public String getTitolo(Rivista r) 
 	{
@@ -710,7 +686,7 @@ public class RivistaDao {
 			}
 		}catch(SQLException e)
 		{
-			e.printStackTrace();
+			java.util.logging.Logger.getLogger("get titolo").log(Level.INFO, "titolo rivista {0}.",e.toString());
 		}
 		
 		return t;

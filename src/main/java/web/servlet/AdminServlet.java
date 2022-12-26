@@ -52,7 +52,8 @@ public class AdminServlet extends HttpServlet {
 			
 		}
 	} catch (LogoutException | ServletException | IOException e) {
-		e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 	}
 	}
 	

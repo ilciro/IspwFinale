@@ -36,6 +36,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 	private String pageFxml = "ricercaPage.fxml";
 	private ControllerRicercaPerTipo cRPT;
 	protected Scene scene;
+	private static String reportLibro="report libro";
 		
 	
 	@FXML
@@ -81,7 +82,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 		else
 		{
 			
-			java.util.logging.Logger.getLogger("report libro").log(Level.WARNING,"\n not found");
+			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found");
 
 
 		}
@@ -103,7 +104,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 		else
 		{
 			
-			java.util.logging.Logger.getLogger("report libro").log(Level.WARNING,"\n not found ");
+			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found ");
 
 
 		}
@@ -125,7 +126,7 @@ public class BoundaryRicercaPerTipo implements Initializable {
 		else
 		{
 			
-			java.util.logging.Logger.getLogger("report libro").log(Level.WARNING,"\n not found");
+			java.util.logging.Logger.getLogger(reportLibro).log(Level.WARNING,"\n not found");
 
 
 		}

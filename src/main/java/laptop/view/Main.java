@@ -46,8 +46,8 @@ public class Main  extends Application {
 			CreateDefaultDB.createDefaultDB();
 			
 
-		} catch (FileNotFoundException  |SQLException |ClassNotFoundException  eFile) {
-			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE,"\n eccezione ottenuta .",eFile);
+		} catch (FileNotFoundException  |SQLException  eFile) {
+			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE,"\n eccezione ottenuta .",eFile.toString());
 
 		}
 			

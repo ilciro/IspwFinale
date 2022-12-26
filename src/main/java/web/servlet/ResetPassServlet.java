@@ -45,7 +45,8 @@ public class ResetPassServlet extends HttpServlet {
 			view.forward(req,resp);
 		}
 	} catch (SQLException e) {
-		e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 	}
 	}
 	

@@ -693,7 +693,7 @@ public class GiornaleDao {
 			 }
 		 }catch(SQLException e)
 		 {
-			 e.printStackTrace();
+				java.util.logging.Logger.getLogger("titolo giornale").log(Level.INFO, "titolo aggiornati {0}.",e.toString());
 		 }
 		 
 		

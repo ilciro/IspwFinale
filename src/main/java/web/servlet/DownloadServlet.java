@@ -40,6 +40,9 @@ public class DownloadServlet extends HttpServlet{
 	private static GiornaleDao gD=new GiornaleDao();
 	private static RivistaDao rD=new RivistaDao();
 	private static ContrassegnoDao fDao=new ContrassegnoDao();
+	private static String giornale="giornale";
+	private static String rivista="rivista";
+	private static String libro="libro";
 	
 	private static String index="/index.jsp";
 	
@@ -48,36 +51,39 @@ public class DownloadServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String invia=req.getParameter("downloadB");
 		String annulla=req.getParameter("annullaB");
+		String type=sB.getType();
 		
 		try {
 			if(invia!=null && invia.equals("scarica e leggi") )
 
 			{
-				switch(sB.getType())
+				if(type.equals(libro))
 				{
-					case "libro":
 						dB.setId(sB.getId());
 						dB.setTitolo(sB.getTitolo());
 						l.setId(sB.getId());
 						l.scarica();						
 						l.leggi(l.getId());
-						break;
-					case "giornale":
+				}
+				else if(type.equals(giornale))
+				{
+						
+					
 						dB.setId(sB.getId());
 						dB.setTitolo(sB.getTitolo());
 						g.setId(sB.getId());
 						g.scarica();						
 						g.leggi(g.getId());
-						break;
-					case "rivista":
+				}
+				else if(type.equals(rivista))
+				{
+					
 						dB.setId(sB.getId());
 						dB.setTitolo(sB.getTitolo());
 						r.setId(sB.getId());
 						r.scarica();
 						r.leggi(r.getId());
-						break;
-					default:break;
-				
+					
 				}
 				
 				req.setAttribute("bean",dB);
@@ -90,7 +96,7 @@ public class DownloadServlet extends HttpServlet{
 				//split
 				boolean statusF=false;
 				boolean statusP=false;
-				String type=sB.getType();
+				
 				String metodoP=sB.getMetodoP();
 				
 				int idF=fDao.retUltimoOrdine(); //ultimo elemento (preso con count)
@@ -102,53 +108,49 @@ public class DownloadServlet extends HttpServlet{
 				
 					if(statusF && statusP && metodoP.equals("cash"))
 					{
-						switch(type)
+						if(type.equals(libro))
 						{
-							case "libro":
 							l.setId(sB.getId());
 							lD.aggiornaDisponibilita(l);
-							break;
-							case "giornale":
+						}
+						else if(type.equals(giornale))
+						{
 								g.setId(sB.getId());
 								gD.aggiornaDisponibilita(g);
-								break;
-							case "rivista":
+						}
+						else if(type.equals(rivista))
+						{
 								r.setId(sB.getId());
 								rD.aggiornaDisponibilita(r);
-								break;
-							default:break;
-	
+						
 						}
 						req.setAttribute("bean",dB);
 						RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 						view.forward(req,resp);
 						
 					}
-					if( statusP && metodoP.equals("cCredito"))
+					 if( statusP && metodoP.equals("cCredito"))
 					{
-						switch(type)
+						if(type.equals(libro))
 						{
-							case "libro":
 							l.setId(sB.getId());
 							lD.aggiornaDisponibilita(l);
-							break;
-							case "giornale":
+						}
+						else if(type.equals(giornale))
+						{
+							
 								g.setId(sB.getId());
 								gD.aggiornaDisponibilita(g);
-								break;
-							case "rivista":
+						}
+						else if(type.equals(rivista))
+						{
+							
 								r.setId(sB.getId());
 								rD.aggiornaDisponibilita(r);
-								break;
-							default:break;
+							
 						}
 						
 						
-					}
-					else {
-						req.setAttribute("bean",dB);
-						RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-						view.forward(req,resp);
 					}
 					
 				
@@ -159,7 +161,9 @@ public class DownloadServlet extends HttpServlet{
 				
 		}catch(SQLException | DocumentException  e)
 		{
-			e.printStackTrace();
+			req.setAttribute("bean",dB);
+			RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
+			view.forward(req,resp);
 		
 		}
 		

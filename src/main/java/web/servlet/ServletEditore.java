@@ -1,6 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import laptop.database.UsersDao;
 import laptop.exception.LogoutException;
@@ -73,7 +74,8 @@ public class ServletEditore extends HttpServlet {
 	
 		
 	} catch (LogoutException | ServletException | IOException e) {
-		e.printStackTrace();
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
 	}
 	
 	}

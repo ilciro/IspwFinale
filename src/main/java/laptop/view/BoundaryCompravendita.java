@@ -79,7 +79,7 @@ public class BoundaryCompravendita implements Initializable {
 					
 				}catch(IdException idE)
 				{
-					java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",idE);
+					java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}.",idE.toString());
 
 				}
 			}		
@@ -122,7 +122,7 @@ public class BoundaryCompravendita implements Initializable {
 				
 			}catch(IdException idE)
 			{
-				java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",idE);
+				java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",idE.toString());
 			}
 		}	
 		if( cCV.disponibilitaLibro(i) || cCV.disponibilitaGiornale(i) || cCV.disponibilitaRivista(i))

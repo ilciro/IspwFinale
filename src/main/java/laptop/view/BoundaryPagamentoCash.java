@@ -141,7 +141,7 @@ public class BoundaryPagamentoCash implements Initializable{
 				try {
 					cPC = new ControllerPagamentoCash();
 				} catch (Exception e) {
-					java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e);
+					java.util.logging.Logger.getLogger("Test pagacc").log(Level.SEVERE,"\n eccezione ottenuta {0}",e.toString());
 
 
 					
