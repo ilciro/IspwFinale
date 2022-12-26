@@ -1,6 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
- <%@ page import= "web.bean.SystemBean" %>
+
  
 <!DOCTYPE html>
 <html lang=en-it>
@@ -20,11 +20,10 @@
 	*TODO cancella riga sotto
 	*/
 %>
-<% SystemBean.getIstance().setTypeAsDaily(); %>
 
 
  
-<c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getType() }"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.getType() }"/>
 <form action ="InserisciOggettoServlet" method="post">
 
 <div>

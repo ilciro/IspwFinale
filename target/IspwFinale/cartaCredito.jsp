@@ -132,7 +132,7 @@ inserire nome utente :
 
 <input type="text" name="utenteL" id="utenteL">
 
-<input type="submit" name="prendiDB" id="prendiDB">
+<input type="submit" name="prendiDB" id="prendiDB" value="genera lista">
 </div>
 
 

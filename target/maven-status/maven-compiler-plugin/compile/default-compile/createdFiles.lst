@@ -78,6 +78,7 @@ web\servlet\GestioneOggettoServlet.class
 laptop\exception\LogoutException.class
 laptop\model\Fattura.class
 web\servlet\DownloadServlet.class
+web\servlet\DownloadServletG.class
 laptop\controller\ControllerLogin.class
 laptop\controller\ControllerRicercaPage.class
 laptop\controller\ControllerAcquista.class
@@ -123,6 +124,7 @@ web\servlet\RicercaServlet.class
 laptop\controller\ControllerVisualizzaOrdine.class
 laptop\view\BoundaryHomePageAfterLoginSE.class
 web\servlet\RaccoltaServlet.class
+web\servlet\DownloadServletR.class
 laptop\view\BoundaryDownload.class
 laptop\model\User$Ruoli.class
 laptop\controller\ControllerVisualizza.class

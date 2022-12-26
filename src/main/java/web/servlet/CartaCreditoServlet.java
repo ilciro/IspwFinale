@@ -54,8 +54,8 @@ public class CartaCreditoServlet extends HttpServlet {
 		String civ=req.getParameter("passL");
 		String invia=req.getParameter("buttonI");
 		String annulla=req.getParameter("buttonA");
-		//String registra=req.getParameter("regB");
-		//String generaLista=req.getParameter("prendiDB");
+		String registra=req.getParameter("regB");
+		String generaLista=req.getParameter("prendiDB");
 		try {
 		if(annulla!=null && annulla.equals("annulla"))
 		{
@@ -123,6 +123,16 @@ public class CartaCreditoServlet extends HttpServlet {
 			}
 			
 			
+		}
+		if(registra!=null && registra.equals("registra e paga"))
+		{
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "da fare");;
+
+		}
+		if(generaLista!=null && generaLista.equals("generaLista"))
+		{
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "da fare");;
+
 		}
 		
 	} catch (ParseException |SQLException  e) {
