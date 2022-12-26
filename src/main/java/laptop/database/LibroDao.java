@@ -707,7 +707,7 @@ public class LibroDao  {
 			}
 		}catch(SQLException e)
 		{
-			java.util.logging.Logger.getLogger("get Titolo l").log(Level.INFO, "titolo libro",e.toString());
+			java.util.logging.Logger.getLogger("get Titolo l").log(Level.INFO, "titolo libro .",e);
 
 		}
 		return t;

@@ -2,6 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import laptop.database.RivistaDao;
 import laptop.exception.IdException;
@@ -38,7 +39,8 @@ public class RivisteServlet extends HttpServlet {
 		try {
 			dimensione =rD.getRiviste().size();
 		} catch (SQLException e1) {
-			e1.printStackTrace();
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e1);
+
 		}	
 		setDim(dimensione);
 		try {

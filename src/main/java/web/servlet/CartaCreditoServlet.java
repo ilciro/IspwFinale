@@ -31,12 +31,13 @@ import laptop.utilities.ConnToDb;
 @WebServlet("/CartaCreditoServlet")
 public class CartaCreditoServlet extends HttpServlet {
 
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private static CartaCreditoBean ccB=new CartaCreditoBean();
-	private static CartaDiCredito cc;
+	private static CartaDiCredito cc=new CartaDiCredito();
 	private static Libro l=new Libro();
 	private static LibroBean lB=new LibroBean();
 	private static Giornale g=new Giornale();
@@ -95,7 +96,7 @@ public class CartaCreditoServlet extends HttpServlet {
 				
 					//inserisco nel db
 					
-					cc=new CartaDiCredito();
+					
 					
 					cc.setTipo(2);
 					cc.setNumeroCC(ccB.getNumeroCC());
@@ -179,10 +180,15 @@ public class CartaCreditoServlet extends HttpServlet {
 			throws SQLException {
 		
 		
+		cc.setNomeUser(n);
+		cc.setCognomeUser(c);
+		cc.setNumeroCC(cod);
+		cc.setScadenza(data);
+		cc.setCiv(civ);
+		cc.setPrezzoTransazine(prezzo);
+		cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaT());
 		
-			cc = new CartaDiCredito(n, c, cod,  data, civ, prezzo);
-						
-			cc.setPrezzoTransazine(SystemBean.getIstance().getSpesaT());
+			
 			insCC(cc);
 						
 			Pagamento p;

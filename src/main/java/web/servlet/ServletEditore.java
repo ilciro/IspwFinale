@@ -74,7 +74,7 @@ public class ServletEditore extends HttpServlet {
 	
 		
 	} catch (LogoutException | ServletException | IOException e) {
-		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
 
 	}
 	
