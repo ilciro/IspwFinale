@@ -27,7 +27,7 @@ public class GiornaliServlet extends HttpServlet{
 	private int dimensione=0;
 	private static GiornaleBean gB=new GiornaleBean();
 	private static GiornaleDao gD=new GiornaleDao();
-	private Giornale gior=new Giornale();
+	private static Giornale gior=new Giornale();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

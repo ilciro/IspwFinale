@@ -1,14 +1,8 @@
 package web.bean;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.logging.Level;
 
-import laptop.model.User;
-import laptop.utilities.ConnToDb;
+import java.time.LocalDate;
+
 
 public class UserBean {
 	
@@ -133,37 +127,7 @@ public class UserBean {
 
 	}
 
-	public static String getRuolo (User u) throws SQLException
-	{
-
-		
-
-			
-			
-			String query="SELECT idRuolo FROM ispw.users where Email = ?";
-			String r="";
-			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
-			{
-				prepQ.setString(1, u.getEmail());
-			
-				ResultSet rs = prepQ.executeQuery();
-				while(rs.next())
-				{
-					r =rs.getString(1);
 	
-				}
-			
-			}catch(SQLException e)
-			{
-				java.util.logging.Logger.getLogger("get ruolo user").log(Level.INFO, "eccezione nel db", e);
-
-			}
-		u.setIdRuolo(r);
-		
-		return r;
-
-	}
 
 	public String getMex() {
 		return mex;

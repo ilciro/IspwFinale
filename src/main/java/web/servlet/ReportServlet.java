@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.LibroDao;
 @WebServlet("/ReportServlet")
 public class ReportServlet extends HttpServlet {
 
@@ -19,6 +20,7 @@ public class ReportServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static TextAreaBean tAB=new TextAreaBean();
 	private static String report="/report.jsp";
+	private static LibroDao lD=new LibroDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

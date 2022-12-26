@@ -26,6 +26,7 @@ public class RicercaCatalogoServlet extends HttpServlet {
 	private static LibroDao lD=new LibroDao();
 	private static RivistaDao rD=new RivistaDao();
 	private static GiornaleDao gD=new GiornaleDao();
+	private static String beanRicerca="beanRicerca";
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,15 +43,15 @@ public class RicercaCatalogoServlet extends HttpServlet {
 			{
 			case "libro":
 				rB.setLista(lD.getLibriByNameL(titolo));
-				req.setAttribute("beanRicerca",rB);
+				req.setAttribute(beanRicerca,rB);
 				break;
 			case "giornale":
 				rB.setLista(gD.getGiornaliByNameL(titolo));
-				req.setAttribute("beanRicerca",rB);				
+				req.setAttribute(beanRicerca,rB);				
 				break;
 			case "rivista":
 				rB.setLista(rD.getRivistaSingoloLN());
-				req.setAttribute("beanRicerca", rB);
+				req.setAttribute(beanRicerca, rB);
 				break;
 				default:break;
 				

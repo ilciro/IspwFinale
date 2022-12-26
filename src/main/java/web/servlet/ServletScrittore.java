@@ -2,8 +2,7 @@ package web.servlet;
 
 import java.io.IOException;
 
-//import laptop.database.UsersDao;
-//import laptop.exception.LogoutException;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

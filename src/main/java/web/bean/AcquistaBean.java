@@ -1,12 +1,7 @@
 package web.bean;
 
-import java.io.Serializable;
 
-public class AcquistaBean implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class AcquistaBean {
 	private String titolo;
 	private String tipo;
 	private float prezzo;

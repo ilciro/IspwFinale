@@ -39,6 +39,7 @@ public class AcquistaServlet extends HttpServlet {
 	private static RivistaDao rD=new RivistaDao();
 	private static Giornale g=new Giornale();
 	private static GiornaleDao gD=new GiornaleDao();
+	private static String bean1="bean1";
 
 	public AcquistaServlet()
 	{
@@ -104,7 +105,7 @@ public class AcquistaServlet extends HttpServlet {
 						SystemBean.getIstance().setQuantita(Integer.parseInt(q));
 						SystemBean.getIstance().setSpesaT(costo);
 						SystemBean.getIstance().setTitolo(aB.getTitolo());
-					//}
+					
 					break;
 				}
 				case "rivista":
@@ -115,7 +116,7 @@ public class AcquistaServlet extends HttpServlet {
 						SystemBean.getIstance().setQuantita(Integer.parseInt(q));
 						SystemBean.getIstance().setSpesaT(costo);
 						SystemBean.getIstance().setTitolo(aB.getTitolo());
-					//}
+					
 					break;
 				}
 				default:break;
@@ -123,7 +124,7 @@ public class AcquistaServlet extends HttpServlet {
 			
 				
 				req.setAttribute("beanA",aB);
-				req.setAttribute("bean1", SystemBean.getIstance());
+				req.setAttribute(bean1, SystemBean.getIstance());
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 				view.forward(req,resp);
 				
@@ -139,7 +140,7 @@ public class AcquistaServlet extends HttpServlet {
 			{
 				case "cash":
 				{
-					req.setAttribute("bean1", SystemBean.getIstance());
+					req.setAttribute(bean1, SystemBean.getIstance());
 
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp"); 
 					view.forward(req,resp);
@@ -147,7 +148,7 @@ public class AcquistaServlet extends HttpServlet {
 				}
 				case "cCredito":
 				{
-					req.setAttribute("bean1", SystemBean.getIstance());
+					req.setAttribute(bean1, SystemBean.getIstance());
 
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp"); 
 					view.forward(req,resp);
@@ -164,7 +165,7 @@ public class AcquistaServlet extends HttpServlet {
 			{
 				case "cash":
 				{
-					req.setAttribute("bean1", SystemBean.getIstance());
+					req.setAttribute(bean1, SystemBean.getIstance());
 
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp"); 
 					view.forward(req,resp);
@@ -172,7 +173,7 @@ public class AcquistaServlet extends HttpServlet {
 				}
 				case "cCredito":
 				{
-					req.setAttribute("bean1", SystemBean.getIstance());
+					req.setAttribute(bean1, SystemBean.getIstance());
 
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/cartaCredito.jsp"); 
 					view.forward(req,resp);

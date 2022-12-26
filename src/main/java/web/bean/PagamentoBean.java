@@ -1,17 +1,15 @@
 package web.bean;
 
-import java.io.Serializable;
 
 
 import javafx.collections.ObservableList;
 import laptop.model.Pagamento;
 
 
-public class PagamentoBean implements Serializable {
+public class PagamentoBean  {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private int id;
 	private String metodo;
 	private int esito; //0 ok 1 fallito

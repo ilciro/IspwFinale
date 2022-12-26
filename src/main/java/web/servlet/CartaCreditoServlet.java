@@ -35,13 +35,13 @@ public class CartaCreditoServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private CartaCreditoBean ccB=new CartaCreditoBean();
+	private static CartaCreditoBean ccB=new CartaCreditoBean();
 	private static CartaDiCredito cc;
-	private Libro l=new Libro();
-	private LibroBean lB=new LibroBean();
-	private Giornale g=new Giornale();
-	private GiornaleBean gB=new GiornaleBean();
-	private Rivista r=new Rivista();
+	private static Libro l=new Libro();
+	private static LibroBean lB=new LibroBean();
+	private static Giornale g=new Giornale();
+	private static GiornaleBean gB=new GiornaleBean();
+	private static Rivista r=new Rivista();
 	private static RivistaDao rD=new RivistaDao();
 	private static PagamentoDao pD=new PagamentoDao();
 	@Override
@@ -106,7 +106,7 @@ public class CartaCreditoServlet extends HttpServlet {
 					
 					insCC(cc);
 					
-					if(SystemBean.getIstance().isNegozioSelezionato()==true)
+					if(SystemBean.getIstance().isNegozioSelezionato())
 					{
 						req.setAttribute("bean1",SystemBean.getIstance());
 

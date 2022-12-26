@@ -24,8 +24,8 @@ public class NegozioServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private NegozioBean nB=new NegozioBean();
-	private Negozio n;
+	private static NegozioBean nB=new NegozioBean();
+	private static Negozio n=new Negozio();
 	private static String eccezione=" eccezione ottenuta";
 
 	@Override
@@ -35,7 +35,6 @@ public class NegozioServlet extends HttpServlet {
 		String neg3=req.getParameter("buttonNeg3");
 		String neg4=req.getParameter("buttonNeg4");
 		
-		n=new Negozio();
 		try {
 		if(neg1!=null && neg1.equals("Negozio A"))
 		{

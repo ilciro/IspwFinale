@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.UsersDao;
 import laptop.model.User;
 
 @WebServlet("/LoginServlet")
@@ -20,6 +21,8 @@ public class LoginServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static String beanUb="beanUb";
+	private static String beanS="beanS";
 	
 
 	@Override
@@ -39,37 +42,37 @@ public class LoginServlet extends HttpServlet {
 				User.getInstance().setPassword(UserBean.getInstance().getPassword());
 				
 				
-				String ruolo=UserBean.getRuolo(User.getInstance());
+				String ruolo=UsersDao.getRuolo(User.getInstance());
 				
 				if(ruolo.equalsIgnoreCase("a"))
 				{
 					SystemBean.getIstance().setIsLogged(true);
-					req.setAttribute("beanUb",UserBean.getInstance());
-					req.setAttribute("beanS",SystemBean.getIstance() );
+					req.setAttribute(beanUb,UserBean.getInstance());
+					req.setAttribute(beanS,SystemBean.getIstance() );
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/admin.jsp"); 
 					view.forward(req,resp);
 				}
 				else if(ruolo.equalsIgnoreCase("u"))
 				{
 					SystemBean.getIstance().setIsLogged(true);
-					req.setAttribute("beanUb",UserBean.getInstance());
-					req.setAttribute("beanS",SystemBean.getIstance() );
+					req.setAttribute(beanUb,UserBean.getInstance());
+					req.setAttribute(beanS,SystemBean.getIstance() );
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/utente.jsp"); 
 					view.forward(req,resp);
 				}
 				else if(ruolo.equalsIgnoreCase("w"))
 				{
 					SystemBean.getIstance().setIsLogged(true);
-					req.setAttribute("beanUb",UserBean.getInstance());
-					req.setAttribute("beanS",SystemBean.getIstance() );
+					req.setAttribute(beanUb,UserBean.getInstance());
+					req.setAttribute(beanS,SystemBean.getIstance() );
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/scrittore.jsp"); 
 					view.forward(req,resp);
 				}
 				else if(ruolo.equalsIgnoreCase("e"))
 				{
 					SystemBean.getIstance().setIsLogged(true);
-					req.setAttribute("beanUb",UserBean.getInstance());
-					req.setAttribute("beanS",SystemBean.getIstance() );
+					req.setAttribute(beanUb,UserBean.getInstance());
+					req.setAttribute(beanS,SystemBean.getIstance() );
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/editore.jsp"); 
 					view.forward(req,resp);
 				}
@@ -77,7 +80,7 @@ public class LoginServlet extends HttpServlet {
 			}
 		else {
 			UserBean.getInstance().setMex(" utente non registrato / credenziali sbagliate ... per favore registrarsi");
-			req.setAttribute("beanUb",UserBean.getInstance());
+			req.setAttribute(beanUb,UserBean.getInstance());
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/login.jsp"); 
 			view.forward(req,resp);
 		}

@@ -24,6 +24,7 @@ public class LibriServlet extends HttpServlet {
 	private int dimensione=0;
 	private static LibroDao lD=new LibroDao();
 	private static Libro l=new Libro();
+	private static String beanL="beanL";
 
 	
 	@Override
@@ -46,7 +47,7 @@ public class LibriServlet extends HttpServlet {
 					
 			 
 				lB.setListaLibri(lD.getLibri());
-				req.setAttribute("beanL",lB);
+				req.setAttribute(beanL,lB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(libri); 
 				view.forward(req,resp);
 			
@@ -65,7 +66,7 @@ public class LibriServlet extends HttpServlet {
 					lB.setTitolo(lD.getTitolo(l));
 					SystemBean.getIstance().setId(lB.getId());
 					SystemBean.getIstance().setTitolo(lB.getTitolo());
-					req.setAttribute("beanL",lB);
+					req.setAttribute(beanL,lB);
 					req.setAttribute("bean1",SystemBean.getIstance());
 				
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
@@ -83,7 +84,7 @@ public class LibriServlet extends HttpServlet {
 		
 		} catch (SQLException e) {
 			lB.setMex(new IdException("id nullo o eccede lista"));
-			req.setAttribute("beanL",lB);
+			req.setAttribute(beanL,lB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(libri); 
 			view.forward(req,resp);
 		}

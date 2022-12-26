@@ -16,7 +16,7 @@
 <form action="DownloadServlet" method="post">
 <div>
 titolo del libro da scaricare:
-<input type="text" id="titoloL" name="titoloL" value="${SystemBean.getIstance().getTitolo()}">
+<input type="text" id="titoloL" name="titoloL" value="${bean1.getTitolo()}">
 </div>
 <br>
 <div>

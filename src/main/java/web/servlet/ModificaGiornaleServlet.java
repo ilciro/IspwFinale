@@ -36,11 +36,8 @@ public class ModificaGiornaleServlet extends HttpServlet {
 		String aggiorna=req.getParameter("confermaB");
 		String annulla=req.getParameter("annullaB");
 		
-			/*
-			 * TODO cancellare assegnazione sotto
-			 */
 		try {
-			SystemBean.getIstance().setId(1);
+			
 			gB.setId(SystemBean.getIstance().getId());
 			g.setId(gB.getId());
 			
@@ -90,8 +87,7 @@ public class ModificaGiornaleServlet extends HttpServlet {
 				g.setDisponibilita(gB.getDisponibilita());
 				g.setPrezzo(gB.getPrezzo());
 				
-				System.out.println("id in vis:"+SystemBean.getIstance().getId());
-				System.out.println("id in g:"+g.getId());
+				
 
 				gD.aggiornaGiornale(g);
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/gestioneOggetto.jsp");

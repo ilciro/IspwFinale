@@ -76,6 +76,7 @@ Inserire id di oggetto scelto:
 
 <input type="text" id="idOgg" name="idOgg">
 <br>
+<br>
 
 
 

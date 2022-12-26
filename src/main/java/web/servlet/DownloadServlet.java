@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import com.itextpdf.text.DocumentException;
 
 import web.bean.DownloadBean;
-import web.bean.FatturaBean;
 
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -15,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.ContrassegnoDao;
 import laptop.database.GiornaleDao;
 import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
@@ -30,16 +30,18 @@ public class DownloadServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private DownloadBean dB=new DownloadBean();
-	private SystemBean sB=SystemBean.getIstance();
-	private Libro l=new Libro();
-	private FatturaBean fB=new FatturaBean();
+	private static DownloadBean dB=new DownloadBean();
+	private static SystemBean sB=SystemBean.getIstance();
+	private static Libro l=new Libro();
 	private static PagamentoDao pD=new PagamentoDao();
-	private Giornale g=new Giornale();
-	private Rivista r=new Rivista();
+	private static Giornale g=new Giornale();
+	private static Rivista r=new Rivista();
 	private static LibroDao lD=new LibroDao();
 	private static GiornaleDao gD=new GiornaleDao();
 	private static RivistaDao rD=new RivistaDao();
+	private static ContrassegnoDao fDao=new ContrassegnoDao();
+	
+	private static String index="/index.jsp";
 	
 	
 	@Override
@@ -79,24 +81,25 @@ public class DownloadServlet extends HttpServlet{
 				}
 				
 				req.setAttribute("bean",dB);
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 				view.forward(req,resp);
 			}
 			if(annulla!=null && annulla.equals("annulla"))
 			{
+				
+				//split
 				boolean statusF=false;
 				boolean statusP=false;
 				String type=sB.getType();
 				String metodoP=sB.getMetodoP();
 				
-				int idF=fB.retUltimoOrdine(); //ultimo elemento (preso con count)
-				statusF=fB.annullaOrdine(idF);
+				int idF=fDao.retUltimoOrdine(); //ultimo elemento (preso con count)
+				statusF=fDao.annullaOrdine(idF);
 				
 				int idP=pD.retUltimoOrdine();
 				statusP=pD.annullaOrdine(idP);
 				
 				
-						
 					if(statusF && statusP && metodoP.equals("cash"))
 					{
 						switch(type)
@@ -117,11 +120,11 @@ public class DownloadServlet extends HttpServlet{
 	
 						}
 						req.setAttribute("bean",dB);
-						RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
+						RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
 						view.forward(req,resp);
 						
 					}
-					 if( statusP && metodoP.equals("cCredito"))
+					if( statusP && metodoP.equals("cCredito"))
 					{
 						switch(type)
 						{
@@ -139,10 +142,13 @@ public class DownloadServlet extends HttpServlet{
 								break;
 							default:break;
 						}
-						req.setAttribute("bean",dB);
-						RequestDispatcher view = getServletContext().getRequestDispatcher("/index.jsp"); 
-						view.forward(req,resp);
 						
+						
+					}
+					else {
+						req.setAttribute("bean",dB);
+						RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
+						view.forward(req,resp);
 					}
 					
 				
@@ -158,6 +164,8 @@ public class DownloadServlet extends HttpServlet{
 		}
 		
 	}
+	
+	
 }
 				
 		

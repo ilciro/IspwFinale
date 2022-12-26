@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-     <%@ page import= "web.bean.SystemBean" %>
+     
     
 <!DOCTYPE html>
 <html lang=it>
@@ -15,15 +15,6 @@
 
 <h2>Inserire le credenziali</h2>
 
-<%
-/*
-*TODO levare sta cosa e vedere se beanS
-
-*TODO finire pagamento servelt bottoni prendi e paga ; genera lista carte dal db
-*/
-SystemBean.getIstance().setIsLogged(true);
-
-%>
 
 
 
@@ -101,7 +92,7 @@ xyz
 <br>
 <br>
 
-<c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getIsLogged() }"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.getIsLogged() }"/>
 
 <c:choose>
 <c:when test="${ tipo==true}">

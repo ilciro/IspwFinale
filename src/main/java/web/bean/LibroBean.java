@@ -1,6 +1,5 @@
 package web.bean;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 import java.time.LocalDate;
@@ -12,11 +11,10 @@ import laptop.model.raccolta.Raccolta;
 
 
 
-public class LibroBean implements Serializable{
+public class LibroBean {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
 	private Exception mex;
 	
 	private String titolo;

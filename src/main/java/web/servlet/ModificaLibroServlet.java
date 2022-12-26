@@ -36,13 +36,9 @@ public class ModificaLibroServlet extends HttpServlet{
 		String aggiorna=req.getParameter("buttonI");
 		String annulla=req.getParameter("buttonA");
 		try {
-			/*
-			 * TODO cancella re .setID 
-			 */
-		SystemBean.getIstance().setId(3);
+			
 		lB.setId(SystemBean.getIstance().getId());
 		l.setId(lB.getId());
-		//mOB.setMiaLista(lD.getLibriSingoloByIdList(l));
 		
 		if(buttonLista!=null && buttonLista.equals("prendi dati"))
 		{

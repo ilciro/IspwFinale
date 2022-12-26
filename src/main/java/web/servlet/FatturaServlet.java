@@ -24,10 +24,10 @@ public class FatturaServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private FatturaBean fB=new FatturaBean();
+	private static FatturaBean fB=new FatturaBean();
 	private static  Fattura f=new Fattura();
 	
-	private LibroBean lB=new LibroBean();
+	private static LibroBean lB=new LibroBean();
 	private static PagamentoDao pD=new PagamentoDao();
 	private static ContrassegnoDao fD=new ContrassegnoDao();
 	private static Pagamento p=new Pagamento();
@@ -78,7 +78,7 @@ public class FatturaServlet extends HttpServlet{
 				e.printStackTrace();
 			}
 		
-			if(SystemBean.getIstance().isNegozioSelezionato()==true)
+			if(SystemBean.getIstance().isNegozioSelezionato())
 			{
 				RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 				view.forward(req,resp);
@@ -97,14 +97,7 @@ public class FatturaServlet extends HttpServlet{
 			view.forward(req,resp);
 		}
 	
-		/*
-		else {
-			fB.setMex(new IdException("dati errati!!!"));
-			req.setAttribute("beanF", fB);
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/fattura.jsp"); 
-			view.forward(req,resp);
-		}
-		*/
+		
 		}
 	
 		private  boolean checkData(String nome,String cognome ,String indirizzo)
@@ -112,7 +105,6 @@ public class FatturaServlet extends HttpServlet{
 			boolean status=false;
 			if(!"".equals(nome) && !"".equals(cognome) && !"".equals(indirizzo))
 				status=true;
-			System.out.println("status :"+status);
 			return status;
 		}
 	

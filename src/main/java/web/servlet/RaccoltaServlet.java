@@ -20,6 +20,8 @@ public class RaccoltaServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static String gestioneOggetto="/gestioneOggetto.jsp";
+	private static String beanS="beanS";
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,22 +33,22 @@ public class RaccoltaServlet extends HttpServlet {
 		if(libro!=null && libro.equals("libri"))
 			{
 				SystemBean.getIstance().setTypeAsBook();
-				req.setAttribute("beanS",SystemBean.getIstance());
-				RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
+				req.setAttribute(beanS,SystemBean.getIstance());
+				RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); 
 				view.forward(req,resp);
 			}
 		if(giornale!=null && giornale.equals("giornali") )
 		{
 			SystemBean.getIstance().setTypeAsDaily();
-			req.setAttribute("beanS",SystemBean.getIstance());
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
+			req.setAttribute(beanS,SystemBean.getIstance());
+			RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); 
 			view.forward(req,resp);
 		}
 		if(rivista!=null && rivista.equals("riviste"))
 		{
 			SystemBean.getIstance().setTypeAsMagazine();
-			req.setAttribute("beanS",SystemBean.getIstance());
-			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
+			req.setAttribute(beanS,SystemBean.getIstance());
+			RequestDispatcher view = getServletContext().getRequestDispatcher(gestioneOggetto); 
 			view.forward(req,resp);
 		}
 		if(logout!=null && logout.equals("logout"))

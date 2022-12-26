@@ -33,7 +33,6 @@ public class GestioneUtenteServlet extends HttpServlet {
 		try {
 			if(genera!=null && genera.equals("genera lista"))
 			{
-				//UserBean.getInstance().setListaUtenti(UsersDao.getUserList());
 				req.setAttribute("beanUB",UserBean.getInstance());
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/gestioneUtente.jsp");
 				view.forward(req, resp);

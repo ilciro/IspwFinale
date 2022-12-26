@@ -1,14 +1,11 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
 import java.util.regex.Pattern;
 
 import web.bean.UserBean;
@@ -18,7 +15,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import laptop.utilities.ConnToDb;
+import laptop.database.UsersDao;
+import laptop.model.User;
 
 @WebServlet("/RegistrazioneServlet")
 public class RegistrazioneServlet extends HttpServlet {
@@ -58,7 +56,17 @@ public class RegistrazioneServlet extends HttpServlet {
 					
 				UserBean.getInstance().setDataDiNascita(sqlDate.toLocalDate());
 				
-					if(checkUser(UserBean.getInstance())==1)
+				User.getInstance().setNome(UserBean.getInstance().getNome());
+				User.getInstance().setCognome(UserBean.getInstance().getCognome());
+				User.getInstance().setEmail(UserBean.getInstance().getEmail());
+				User.getInstance().setPassword(UserBean.getInstance().getPassword());
+				User.getInstance().setDataDiNascita(UserBean.getInstance().getDataDiNascita());
+
+
+
+
+				
+					if(UsersDao.checkUser(User.getInstance())==1)
 							{
 								//utente già trovato
 						UserBean.getInstance().setMex("utente gia registrato nel sistema !!!");
@@ -123,38 +131,6 @@ public class RegistrazioneServlet extends HttpServlet {
 		return state;
 	}
 	
-	public static int checkUser(UserBean u) throws SQLException
-	{
-		int  status=0;
-		// ritorna int per motivi legati al controller
-		// anche se lo tratto come boolean
-		//levato pwd se no non aggiorna
-
-
-			String query="SELECT idUser FROM ispw.users where Email =?";
-			try(Connection conn=ConnToDb.generalConnection();
-					PreparedStatement prepQ=conn.prepareStatement(query);)
-			{
-				
-			prepQ.setString(1, u.getEmail());
-			ResultSet rs = prepQ.executeQuery();
-			if(rs.next())
-			{
-				 int id=rs.getInt("idUser");
-				 if(id>0)
-					 status=1;	 			
-
-			}
-			}catch(SQLException e)
-			{
-				java.util.logging.Logger.getLogger("check user").log(Level.INFO, "eccezione ottenuta", e);
-
-			}
-			
-			java.util.logging.Logger.getLogger("check user id").log(Level.INFO, "idUser {0}",u.getEmail());
-
-
-		return status ;
-	}
+	
 
 }

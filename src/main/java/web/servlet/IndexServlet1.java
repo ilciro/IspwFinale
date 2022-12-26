@@ -21,9 +21,7 @@ public class IndexServlet1 extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		/*
-		 * TODO fare singeltonBean/systemBean
-		 */
+		
 		String l=req.getParameter("buttonL");
 		String g=req.getParameter("buttonG");
 		String r=req.getParameter("buttonR");

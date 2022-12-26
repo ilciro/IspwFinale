@@ -1,10 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import web.bean.GiornaleBean;
 import web.bean.LibroBean;
@@ -17,13 +14,31 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.RivistaDao;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
-import laptop.utilities.ConnToDb;
 
 @WebServlet("/GestioneOggettoServlet")
 public class GestioneOggettoServlet extends HttpServlet {
+	
+	public GestioneOggettoServlet()
+	{
+		super();
+		try {
+		if (SystemBean.getIstance().getType().equals(libro))
+			mOB.setMiaLista(lD.getLibri());
+			
+		if(SystemBean.getIstance().getType().equals(giornale))
+			mOB.setMiaLista(gD.getGiornali());
+		if(SystemBean.getIstance().getType().equals(rivista))
+			mOB.setMiaLista(rD.getRiviste());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 
@@ -36,6 +51,12 @@ public class GestioneOggettoServlet extends HttpServlet {
 	private static Giornale g=new Giornale();
 	private static Libro l=new Libro();
 	private static Rivista r=new Rivista();
+	private static LibroDao lD=new LibroDao();
+	private static RivistaDao rD=new RivistaDao();
+	private static GiornaleDao gD=new GiornaleDao();
+	private static String libro="libro";
+	private static String rivista="rivista";
+	private static String giornale ="giornale";
 	
 
 	@Override
@@ -46,19 +67,13 @@ public class GestioneOggettoServlet extends HttpServlet {
 		String modifica=req.getParameter("buttonMod");
 		String cancella=req.getParameter("buttonCanc");
 		String indietro=req.getParameter("buttonI");
-		// cancellare questa riga sotto
-		//SystemBean.getIstance().setTypeAsBook();
+		
 		String type=SystemBean.getIstance().getType();
 		
 		try {
 		if(genera!=null && genera.equals("genera lista"))
 		{
-			if (type.equals("libro"))
-				//mOB.setMiaLista(lB.getLibri());
-			 if(type.equals("giornale"))
-				mOB.setMiaLista(gB.getListaGiornali());
-			 if(type.equals("rivista"))
-				mOB.setMiaLista(rB.getListaRiviste());
+			
 		
 			req.setAttribute("beanMOB",mOB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
@@ -71,19 +86,19 @@ public class GestioneOggettoServlet extends HttpServlet {
 		}
 		if(modifica!=null && modifica.equals("modifica") && !"".equals(id))
 		{
-			if(type.equals("libro"))
+			if(type.equals(libro))
 			{
 				lB.setId(Integer.parseInt(type));
 				SystemBean.getIstance().setId(lB.getId());
 				l.setId(lB.getId());
 			}
-			else if(type.equals( "giornale"))
+			else if(type.equals( giornale))
 			{
 				gB.setId(Integer.parseInt(id));
 				SystemBean.getIstance().setId(gB.getId());
 				g.setId(gB.getId());
 			}	
-			else if(type.equals("rivista"))
+			else if(type.equals(rivista))
 			{
 				rB.setId(Integer.parseInt(id));
 				SystemBean.getIstance().setId(rB.getId());
@@ -95,24 +110,24 @@ public class GestioneOggettoServlet extends HttpServlet {
 		}
 		if(cancella!=null && cancella.equals("cancella") && !"".equals(id))
 		{
-			if(type.equals("libro"))
+			if(type.equals(libro))
 			{
 				lB.setId(Integer.parseInt(type));
 				l.setId(lB.getId());
-				cancella(l);
+				lD.cancella(l);
 			}
-			else if(type.equals("giornale"))
+			else if(type.equals(giornale))
 			{
 				gB.setId(Integer.parseInt(id));
 				g.setId(gB.getId());
-				cancellaG(g);
+				gD.cancella(g);
 			}
-			else if(type.equals("rivista"))
+			else if(type.equals(rivista))
 			{
 			
 				rB.setId(Integer.parseInt(id));
 				r.setId(rB.getId());
-				cancellaR(r);
+				rD.cancella(r);
 			}
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
 			view.forward(req, resp);
@@ -128,58 +143,7 @@ public class GestioneOggettoServlet extends HttpServlet {
 		}
 	}
 	
-	public void cancella(Libro l) throws SQLException {
-		int row=0;
-		String query="delete from libro where idProd=?";
-		
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, l.getId());
-			row=prepQ.executeUpdate();
-		}
-		
-		java.util.logging.Logger.getLogger("Cancella libro").log(Level.INFO,"libro cancellato {0}",row);
-
-		
-	}
-	public  void cancellaG(Giornale g) throws SQLException  {
-		int row=0;
-		String query="delete from giornale where id=?";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setInt(1, g.getId());
-			row=prepQ.executeUpdate();
-			
-		}catch(SQLException e)
-		{
-						java.util.logging.Logger.getLogger("cancella").log(Level.INFO, "eccezione", e);
-		}
-		java.util.logging.Logger.getLogger("cancella g").log(Level.INFO,"\n rows affcted {0}",row);
-
-
-
-
-	}
 	
-	public void cancellaR(Rivista r) throws SQLException {
-
-		 int row=0;
-		 String query="delete from rivista where id=?";
-		 try(Connection conn=ConnToDb.generalConnection();
-				 PreparedStatement prepQ=conn.prepareStatement(query);)
-		 {
-			 prepQ.setInt(1, r.getId());
-			 row=prepQ.executeUpdate();
-		 }catch(SQLException e)
-		 {
-			 java.util.logging.Logger.getLogger("cancella r").log(Level.INFO, "eccezione in cancellare rivista", e);
-		 }
-		 java.util.logging.Logger.getLogger("rivista cancellata").log(Level.INFO, "row delected{0}",row);
-
-	}
-
 
 	
 }

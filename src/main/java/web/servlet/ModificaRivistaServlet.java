@@ -35,11 +35,8 @@ public class ModificaRivistaServlet extends HttpServlet{
 		String categ=req.getParameter("buttonCat");
 		String aggiorna=req.getParameter("buttonI");
 		String annulla=req.getParameter("buttonA");
-		/*
-		 * TODO cancellare setId
-		 */
+		
 		try {
-			SystemBean.getIstance().setId(3);
 			rB.setId(SystemBean.getIstance().getId());
 			r.setId(rB.getId());
 			mOB.setMiaLista(rD.getRivistaSingoloL());
