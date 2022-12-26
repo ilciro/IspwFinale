@@ -13,6 +13,11 @@
 
 <h2> Inserire le credenziali</h2>
 
+<p>
+aaaaa
+${aB.getTitolo() }
+</p>
+
 <form action="FatturaServlet" method="post">
 <table>
 <tr>
@@ -65,6 +70,7 @@ inserire eventuali comunicazioni :
 
 <div>
 ${beanF.getMex() }
+${aB.getTitolo() }
 </div>
 </body>
 </html>

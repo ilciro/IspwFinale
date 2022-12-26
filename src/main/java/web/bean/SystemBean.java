@@ -13,6 +13,7 @@ public class SystemBean {
 		 private int quantita; //usato per avere quantita oggetto che compro
 		 private String metodoP; //usato per vedere se contanti o cc
 		 private boolean negozioSelezionato;// per vedere se download o negozio
+		 private String titolo;
 		 
 		 public int getQuantita() {
 			return quantita;
@@ -106,6 +107,14 @@ public class SystemBean {
 
 		public void setNegozioSelezionato(boolean negozioSelezionato) {
 			this.negozioSelezionato = negozioSelezionato;
+		}
+
+		public String getTitolo() {
+			return titolo;
+		}
+
+		public void setTitolo(String titolo) {
+			this.titolo = titolo;
 		}
 
 		

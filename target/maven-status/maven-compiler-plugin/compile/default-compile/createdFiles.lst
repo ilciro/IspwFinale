@@ -61,7 +61,6 @@ web\bean\DownloadBean.class
 laptop\model\Pagamento.class
 laptop\utilities\ConnToDb.class
 web\bean\GiornaleBean.class
-web\servlet\IndexServlet.class
 laptop\view\BoundaryAdminPage.class
 web\bean\UserBean$Ruoli.class
 laptop\controller\ControllerScegliNegozio.class
@@ -95,6 +94,7 @@ web\bean\RicercaBean.class
 laptop\model\raccolta\CategorieRivista.class
 web\servlet\AcquistaServlet.class
 laptop\controller\ControllerRicercaPerTipo.class
+web\servlet\IndexServlet1.class
 web\servlet\InserisciOggettoServlet.class
 web\servlet\NegozioServlet.class
 laptop\database\GiornaleDao.class

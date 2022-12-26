@@ -13,6 +13,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.ContrassegnoDao;
+import laptop.database.PagamentoDao;
 import laptop.model.Fattura;
 import laptop.model.Pagamento;
 @WebServlet("/FatturaServlet")
@@ -26,8 +28,10 @@ public class FatturaServlet extends HttpServlet{
 	private static  Fattura f=new Fattura();
 	
 	private LibroBean lB=new LibroBean();
-	private PagamentoBean pB=new PagamentoBean();
+	private static PagamentoDao pD=new PagamentoDao();
+	private static ContrassegnoDao fD=new ContrassegnoDao();
 	private static Pagamento p=new Pagamento();
+	private static PagamentoBean pB=new PagamentoBean();
 	
 
 	@Override
@@ -58,7 +62,7 @@ public class FatturaServlet extends HttpServlet{
 			pB.setAmmontare(SystemBean.getIstance().getSpesaT());
 			pB.setEsito(0);
 			pB.setNomeUtente(fB.getNome());
-			pB.setTipo(lB.getCategoriaD());
+			pB.setTipo(lB.getCategoria());
 		
 			p.setId(pB.getId());
 			p.setMetodo(pB.getMetodo());
@@ -68,8 +72,8 @@ public class FatturaServlet extends HttpServlet{
 			p.setTipo(pB.getTipo());
 			
 			try {
-				fB.inserisciFattura(f);
-				pB.inserisciPagamento(p);
+				fD.inserisciFattura(f);
+				pD.inserisciPagamento(p);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -80,6 +84,7 @@ public class FatturaServlet extends HttpServlet{
 				view.forward(req,resp);
 			}
 			else {
+				req.setAttribute("bean1",SystemBean.getIstance());
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp"); 
 			view.forward(req,resp);
 			}

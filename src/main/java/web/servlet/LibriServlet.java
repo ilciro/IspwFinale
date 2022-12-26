@@ -3,7 +3,9 @@ package web.servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import laptop.database.LibroDao;
 import laptop.exception.IdException;
+import laptop.model.raccolta.Libro;
 import web.bean.LibroBean;
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -20,6 +22,8 @@ public class LibriServlet extends HttpServlet {
 	private static LibroBean lB=new LibroBean();
 	private static String libri="/libri.jsp";
 	private int dimensione=0;
+	private static LibroDao lD=new LibroDao();
+	private static Libro l=new Libro();
 
 	
 	@Override
@@ -30,7 +34,7 @@ public class LibriServlet extends HttpServlet {
 		String id=req.getParameter("idOgg");
 		
 		try {
-			dimensione =lB.getLibri().size();
+			dimensione =lD.getLibri().size();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}	
@@ -41,7 +45,7 @@ public class LibriServlet extends HttpServlet {
 			
 					
 			 
-				lB.setListaLibri(lB.getLibri());
+				lB.setListaLibri(lD.getLibri());
 				req.setAttribute("beanL",lB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(libri); 
 				view.forward(req,resp);
@@ -57,9 +61,13 @@ public class LibriServlet extends HttpServlet {
 					
 					
 					lB.setId(Integer.parseInt(id));
+					l.setId(lB.getId());
+					lB.setTitolo(lD.getTitolo(l));
 					SystemBean.getIstance().setId(lB.getId());
+					SystemBean.getIstance().setTitolo(lB.getTitolo());
 					req.setAttribute("beanL",lB);
 					req.setAttribute("bean1",SystemBean.getIstance());
+				
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 					view.forward(req,resp);
 				}

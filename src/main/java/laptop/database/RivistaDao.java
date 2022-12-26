@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -692,6 +693,45 @@ public class RivistaDao {
 		
 		
 	}
+	
+	public String getTitolo(Rivista r) 
+	{
+		String t="";
+		query="select titolo from rivista where id=? or id=? ";
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+			prepQ.setInt(1, r.getId());
+			prepQ.setInt(2, vis.getId());
+			ResultSet res=prepQ.executeQuery();
+			if(res.next())
+			{
+				t=res.getString("titolo");
+			}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return t;
+	}
+
+	public void aggiornaData(Rivista r, Date sqlDate) throws SQLException {
+		int row=0;
+		query="update rivista set dataPubblicazione=? where id=? or id=?  ";
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+			prepQ.setDate(1, sqlDate);
+			prepQ.setInt(2, r.getId());
+			prepQ.setInt(row, vis.getId());
+			row=prepQ.executeUpdate();
+		}
+		java.util.logging.Logger.getLogger("aggiorna data giornale").log(Level.INFO, "rivista aggiornati {0}.",row);
+
+	}
+		
+	
 		
 }
 

@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.GiornaleDao;
 import laptop.model.raccolta.Giornale;
 
 @WebServlet("/InserisciOggettoServletGiornale")
@@ -22,6 +23,7 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static GiornaleBean gB=new GiornaleBean();
 	private static Giornale g=new Giornale();
+	private static GiornaleDao gD=new GiornaleDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -77,9 +79,9 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 					  g.setPrezzo(gB.getPrezzo());
 					  
 					  
-						if(gB.creaGiornale(g))
+						if(gD.creaGiornale(g))
 						{
-							gB.aggiornaData(g, sqlDate);
+							gD.aggiornaData(g, sqlDate);
 							
 							RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
 							view.forward(req,resp); 

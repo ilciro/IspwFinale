@@ -3,7 +3,9 @@ package web.servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import laptop.database.RivistaDao;
 import laptop.exception.IdException;
+import laptop.model.raccolta.Rivista;
 import web.bean.RivistaBean;
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
@@ -23,6 +25,8 @@ public class RivisteServlet extends HttpServlet {
 	private int dimensione=0;
 	private static RivistaBean rB=new RivistaBean();
 	private static String riviste="/riviste.jsp";
+	private static Rivista r=new Rivista();
+	private static RivistaDao rD=new RivistaDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,7 +36,7 @@ public class RivisteServlet extends HttpServlet {
 		String id=req.getParameter("idOgg");
 		
 		try {
-			dimensione =rB.getRiviste().size();
+			dimensione =rD.getRiviste().size();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}	
@@ -41,15 +45,20 @@ public class RivisteServlet extends HttpServlet {
 			if(g!=null && g.equals("genera lista"))
 			{
 			
-					
-			 
-				rB.setListaRiviste(rB.getRiviste());
+				rB.setListaRiviste(rD.getRiviste());
 				req.setAttribute("beanR",rB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(riviste); 
 				view.forward(req,resp);
-			
-			
+				
+				
+				
+				
 			}
+					
+				
+			
+			
+			
 			if(i!=null && i.equals("procedi"))
 			{
 				
@@ -59,12 +68,17 @@ public class RivisteServlet extends HttpServlet {
 					
 					
 					rB.setId(Integer.parseInt(id));
+					r.setId(rB.getId());
+					rB.setTitolo(rD.getTitolo(r));
 					SystemBean.getIstance().setId(rB.getId());
-					req.setAttribute("beanr",rB);
+					SystemBean.getIstance().setTitolo(rB.getTitolo());
+					req.setAttribute("beanL",rB);
 					req.setAttribute("bean1",SystemBean.getIstance());
+				
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
 					view.forward(req,resp);
 				}
+				
 				
 				
 			}

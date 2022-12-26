@@ -12,8 +12,6 @@ import java.util.logging.Level;
 import web.bean.CartaCreditoBean;
 import web.bean.GiornaleBean;
 import web.bean.LibroBean;
-import web.bean.PagamentoBean;
-import web.bean.RivistaBean;
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -21,6 +19,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.PagamentoDao;
+import laptop.database.RivistaDao;
 import laptop.model.CartaDiCredito;
 import laptop. model.Pagamento;
 import laptop.model.raccolta.Giornale;
@@ -39,11 +39,11 @@ public class CartaCreditoServlet extends HttpServlet {
 	private static CartaDiCredito cc;
 	private Libro l=new Libro();
 	private LibroBean lB=new LibroBean();
-	private PagamentoBean pB=new PagamentoBean();
 	private Giornale g=new Giornale();
 	private GiornaleBean gB=new GiornaleBean();
 	private Rivista r=new Rivista();
-	private RivistaBean rB=new RivistaBean();
+	private static RivistaDao rD=new RivistaDao();
+	private static PagamentoDao pD=new PagamentoDao();
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String n=req.getParameter("nomeL");
@@ -108,10 +108,13 @@ public class CartaCreditoServlet extends HttpServlet {
 					
 					if(SystemBean.getIstance().isNegozioSelezionato()==true)
 					{
+						req.setAttribute("bean1",SystemBean.getIstance());
+
 						RequestDispatcher view = getServletContext().getRequestDispatcher("/negozi.jsp"); 
 						view.forward(req,resp);
 					}
 					else {
+						req.setAttribute("bean1",SystemBean.getIstance());
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/download.jsp"); 
 					view.forward(req,resp);
 					}
@@ -193,7 +196,7 @@ public class CartaCreditoServlet extends HttpServlet {
 					l.setId(SystemBean.getIstance().getId());
 					p.setAmmontare(SystemBean.getIstance().getSpesaT());
 					p.setId(l.getId());
-					p.setTipo(lB.retTip(l));
+					p.setTipo(lB.getCategoria());
 				}
 			
 				if(tipo.equals("giornale"))
@@ -202,7 +205,7 @@ public class CartaCreditoServlet extends HttpServlet {
 					g.setId(SystemBean.getIstance().getId());
 					p.setAmmontare(SystemBean.getIstance().getSpesaT());
 					p.setId(g.getId());
-					p.setTipo(gB.retTip(g));
+					p.setTipo(gB.getTipologia());
 					
 				}
 				
@@ -212,11 +215,11 @@ public class CartaCreditoServlet extends HttpServlet {
 					r.setId(SystemBean.getIstance().getId());
 					p.setAmmontare(SystemBean.getIstance().getSpesaT());
 					p.setId(r.getId());
-					p.setTipo(rB.retTip(r));
+					p.setTipo(rD.retTip(r));
 					
 				}
 								
-				pB.inserisciPagamento(p);
+				pD.inserisciPagamento(p);
 		
 		
 

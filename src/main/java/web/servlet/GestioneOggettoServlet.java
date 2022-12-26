@@ -54,10 +54,10 @@ public class GestioneOggettoServlet extends HttpServlet {
 		if(genera!=null && genera.equals("genera lista"))
 		{
 			if (type.equals("libro"))
-				mOB.setMiaLista(lB.getLibri());
-			else if(type.equals("giornale"))
+				//mOB.setMiaLista(lB.getLibri());
+			 if(type.equals("giornale"))
 				mOB.setMiaLista(gB.getListaGiornali());
-			else if(type.equals("rivista"))
+			 if(type.equals("rivista"))
 				mOB.setMiaLista(rB.getListaRiviste());
 		
 			req.setAttribute("beanMOB",mOB);

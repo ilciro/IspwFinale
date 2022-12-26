@@ -13,6 +13,7 @@
 
 <h2>Scegliere il metodo di pagamento</h2>
 
+
 <form action="AcquistaServlet" method="post">
 <table>
 <caption></caption>
@@ -25,18 +26,16 @@
 titolo o nome oggetto :
 </td>
 <td>
-<input type="text" id="nome" name="nome"  class="automatic" value="${beanA.getTitolo() }">
+<input type="text" id="nome" name="nome"  class="automatic" value="${bean1.getTitolo() }">
 </td>
-<td>
-<input type="submit" id="buttonNome" name="buttonNome" value="prendi titolo">
-</td>
+
 </tr>
 <tr>
 <td>
 inserire quantita da acquistare :
 </td>
 <td>
-<input type="text" id="quantita" name="quantita" value="${bean1.getQuantita() }" >
+<input type="text" id="quantita" name="quantita" value="${bean1.getQuantita() }">
 </td>
 </tr>
 <tr>
@@ -44,11 +43,12 @@ inserire quantita da acquistare :
 totale da pagare :
 </td>
 <td>
-<input type="text" id="totale" name="totale" value="${bean1.getSpesaT()}">
+<input type="text" id="totale" name="totale" value="${bean1.getSpesaT() }">
 </td>
-<td>
+<td> 
 <input type="submit" id="totaleB" name="totaleB" value="calcola">
 </td>
+
 </tr>
 <tr>
 

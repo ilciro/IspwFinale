@@ -5,13 +5,9 @@ import java.sql.SQLException;
 
 import com.itextpdf.text.DocumentException;
 
-import web.bean.AcquistaBean;
 import web.bean.DownloadBean;
 import web.bean.FatturaBean;
-import web.bean.GiornaleBean;
-import web.bean.LibroBean;
-import web.bean.PagamentoBean;
-import web.bean.RivistaBean;
+
 import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -19,6 +15,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.GiornaleDao;
+import laptop.database.LibroDao;
+import laptop.database.PagamentoDao;
+import laptop.database.RivistaDao;
 import laptop.model.raccolta.Giornale;
 import laptop.model.raccolta.Libro;
 import laptop.model.raccolta.Rivista;
@@ -32,15 +32,14 @@ public class DownloadServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private DownloadBean dB=new DownloadBean();
 	private SystemBean sB=SystemBean.getIstance();
-	private AcquistaBean aB=new AcquistaBean();
 	private Libro l=new Libro();
 	private FatturaBean fB=new FatturaBean();
-	private PagamentoBean pB=new PagamentoBean();
-	private LibroBean lB=new LibroBean();
+	private static PagamentoDao pD=new PagamentoDao();
 	private Giornale g=new Giornale();
 	private Rivista r=new Rivista();
-	private GiornaleBean gB=new GiornaleBean();
-	private RivistaBean rB=new RivistaBean();
+	private static LibroDao lD=new LibroDao();
+	private static GiornaleDao gD=new GiornaleDao();
+	private static RivistaDao rD=new RivistaDao();
 	
 	
 	@Override
@@ -56,26 +55,26 @@ public class DownloadServlet extends HttpServlet{
 				{
 					case "libro":
 						dB.setId(sB.getId());
-						dB.setTitolo(aB.getTitolo());
+						dB.setTitolo(sB.getTitolo());
 						l.setId(sB.getId());
 						l.scarica();						
 						l.leggi(l.getId());
 						break;
 					case "giornale":
 						dB.setId(sB.getId());
-						dB.setTitolo(aB.getTitolo());
+						dB.setTitolo(sB.getTitolo());
 						g.setId(sB.getId());
 						g.scarica();						
 						g.leggi(g.getId());
 						break;
 					case "rivista":
 						dB.setId(sB.getId());
-						dB.setTitolo(aB.getTitolo());
+						dB.setTitolo(sB.getTitolo());
 						r.setId(sB.getId());
 						r.scarica();
 						r.leggi(r.getId());
 						break;
-						default:break;
+					default:break;
 				
 				}
 				
@@ -93,8 +92,8 @@ public class DownloadServlet extends HttpServlet{
 				int idF=fB.retUltimoOrdine(); //ultimo elemento (preso con count)
 				statusF=fB.annullaOrdine(idF);
 				
-				int idP=pB.retUltimoOrdine();
-				statusP=pB.annullaOrdine(idP);
+				int idP=pD.retUltimoOrdine();
+				statusP=pD.annullaOrdine(idP);
 				
 				
 						
@@ -104,15 +103,15 @@ public class DownloadServlet extends HttpServlet{
 						{
 							case "libro":
 							l.setId(sB.getId());
-							lB.aggiornaDisponibilita(l);
+							lD.aggiornaDisponibilita(l);
 							break;
 							case "giornale":
 								g.setId(sB.getId());
-								gB.aggiornaDisponibilita(g);
+								gD.aggiornaDisponibilita(g);
 								break;
 							case "rivista":
 								r.setId(sB.getId());
-								rB.aggiornaDisponibilita(r);
+								rD.aggiornaDisponibilita(r);
 								break;
 							default:break;
 	
@@ -122,21 +121,21 @@ public class DownloadServlet extends HttpServlet{
 						view.forward(req,resp);
 						
 					}
-					if( statusP && metodoP.equals("cCredito"))
+					 if( statusP && metodoP.equals("cCredito"))
 					{
 						switch(type)
 						{
 							case "libro":
 							l.setId(sB.getId());
-							lB.aggiornaDisponibilita(l);
+							lD.aggiornaDisponibilita(l);
 							break;
 							case "giornale":
 								g.setId(sB.getId());
-								gB.aggiornaDisponibilita(g);
+								gD.aggiornaDisponibilita(g);
 								break;
 							case "rivista":
 								r.setId(sB.getId());
-								rB.aggiornaDisponibilita(r);
+								rD.aggiornaDisponibilita(r);
 								break;
 							default:break;
 						}

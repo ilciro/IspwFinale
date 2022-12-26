@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.RivistaDao;
 import laptop.model.raccolta.Rivista;
 
 @WebServlet("/InserisciOggettoServletRivista")
@@ -25,6 +26,7 @@ public class InserisciOggettoServletRivista extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static RivistaBean rB=new RivistaBean();
 	private static Rivista r=new Rivista();
+	private static RivistaDao rD=new RivistaDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -118,9 +120,9 @@ public class InserisciOggettoServletRivista extends HttpServlet{
      			  
      			
      			
-     				if(Boolean.TRUE.equals(rB.creaRivista(r)))
+     				if(Boolean.TRUE.equals(rD.creaRivista(r)))
      				{
-     					rB.aggiornaData(r, sqlDate);
+     					rD.aggiornaData(r, sqlDate);
      					RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
      					view.forward(req,resp); 
      	

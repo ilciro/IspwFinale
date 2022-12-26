@@ -1,14 +1,9 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
 
+import laptop.database.GiornaleDao;
 import laptop.exception.IdException;
 import web.bean.GiornaleBean;
 import web.bean.SystemBean;
@@ -18,9 +13,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import laptop.model.raccolta.Factory;
-import laptop.model.raccolta.Raccolta;
-import laptop.utilities.ConnToDb;
+import laptop.model.raccolta.Giornale;
+
 
 @WebServlet("/GiornaliServlet")
 public class GiornaliServlet extends HttpServlet{
@@ -32,7 +26,8 @@ public class GiornaliServlet extends HttpServlet{
 	private static String giornali="/giornali.jsp";
 	private int dimensione=0;
 	private static GiornaleBean gB=new GiornaleBean();
-	private static String giornale="giornale";
+	private static GiornaleDao gD=new GiornaleDao();
+	private Giornale gior=new Giornale();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,7 +37,7 @@ public class GiornaliServlet extends HttpServlet{
 		String id=req.getParameter("idOgg");
 		
 		try {
-			dimensione =getGiornali().size();
+			dimensione =gD.getGiornali().size();
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}	
@@ -52,7 +47,7 @@ public class GiornaliServlet extends HttpServlet{
 			{
 			
 					
-				gB.setListaGiornali(getGiornali());
+				gB.setListaGiornali(gD.getGiornali());
 				
 				req.setAttribute("beanG",gB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(giornali); 
@@ -67,9 +62,14 @@ public class GiornaliServlet extends HttpServlet{
 				if((idO>=1) && (idO<getDim()))
 				{
 					
+				
+					gB.setId(idO);
+					gior.setId(gB.getId());
+					gB.setTitolo(gD.getTitolo(gior));
+					SystemBean.getIstance().setId(gB.getId());					
+					SystemBean.getIstance().setTitolo(gB.getTitolo());
+				
 					
-					gB.setId(Integer.parseInt(id));
-					SystemBean.getIstance().setId(gB.getId());
 					req.setAttribute("beanG",gB);
 					req.setAttribute("bean1",SystemBean.getIstance());
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/acquista.jsp"); 
@@ -103,35 +103,7 @@ public class GiornaliServlet extends HttpServlet{
 	}
 	
 	
-	public  List<Raccolta> getGiornali() throws SQLException   {
-
-		List<Raccolta> catalogo=new ArrayList<>();
-
-		Factory f=new Factory();
 	
-	
-		String query="select * from giornale";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);
-				ResultSet rs=prepQ.executeQuery())
-		{
-		while(rs.next())        
-
-		{
-			
-			f.createRaccoltaFinale1(giornale, rs.getString(1),rs.getString(2), null,rs.getString(3),rs.getString(4),null);
-			f.createRaccoltaFinale2(giornale,0,null,0,rs.getInt(7),rs.getFloat(8),rs.getInt(6));
-			catalogo.add(f.createRaccoltaFinaleCompleta(giornale, rs.getDate(5).toLocalDate(), null, null,rs.getInt(9)));
-		
-			
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("catalogo giornali").log(Level.INFO, "eccezione ottenuta :", e);
-		}
-
-	return catalogo;
-}
 	
 
 }

@@ -32,9 +32,6 @@ lingua
 editore
 </th>
 <th>
-descrizione
-</th>
-<th>
 data pubblicazione
 </th>
 <th>
@@ -60,7 +57,6 @@ id
 <td>${ lista.getAutore() }</td>
 <td>${ lista.getLingua() }</td>
 <td>${ lista.getEditore() }</td>
-<td>${ lista.getDescrizione() }</td>
 <td>${ lista.getDataPubb()}</td>
 <td>${ lista.getDisp() }</td>
 <td>${ lista.getPrezzo() }</td>
@@ -80,6 +76,7 @@ Inserire id di oggetto scelto:
 
 
 <input type="text" id="idOgg" name="idOgg">
+<br>
 <br>
 
 

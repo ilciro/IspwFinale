@@ -16,6 +16,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.LibroDao;
 import laptop.model.raccolta.Libro;
 
 @WebServlet("/InserisciOggettoServlet")
@@ -28,6 +29,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 	private static LibroBean lB=new LibroBean();
 	private static Libro l=new Libro();
 	private static ModificaOggettoBean mOB=new ModificaOggettoBean();
+	private static LibroDao lD=new LibroDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -108,7 +110,7 @@ public class InserisciOggettoServlet extends HttpServlet {
 			l.setEditore(lB.getEditore());
 			l.setAutore(lB.getAutore());
 			l.setLingua(lB.getLingua());
-			l.setCategoria(lB.getCategoriaD());
+			l.setCategoria(lB.getCategoria());
 			l.setDataPubb(localDate);
 			l.setRecensione(lB.getRecensione());
 			l.setDesc(lB.getDesc());
@@ -117,9 +119,9 @@ public class InserisciOggettoServlet extends HttpServlet {
 			l.setNrCopie(lB.getNrCopie());
 			
 				
-				if(lB.creaLibrio(l))
+				if(lD.creaLibrio(l))
 				{
-					lB.aggiornaData(l, sqlDate);
+					lD.aggiornaData(l, sqlDate);
 					req.setAttribute("bean", lB);
 					RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggettoPage.jsp"); 
 					view.forward(req,resp); 

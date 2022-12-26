@@ -15,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.PagamentoDao;
 import laptop.model.User;
 import laptop.utilities.ConnToDb;
 @WebServlet("/ProfiloServlet")
@@ -25,7 +26,7 @@ public class ProfiloServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 	private static PagamentoBean pB=new PagamentoBean();
-
+	private static PagamentoDao pD=new PagamentoDao();
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String dati=req.getParameter("prendiDatiB");
@@ -57,7 +58,7 @@ public class ProfiloServlet extends HttpServlet{
 		{
 			//prendo pagamento dao> lista pagamento
 			User.getInstance().setEmail(UserBean.getInstance().getEmail());
-			pB.setListaPagamenti(pB.getPagamentiList());
+			pB.setListaPagamenti(pD.getPagamenti());
 			req.setAttribute("bean", User.getInstance());
 			req.setAttribute("beanP", pB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/profilo.jsp"); 

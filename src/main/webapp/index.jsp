@@ -19,7 +19,7 @@ Scegliere quale oggetto si desidera
 
 
 
-<form action="IndexServlet" method="post">
+<form action="IndexServlet1" method="post">
 <table>
 <caption>
 scegliere tra libri , giornali e riviste

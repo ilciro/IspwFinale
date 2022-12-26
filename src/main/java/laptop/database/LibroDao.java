@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -688,6 +689,43 @@ public class LibroDao  {
 		
 		
 		return catalogo;
+
+	}
+	public String getTitolo(Libro l) 
+	{
+		String t="";
+		query="select titolo from libro where idProd=? or idProd=?";
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+			prepQ.setInt(1, l.getId());
+			prepQ.setInt(2, vis.getId());
+			ResultSet rs=prepQ.executeQuery();
+			if(rs.next())
+			{
+				t=rs.getString("titolo");
+			}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return t;
+	}
+
+	public void aggiornaData(Libro l, Date sqlDate) throws SQLException {
+		int row=0;
+		query="update libro set dataPubblicazione=? where idProd=? or idProd=?";
+		try(Connection conn=ConnToDb.generalConnection();
+				PreparedStatement prepQ=conn.prepareStatement(query);)
+		{
+			prepQ.setDate(1, sqlDate);
+			prepQ.setInt(2, l.getId());
+			prepQ.setInt(3, vis.getId());
+			row=prepQ.executeUpdate();
+			
+		}
+		
+		java.util.logging.Logger.getLogger("aggiorna data").log(Level.INFO, "libri aggiornati {0}.",row);
 
 	}
 
