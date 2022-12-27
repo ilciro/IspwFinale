@@ -76,7 +76,6 @@ public class GestioneOggettoServlet extends HttpServlet {
 		if(genera!=null && genera.equals("genera lista"))
 		{
 			
-		
 			req.setAttribute("beanMOB",mOB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
 			view.forward(req,resp);
@@ -86,11 +85,48 @@ public class GestioneOggettoServlet extends HttpServlet {
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
 			view.forward(req, resp);
 		}
-		if(modifica!=null && modifica.equals("modifica") && !"".equals(id))
+		
+		if(modifica!=null && modifica.equals("modifica"))
+		{
+			checkModifica(type,id);
+			RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
+			view.forward(req, resp);
+		}
+		
+		if(cancella!=null && cancella.equals("cancella") && !"".equals(id))
+		{
+			
+			checkCancella(type,id);
+			RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
+			view.forward(req, resp);
+		}
+		
+		if(indietro!=null && indietro.equals("indietro"))
+		{
+			RequestDispatcher view=getServletContext().getRequestDispatcher("/raccolta.jsp");
+			view.forward(req, resp);
+		}
+		
+		
+	
+	
+
+	
+	}catch(SQLException e)
+	{
+		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+
+	}
+	}
+	//used for checkData before modif
+
+	private void checkModifica(String type,String  id)
+	{
+		if(!"".equals(id))
 		{
 			if(type.equals(libro))
 			{
-				lB.setId(Integer.parseInt(type));
+				lB.setId(Integer.parseInt(id));
 				SystemBean.getIstance().setId(lB.getId());
 				l.setId(lB.getId());
 			}
@@ -107,10 +143,12 @@ public class GestioneOggettoServlet extends HttpServlet {
 				r.setId(rB.getId());
 			
 			}
-			RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
-			view.forward(req, resp);
 		}
-		if(cancella!=null && cancella.equals("cancella") && !"".equals(id))
+	}
+	//used for checkData before delete
+	private void checkCancella(String type,String  id) throws SQLException
+	{
+		if(!"".equals(id))
 		{
 			if(type.equals(libro))
 			{
@@ -131,22 +169,6 @@ public class GestioneOggettoServlet extends HttpServlet {
 				r.setId(rB.getId());
 				rD.cancella(r);
 			}
-			RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
-			view.forward(req, resp);
-		}
-		if(indietro!=null && indietro.equals("indietro"))
-		{
-			RequestDispatcher view=getServletContext().getRequestDispatcher("/raccolta.jsp");
-			view.forward(req, resp);
-		}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
-
 		}
 	}
-	
-	
-
-	
 }

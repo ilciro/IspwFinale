@@ -1,9 +1,7 @@
 package web.servlet;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 
@@ -14,8 +12,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.NegozioDao;
 import laptop.model.Negozio;
-import laptop.utilities.ConnToDb;
 
 @WebServlet("/NegozioServlet")
 public class NegozioServlet extends HttpServlet {
@@ -26,8 +24,8 @@ public class NegozioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static NegozioBean nB=new NegozioBean();
 	private static Negozio n=new Negozio();
-	private static String eccezione=" eccezione ottenuta";
 	private static String index="/index.jsp";
+	private static NegozioDao nD=new NegozioDao();
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -42,18 +40,12 @@ public class NegozioServlet extends HttpServlet {
 			nB.setNome("Negozio A");
 			
 			n.setNome(nB.getNome());
-			n.setIsOpen(checkOpen(n));
-			n.setIsValid(checkRitiro(n));
+			n.setIsOpen(nD.checkOpen(n));
+			n.setIsValid(nD.checkRitiro(n));
 			nB.setApertura(n.getIsOpen());
 			nB.setDisponibile(n.getIsValid());
 			
-			
-			
-			if(nB.isApertura() && nB.isDisponibile())
-			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-				view.forward(req,resp);
-			}
+			checkDisp(n,req,resp);
 			
 		
 		}
@@ -61,48 +53,40 @@ public class NegozioServlet extends HttpServlet {
 		{
 			nB.setNome("Negozio B");
 			n.setNome(nB.getNome());
-			n.setIsOpen(checkOpen(n));
-			n.setIsValid(checkRitiro(n));
+			n.setIsOpen(nD.checkOpen(n));
+			n.setIsValid(nD.checkRitiro(n));
 			nB.setApertura(n.getIsOpen());
 			nB.setDisponibile(n.getIsValid());
 			
-			if(nB.isApertura() && nB.isDisponibile())
-			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-				view.forward(req,resp);
-			}
+			checkDisp(n,req,resp);
+
 			
 		}
 		if(neg3!=null && neg3.equals("Negozio C"))
 		{
 			nB.setNome("Negozio C");
 			n.setNome(nB.getNome());
-			n.setIsOpen(checkOpen(n));
-			n.setIsValid(checkRitiro(n));
+			n.setIsOpen(nD.checkOpen(n));
+			n.setIsValid(nD.checkRitiro(n));
 			nB.setApertura(n.getIsOpen());
 			nB.setDisponibile(n.getIsValid());
 			
-			if(nB.isApertura() && nB.isDisponibile())
-			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-				view.forward(req,resp);
-			}
+			checkDisp(n,req,resp);
+
 			
 		}
 		if(neg4!=null && neg4.equals("Negozio D"))
 		{
 			nB.setNome("Negozio D");
 			n.setNome(nB.getNome());
-			n.setIsOpen(checkOpen(n));
-			n.setIsValid(checkRitiro(n));
+			n.setIsOpen(nD.checkOpen(n));
+			n.setIsValid(nD.checkRitiro(n));
 			nB.setApertura(n.getIsOpen());
 			nB.setDisponibile(n.getIsValid());
 			
-			if(nB.isApertura() && nB.isDisponibile())
-			{
-				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-				view.forward(req,resp);
-			}
+			checkDisp(n,req,resp);
+
+			
 			
 		}
 		else {
@@ -117,61 +101,16 @@ public class NegozioServlet extends HttpServlet {
 		}
 		
 	}
-	
-	public boolean checkOpen(Negozio  shop) throws SQLException
+	//userd for check if negozio is avalaible for pickup
+	//and if negozio is open
+	private void checkDisp(Negozio n,HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
 	{
-		int aperto=0;
-		boolean state=false;
-		String query="select isOpen from negozio where nome=?";
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareCall(query);)
+		if(n.getIsOpen() && n.getIsValid())
 		{
-			prepQ.setString(1, shop.getNome());
-			ResultSet rs=prepQ.executeQuery();
-			while(rs.next()){
-				aperto=rs.getInt(1);
-				if(aperto==1)
-					state=true;
-				
-			}
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
+			RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
+			view.forward(req,resp);
 		}
-			 
-			
-		
-		return state;
 	}
-
 	
-	//controllo se il negozio fa PickUP
-	public boolean checkRitiro(Negozio shop) throws SQLException
-	{
-		String query="select isValid from negozio where nome=?";
-		boolean state=false;
-		int disp;
-		
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			prepQ.setString(1, shop.getNome());
-			ResultSet rs=prepQ.executeQuery();
-			while ( rs.next() ) {
-
-					disp=rs.getInt(1);
-					if (disp==1)
-						state=true;
-				
-						
-			}
-			
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, eccezione, e);
-		}
-			
-		return state;
-	}
-
+	
 }

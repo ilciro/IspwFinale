@@ -126,12 +126,12 @@ public class CartaCreditoServlet extends HttpServlet {
 		}
 		if(registra!=null && registra.equals("registra e paga"))
 		{
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "da fare");;
+			java.util.logging.Logger.getLogger("post registra ").log(Level.INFO, "da fare");
 
 		}
 		if(generaLista!=null && generaLista.equals("generaLista"))
 		{
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "da fare");;
+			java.util.logging.Logger.getLogger("post genera").log(Level.INFO, "da fare");
 
 		}
 		

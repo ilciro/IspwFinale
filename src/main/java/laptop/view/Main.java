@@ -47,7 +47,7 @@ public class Main  extends Application {
 			
 
 		} catch (FileNotFoundException  |SQLException  eFile) {
-			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE,"\n eccezione ottenuta .",eFile.toString());
+			java.util.logging.Logger.getLogger("crwa db").log(Level.SEVERE,"\n eccezione ottenuta .",eFile);
 
 		}
 			

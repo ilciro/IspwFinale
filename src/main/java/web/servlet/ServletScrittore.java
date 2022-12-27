@@ -9,6 +9,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import laptop.database.UsersDao;
+import laptop.exception.LogoutException;
 
 @WebServlet("/ServletScrittore")
 
@@ -26,7 +28,7 @@ public class ServletScrittore extends HttpServlet {
 		String buttonR=req.getParameter("buttonR");
 		String buttonGestione=req.getParameter("buttonGestione");
 		String buttonRic=req.getParameter("buttonRic");
-		//String logoutB=req.getParameter("logoutB");
+		String logoutB=req.getParameter("logoutB");
 		String profiloB=req.getParameter("profiloB");
 		try {
 		if(buttonL!=null && buttonL.equals("libri"))
@@ -56,13 +58,13 @@ public class ServletScrittore extends HttpServlet {
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/ricerca.jsp");
 			view.forward(req, resp);
 		}
-		/*
+		
 		if(logoutB!=null && logoutB.equals("logout") &&(UsersDao.logout()))
 				{
 					RequestDispatcher view=getServletContext().getRequestDispatcher("/index.jsp");
 					view.forward(req, resp);
 				}
-			*/
+			
 		if(profiloB!=null && profiloB.equals("vai al profilo"))
 		{
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/profilo.jsp");
@@ -70,10 +72,11 @@ public class ServletScrittore extends HttpServlet {
 		}
 		
 		
-	} catch ( ServletException | IOException e) {
+	} catch ( ServletException | IOException |LogoutException e) {
 		java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
 
-	}
 	
+	
+	}
 	}
 }

@@ -51,9 +51,8 @@ public class RicercaServlet extends HttpServlet {
 		{
 			if(SystemBean.getIstance().getIsLogged())
 			{
-				/*
-				 * TODO vedere
-				 */
+				RequestDispatcher view=getServletContext().getRequestDispatcher("/scrittore.jsp");
+				view.forward(req, resp);
 			}
 			else {
 					RequestDispatcher view=getServletContext().getRequestDispatcher("/index.jsp");
