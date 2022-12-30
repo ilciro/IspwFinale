@@ -14,12 +14,7 @@
 
 <h2> Scegliere i campi da modificare</h2>
 
-<%
-	/*
-	*  TODO Cancellare riga sotto
-	*/
-	SystemBean.getIstance().setTypeAsMagazine();
-%>
+
 <c:set var = "tipo" scope = "session" value = "${SystemBean.getIstance().getType() }"/>
 
 <form action="ModificaLibroServlet" method="post">
@@ -307,7 +302,6 @@ elenco categorie possibili:
 <textarea rows="10" cols="50" id="categoriePossibili" name="categoriePossibili" >
 ${beanMOBR.elencoCategorie()}
 </textarea>
-<input type="submit" id="buttonCat" name="buttonCat" value="elenco categorie" class="categorie">
 </div>
 <div class="column">
 
@@ -333,7 +327,7 @@ editore da aggiornare:
 <br>
 descrizione da aggiornare:
 <label for="descNR"></label>
-<textarea rows="10" cols="50">
+<textarea rows="10" cols="50" id="descNR" name="descNR">
 </textarea>
 <br>
 <br>

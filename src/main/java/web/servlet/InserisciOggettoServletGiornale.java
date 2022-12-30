@@ -102,7 +102,7 @@ public class InserisciOggettoServletGiornale extends HttpServlet{
 			}
 			
 		} catch (ParseException |SQLException |ServletException e) {
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post {0}.",e.toString());
+			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e);
 
 	    
 		

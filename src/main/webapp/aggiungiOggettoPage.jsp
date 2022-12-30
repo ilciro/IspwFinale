@@ -15,12 +15,6 @@
 
 <h2> compilare il form</h2>
 
-<%
-	/*
-	*TODO cancella riga sotto
-	*/
-%>
-
 
  
 <c:set var = "tipo" scope = "session" value = "${bean1.getType() }"/>

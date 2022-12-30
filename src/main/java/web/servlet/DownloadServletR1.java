@@ -1,14 +1,5 @@
 package web.servlet;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.sql.SQLException;
-
-import com.itextpdf.text.DocumentException;
-
-import web.bean.DownloadBean;
-
-import web.bean.SystemBean;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,33 +7,49 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import laptop.database.ContrassegnoDao;
-import laptop.database.LibroDao;
 import laptop.database.PagamentoDao;
-import laptop.model.raccolta.Libro;
+import laptop.database.RivistaDao;
+import laptop.model.raccolta.Rivista;
+import web.bean.DownloadBean;
+import web.bean.SystemBean;
 
-@WebServlet("/DownloadServlet")
-public class DownloadServlet extends HttpServlet{
+import java.io.IOException;
+import java.sql.SQLException;
 
-	/**
-	 * 
-	 */
+import com.itextpdf.text.DocumentException;
+
+/**
+ * Servlet implementation class DownloadServletR
+ */
+@WebServlet("/DownloadServletR1")
+public class DownloadServletR1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static DownloadBean dB=new DownloadBean();
 	private static SystemBean sB=SystemBean.getIstance();
-	private static Libro l=new Libro();
+	private static Rivista r=new Rivista();
 	private static PagamentoDao pD=new PagamentoDao();
-	private static LibroDao lD=new LibroDao();
+	private static RivistaDao  rD=new RivistaDao();
 	private static ContrassegnoDao fDao=new ContrassegnoDao();
-
-	
-	
 	private static String index="/index.jsp";
+
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+   
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	
-	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String invia=req.getParameter("downloadB");
-		String annulla=req.getParameter("annullaB");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String invia=request.getParameter("downloadB");
+		String annulla=request.getParameter("annullaB");
 		
 		try {
 			if(invia!=null && invia.equals("scarica e leggi") )
@@ -51,13 +58,13 @@ public class DownloadServlet extends HttpServlet{
 				
 						dB.setId(sB.getId());
 						dB.setTitolo(sB.getTitolo());
-						l.setId(sB.getId());
-						l.scarica();						
-						l.leggi(l.getId());
+						r.setId(sB.getId());
+						r.scarica();						
+						r.leggi(r.getId());
 				
-				req.setAttribute("bean",dB);
+				request.setAttribute("bean",dB);
 				RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-				view.forward(req,resp);
+				view.forward(request,response);
 			}
 			if(annulla!=null && annulla.equals("annulla"))
 			{
@@ -78,24 +85,24 @@ public class DownloadServlet extends HttpServlet{
 					if(statusF && statusP && metodoP.equals("cash"))
 					{
 						
-							l.setId(sB.getId());
-							lD.aggiornaDisponibilita(l);
+							r.setId(sB.getId());
+							rD.aggiornaDisponibilita(r);
 						
 						
-						req.setAttribute("bean",dB);
+						request.setAttribute("bean",dB);
 						RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-						view.forward(req,resp);
+						view.forward(request,response);
 						
 						
 					}
 					 if( statusP && metodoP.equals("cCredito"))
 					{
 						
-							l.setId(sB.getId());
-							lD.aggiornaDisponibilita(l);
-							req.setAttribute("bean",dB);
+							r.setId(sB.getId());
+							rD.aggiornaDisponibilita(r);
+							request.setAttribute("bean",dB);
 							RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-							view.forward(req,resp);
+							view.forward(request,response);
 						
 						
 						
@@ -108,23 +115,16 @@ public class DownloadServlet extends HttpServlet{
 			}
 			
 				
-		}catch(SQLException | DocumentException |URISyntaxException  e)
+		}catch(SQLException | DocumentException  e)
 		{
-			req.setAttribute("bean",dB);
+			request.setAttribute("bean",dB);
 			RequestDispatcher view = getServletContext().getRequestDispatcher(index); 
-			view.forward(req,resp);
+			view.forward(request,response);
 		
 		}
 		
 	}
 	
 	
+
 }
-				
-		
-		
-	
-	
-	
-
-

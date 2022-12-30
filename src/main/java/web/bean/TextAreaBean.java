@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 import laptop.model.TempUser;
@@ -16,6 +17,8 @@ public class TextAreaBean {
 	private String scrivi;
 	private static String ricavoTotale="Ricavo totale :";
 	private static String titolo=" Titolo :";
+	private static ResourceBundle rB=ResourceBundle.getBundle("configurations/reportsPath");
+
 
 	public String getScrivi() {
 		return scrivi;
@@ -29,8 +32,9 @@ public class TextAreaBean {
 	{
 		StringBuilder s=new StringBuilder();
 
+
 		FileWriter w=null;
-		w=new FileWriter("ReportFinale\\riepilogoLibro.txt");
+		w=new FileWriter(rB.getString("libri"));
 		String query="select titolo,copieVendute,prezzo as totale from libro";
 		
 		   try (BufferedWriter b=new BufferedWriter (w)){
@@ -84,7 +88,7 @@ public class TextAreaBean {
 				FileWriter w;
 				StringBuilder s=new StringBuilder();
 				String query="select titolo,editore,copieRimanenti,prezzo as totale  from ispw.rivista";
-		        w=new FileWriter("ReportFinale\\riepilogoRiviste.txt");
+				w=new FileWriter(rB.getString("riviste"));
 		        
 		        
 		        try (BufferedWriter b=new BufferedWriter (w)){
@@ -145,7 +149,7 @@ public class TextAreaBean {
 		FileWriter w;
 		StringBuilder s=new StringBuilder();
 		String query="select titolo,editore,copiRim,prezzo as totale  from ispw.giornale";
-		w=new FileWriter("ReportFinale\\riepilogoGiornali.txt");
+		w=new FileWriter(rB.getString("giornali"));
 		   try (BufferedWriter b=new BufferedWriter (w)){
 			   try(Connection conn=ConnToDb.generalConnection();
 					   PreparedStatement prepQ=conn.prepareStatement(query);)
@@ -206,7 +210,7 @@ public class TextAreaBean {
 		String query="select * from ispw.users";
 		StringBuilder s=new StringBuilder();
 		FileWriter w;
-		w=new FileWriter("ReportFinale\\riepilogoUtenti.txt");
+		w=new FileWriter(rB.getString("utenti"));
 
 		
 		try (BufferedWriter b=new BufferedWriter (w)) {

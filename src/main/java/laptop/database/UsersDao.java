@@ -195,6 +195,7 @@ public class UsersDao {
 	{
 
 		
+		System.out.println("email :"+u.getEmail());
 
 			
 			
@@ -207,7 +208,7 @@ public class UsersDao {
 				ResultSet rs = prepQ.executeQuery();
 				while(rs.next())
 				{
-					r =rs.getString(1);
+					r =rs.getString("idRuolo");
 	
 				}
 			

@@ -709,7 +709,7 @@ public class GiornaleDao {
 		{
 			prepQ.setDate(1, sqlDate);
 			prepQ.setInt(2, g.getId());
-			prepQ.setInt(row, vis.getId());
+			prepQ.setInt(3, vis.getId());
 			row=prepQ.executeUpdate();
 		}
 		java.util.logging.Logger.getLogger("aggiorna data giornale").log(Level.INFO, "giornali aggiornati {0}.",row);

@@ -216,7 +216,8 @@
     <sonar.coverage.jacoco.xmlReportPaths>../app-it/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <sonar.language>java</sonar.language>
     
-    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/**</sonar.exclusions>
+    <sonar.exclusions>**/src/main/java/laptop/view/**,**/src/test/java/**,
+    **/src/main/java/web/bean/**,**/src/main/java/web/servlet/**</sonar.exclusions>
     
   </properties>
 </project>

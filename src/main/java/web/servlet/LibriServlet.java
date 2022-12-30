@@ -2,7 +2,6 @@ package web.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.logging.Level;
 
 import laptop.database.LibroDao;
 import laptop.exception.IdException;
@@ -37,12 +36,9 @@ public class LibriServlet extends HttpServlet {
 		
 		try {
 			dimensione =lD.getLibri().size();
-		} catch (SQLException e1) {
-			java.util.logging.Logger.getLogger("post ").log(Level.INFO, "eccezione nel post .",e1);
-
-		}	
+		
 		setDim(dimensione);
-		try {
+		
 			if(g!=null && g.equals("genera lista"))
 			{
 			

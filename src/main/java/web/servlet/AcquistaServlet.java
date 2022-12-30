@@ -44,6 +44,7 @@ public class AcquistaServlet extends HttpServlet {
 	public AcquistaServlet()
 	{
 		super();
+		System.out.println("rwdvcewsf"+SystemBean.getIstance().getType());
 		if(SystemBean.getIstance().getType().equals("libro"))
 		{
 			lB.setId(SystemBean.getIstance().getId());

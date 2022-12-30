@@ -33,7 +33,6 @@ public class ModificaRivistaServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String prendiDati=req.getParameter("listaB");
-		String categ=req.getParameter("buttonCat");
 		String aggiorna=req.getParameter("buttonI");
 		String annulla=req.getParameter("buttonA");
 		
@@ -46,14 +45,11 @@ public class ModificaRivistaServlet extends HttpServlet{
 			if(prendiDati!=null && prendiDati.equals("prendi dati"))
 			{
 				req.setAttribute("beanMOB", mOB);
-				RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
-				view.forward(req, resp);
-			}
-			if(categ!=null && categ.equals("elenco categorie"))
-			{
 				req.setAttribute("beanMOBR",rB);
 				RequestDispatcher view=getServletContext().getRequestDispatcher("/modificaOggettoPage.jsp");
 				view.forward(req, resp);
+			
+				
 			}
 			if(aggiorna!=null && aggiorna.equals("aggiorna"))
 			{

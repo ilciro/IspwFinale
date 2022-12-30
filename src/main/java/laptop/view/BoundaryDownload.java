@@ -1,6 +1,7 @@
 package laptop.view;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -47,7 +48,7 @@ public class BoundaryDownload implements Initializable {
 	protected Scene scene;
 
 	@FXML
-	private void scarica() throws IOException, DocumentException {
+	private void scarica() throws IOException, DocumentException, URISyntaxException {
 		
 		a = new Alert(Alert.AlertType.CONFIRMATION);
 		a.setTitle("Download effettuato");

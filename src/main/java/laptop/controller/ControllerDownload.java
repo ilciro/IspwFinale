@@ -1,6 +1,7 @@
 package laptop.controller;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.UUID;
 
@@ -29,7 +30,7 @@ public class ControllerDownload {
 	private Rivista r;
 	
 	private  Libro l;
-	public void scaricaLibro() throws DocumentException, IOException {
+	public void scaricaLibro() throws DocumentException, IOException, URISyntaxException {
 		l.setId(vis.getId());		
 		l.scarica();		
 		l.leggi(vis.getId());

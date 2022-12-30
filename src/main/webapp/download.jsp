@@ -16,7 +16,7 @@
 <br>
 
 
-<c:set var = "tipo" scope = "session" value = "giornale"/>
+<c:set var = "tipo" scope = "session" value = "${bean1.getType() }"/>
 
 <c:choose>
 <c:when test="${ tipo=='libro'}">
@@ -33,7 +33,7 @@ titolo del libro da scaricare:
 </form>
 </c:when>
 <c:when test="${ tipo=='giornale'}">
-<form action="DownloadServletG" method="post">
+<form action="DownloadServletG1" method="post">
 <div>
 titolo del giornale da scaricare:
 <input type="text" id="titoloL" name="titoloL" value="${bean1.getTitolo()}">
@@ -46,7 +46,7 @@ titolo del giornale da scaricare:
 </form>
 </c:when>
 <c:when test="${ tipo=='rivista'}">
-<form action="DownloadServletR" method="post">
+<form action="DownloadServletR1" method="post">
 <div>
 titolo della rivista da scaricare:
 <input type="text" id="titoloL" name="titoloL" value="${bean1.getTitolo()}">

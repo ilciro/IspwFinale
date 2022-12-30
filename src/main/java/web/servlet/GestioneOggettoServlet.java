@@ -75,13 +75,15 @@ public class GestioneOggettoServlet extends HttpServlet {
 		try {
 		if(genera!=null && genera.equals("genera lista"))
 		{
-			
 			req.setAttribute("beanMOB",mOB);
+			req.setAttribute("beanS",SystemBean.getIstance());
 			RequestDispatcher view = getServletContext().getRequestDispatcher("/gestioneOggetto.jsp"); 
 			view.forward(req,resp);
 		}
 		if(aggiungi!=null && aggiungi.equals("inserisci"))
 		{
+			req.setAttribute("bean1",SystemBean.getIstance());
+
 			RequestDispatcher view=getServletContext().getRequestDispatcher("/aggiungiOggettoPage.jsp");
 			view.forward(req, resp);
 		}

@@ -13,10 +13,6 @@
 
 <h2> Inserire le credenziali</h2>
 
-<p>
-aaaaa
-${aB.getTitolo() }
-</p>
 
 <form action="FatturaServlet" method="post">
 <table>

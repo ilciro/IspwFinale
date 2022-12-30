@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -320,7 +320,7 @@ class TestLaptop {
 	}
 	@ParameterizedTest
 	@ValueSource(ints= {1,2,3,4,5,6,7,8,9,10,11,12})
-	void testScaricaLibro(int ints) throws DocumentException, IOException {
+	void testScaricaLibro(int ints) throws DocumentException, IOException, URISyntaxException {
 		vis.setId(ints);
 		cD.scaricaLibro();
 		assertEquals(ints,vis.getId());

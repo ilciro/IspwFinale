@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 				User.getInstance().setPassword(UserBean.getInstance().getPassword());
 				
 				
+				
 				String ruolo=UsersDao.getRuolo(User.getInstance());
 				
 				if(ruolo.equalsIgnoreCase("a"))

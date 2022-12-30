@@ -3,6 +3,7 @@ package laptop.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -516,7 +517,7 @@ class TestLaptop2 {
 	
 	@ParameterizedTest
 	@ValueSource(ints= {1,5,6,7})
-	void testLeggiL(int ints) throws IOException, DocumentException
+	void testLeggiL(int ints) throws IOException, DocumentException, URISyntaxException
 	{
 		l.setId(ints);
 		l.leggi(ints);

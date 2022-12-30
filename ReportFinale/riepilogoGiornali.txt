@@ -1,12 +1,12 @@
-Titolo :cambio giornale	Editore :cambio ediitore	Ricavo totale :-6.25
-Titolo :La Republica2	Editore :La Republica	Ricavo totale :6.0
-Titolo :La Republica3	Editore :La Republica	Ricavo totale :94.0
-Titolo :La Republica4	Editore :La Republica	Ricavo totale :28.0
-Titolo :La Republica5	Editore :La Republica	Ricavo totale :20.0
-Titolo :La Republica6	Editore :La Republica	Ricavo totale :30.0
-Titolo :Il Fatto Quotidiano1	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano2	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano3	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
-Titolo :Il Fatto Quotidiano4	Editore :Il Fatto Quotidiano	Ricavo totale :30.0
-Titolo :La gazzetta del profeta	Editore :Hoepli	Ricavo totale :17.0
-Titolo :giornale da inserire	Editore :editore ins prova	Ricavo totale :245.0
+ Titolo :La Republica1	Editore :La Republica	Ricavo totale :0.0
+ Titolo :La Republica2	Editore :La Republica	Ricavo totale :0.0
+ Titolo :La Republica3	Editore :La Republica	Ricavo totale :20.0
+ Titolo :La Republica4	Editore :La Republica	Ricavo totale :28.0
+ Titolo :La Republica5	Editore :La Republica	Ricavo totale :20.0
+ Titolo :La Republica6	Editore :La Republica	Ricavo totale :30.0
+ Titolo :Il Fatto Quotidiano1	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
+ Titolo :Il Fatto Quotidiano2	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
+ Titolo :Il Fatto Quotidiano3	Editore :Il Fatto Quotidiano	Ricavo totale :0.0
+ Titolo :Il Fatto Quotidiano4	Editore :Il Fatto Quotidiano	Ricavo totale :30.0
+ Titolo :Il Fatto Quotidiano5	Editore :Il Fatto Quotidiano	Ricavo totale :32.0
+ Titolo :La gazzetta del profeta	Editore :Hoepli	Ricavo totale :17.0

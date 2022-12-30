@@ -4,7 +4,9 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -236,24 +238,27 @@ public class Libro implements Raccolta {
 
 	}
 	@Override
-	public void leggi(int i) throws IOException, DocumentException {
+	public void leggi(int i) throws IOException, DocumentException, URISyntaxException {
 		Document document=null;
 		File file;
+		
+		ResourceBundle rB=ResourceBundle.getBundle("configurations/booksPath");
+
 		
 		if(i==1)
 		{
 	   		document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Alessandro Coppola - Apocalypse Town.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Alessandro Coppola - Apocalypse Town.pdf");
-	        Desktop.getDesktop().open(file);
+			file=new File(rB.getString("path1"));
+			Desktop.getDesktop().open(file);
 	     }
 		if (i==2)
 		{
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Andrea Baranes - Dobbiamo restituire.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Andrea Baranes - Dobbiamo restituire.pdf");
+			file=new File(rB.getString("path2"));
 	        Desktop.getDesktop().open(file);
 		}
 		if (i==3)
@@ -262,7 +267,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Ariel Toaff, Elio Toaff - Zohar. Il libro dello splendore.pdf");
+			file=new File(rB.getString("path3"));
 	        Desktop.getDesktop().open(file);
 					
 		}
@@ -272,7 +277,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Come i servizi segreti usano i media - Aldo Giannuli.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Come i servizi segreti usano i media - Aldo Giannuli.pdf");
+			file=new File(rB.getString("path4"));
 	        Desktop.getDesktop().open(file);
 					
 		}
@@ -281,7 +286,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Donald Davidson - Sulla verit (2006).pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Donald Davidson - Sulla verita (2006).pdf");
+			file=new File(rB.getString("path5"));
 	        Desktop.getDesktop().open(file);
 		}
 		if(i==6)
@@ -289,8 +294,9 @@ public class Libro implements Raccolta {
 
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\eragon.pdf"));
-   			document.open();	   		
-			file=new File("libriPerSito\\eragon.pdf");
+   			document.open();	
+			file=new File(rB.getString("path6"));
+			
 	        Desktop.getDesktop().open(file);
 		}
 		if(i==8)
@@ -298,7 +304,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Gershom Scholem - Alchimia E Kabbalah.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Gershom Scholem - Alchimia E Kabbalah.pdf");
+			file=new File(rB.getString("path7"));
 	        Desktop.getDesktop().open(file);
 		}
 		if (i==9)
@@ -306,7 +312,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Excell - Giampietro Lanzanova.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Excell - Giampietro Lanzanova.pdf");
+			file=new File(rB.getString("path9"));
 	        Desktop.getDesktop().open(file);
 		}
 		if (i==10)
@@ -314,7 +320,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Giocatore5.pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Giocatore5.pdf");
+			file=new File(rB.getString("path10"));
 	        Desktop.getDesktop().open(file);
 		}
 		if (i==11)
@@ -322,7 +328,7 @@ public class Libro implements Raccolta {
 			document = new Document();
    			PdfWriter.getInstance(document, new FileOutputStream("C:\\libriScaricati\\Grammatica italiana-Garzanti(le garzantine)(2012).pdf"));
    			document.open();	   		
-			file=new File("libriPerSito\\Grammatica italiana-Garzanti(le garzantine)(2012).pdf");
+			file=new File(rB.getString("path11"));
 	        Desktop.getDesktop().open(file);
 		}
 		else {

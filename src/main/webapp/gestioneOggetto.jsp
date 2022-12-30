@@ -45,19 +45,48 @@ id
 </tr>
 
 
+
+<c:set var = "tipo" scope = "session" value = "${beanS.getType() }"/>
+
+<c:choose>
+<c:when test="${ tipo=='libro'}">
 <c:forEach items="#{beanMOB.miaLista }" var="lista">
 <tr>
-
 <td>${ lista.getTitolo() }</td>
 <td>${ lista.getCategoria()}</td>
 <td>${ lista.getEditore()}</td>
 <td>${ lista.getAutore()}</td>
 <td>${ lista.getPrezzo() }</td>
 <td>${ lista.getId()}</td>
-
 </tr>
 </c:forEach>
+</c:when>
 
+<c:when test="${ tipo=='giornale'}">
+<c:forEach items="#{beanMOB.miaLista }" var="lista">
+<tr>
+<td>${ lista.getTitolo() }</td>
+<td>QUOTIDIANO</td>
+<td>${ lista.getEditore()}</td>
+<td> NULL </td>
+<td>${ lista.getPrezzo() }</td>
+<td>${ lista.getId()}</td>
+</tr>
+</c:forEach>
+</c:when>
+<c:when test="${ tipo=='rivista'}">
+<c:forEach items="#{beanMOB.miaLista }" var="lista">
+<tr>
+<td>${ lista.getTitolo() }</td>
+<td>NULL</td>
+<td>${ lista.getEditore()}</td>
+<td>${ lista.getAutore()}</td>
+<td>${ lista.getPrezzo() }</td>
+<td>${ lista.getId()}</td>
+</tr>
+</c:forEach>
+</c:when>
+</c:choose>
 
 </table>
 

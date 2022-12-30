@@ -4,14 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.time.LocalDate;
-import java.util.logging.Level;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -332,24 +329,6 @@ class TestLaptop3 {
 		User.getInstance().setId(5);
 		assertTrue(cCU.cancellaUser());
 	}
-	@AfterAll
-	static void testRimuoviDB()
-	{
-		String query="drop schema ispw";
-		int row=0;
-		try(Connection conn=ConnToDb.generalConnection();
-				PreparedStatement prepQ=conn.prepareStatement(query);)
-		{
-			row=prepQ.executeUpdate();
-		}catch(SQLException e)
-		{
-			java.util.logging.Logger.getLogger("cancella db").log(Level.INFO,"errore nel db \n");
-
-		}
-		java.util.logging.Logger.getLogger("cancella db").log(Level.INFO,"db cancellato \n");
-
-
-		assertEquals(11,row);
-	}
+	
 
 }
