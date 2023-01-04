@@ -25,7 +25,6 @@ import laptop.model.Pagamento;
 import laptop.model.TempUser;
 import laptop.model.User;
 import laptop.model.raccolta.Rivista;
-import laptop.utilities.ConnToDb;
 
 class TestLaptop3 {
 	private PagamentoDao pD=new PagamentoDao();

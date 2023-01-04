@@ -195,8 +195,7 @@ public class UsersDao {
 	{
 
 		
-		System.out.println("email :"+u.getEmail());
-
+		
 			
 			
 			query="SELECT idRuolo FROM ispw.users where Email = ?";
