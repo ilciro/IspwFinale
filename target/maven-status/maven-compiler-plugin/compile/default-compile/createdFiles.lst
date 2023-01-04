@@ -55,6 +55,7 @@ laptop\model\raccolta\Rivista.class
 laptop\controller\ControllerVisualizzaProfilo.class
 laptop\model\Negozio.class
 laptop\controller\ControllerRegistraUtente.class
+web\servlet\DownloadServletR1.class
 laptop\database\RivistaDao.class
 laptop\database\UsersDao.class
 web\bean\DownloadBean.class
@@ -78,7 +79,6 @@ web\servlet\GestioneOggettoServlet.class
 laptop\exception\LogoutException.class
 laptop\model\Fattura.class
 web\servlet\DownloadServlet.class
-web\servlet\DownloadServletG.class
 laptop\controller\ControllerLogin.class
 laptop\controller\ControllerRicercaPage.class
 laptop\controller\ControllerAcquista.class
@@ -103,6 +103,7 @@ laptop\view\BoundaryRegistrazioneOk.class
 laptop\controller\ControllerPagamentoCash.class
 laptop\view\BoundaryCompravendita.class
 laptop\view\BoundaryRegistraUtente.class
+web\servlet\DownloadServletG1.class
 laptop\view\BoundaryAcquista.class
 web\servlet\ModificaLibroServlet.class
 laptop\controller\ControllerHomePageAfterLogin.class
@@ -124,7 +125,6 @@ web\servlet\RicercaServlet.class
 laptop\controller\ControllerVisualizzaOrdine.class
 laptop\view\BoundaryHomePageAfterLoginSE.class
 web\servlet\RaccoltaServlet.class
-web\servlet\DownloadServletR.class
 laptop\view\BoundaryDownload.class
 laptop\model\User$Ruoli.class
 laptop\controller\ControllerVisualizza.class

@@ -1,10 +1,11 @@
-1	ADMIN	admin	admin	admin@admin.com	null	1980-10-26
-2	ADMIN	Gianni	Morandi	giannni@gmail.com	null	1940-10-18
+2	ADMIN	gianni	morandi	gMorandi@gmail.com	un mito	1952-06-07
 3	UTENTE	gino	zaia	gino@zaia.eu	null	1995-04-25
 4	UTENTE	Giulia	Conforto	giuliaConforto@gmail.eu	null	1998-09-05
-5	SCRITTORE	Zerocalcare	Zerocalcare	zerocalcare@gmail.com	null	1980-05-20
-6	EDITORE	Bao Publishing	Bao Publishing	baoPublishing@gmail.com	null	1960-11-21
+5	EDITORE	nomeU	cognomeU	nomeCognomeU@gmail.com	utente aggiornato	1963-08-11
 7	UTENTE	franco	rossi	francoRossi12@gmail.com	null	1985-05-06
 8	UTENTE	lisa	gialli	lisagialli15@libero.it	null	1961-11-09
 9	UTENTE	marco	arancioni	maran@libero.it	null	1972-01-12
 10	UTENTE	andrea	verdi	a.verdi1@gmail.com	null	1998-06-05
+11	EDITORE	tempUser nome	tempUser cognome	tempUser@libero.it	provo ad inserire un tempUser	1988-05-12
+12	UTENTE	nuovoUtenteN	nuovoUtenteC	nuovoUtente@gmail.com	null	1985-02-24
+13	UTENTE	nome prova	cognome prova	emailProva@gmail.com	null	1985-08-11

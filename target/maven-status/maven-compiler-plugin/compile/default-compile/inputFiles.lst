@@ -41,7 +41,6 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\Bounda
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\ServletEditore.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\bean\RicercaBean.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryModificaUtente.java
-C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\DownloadServletG.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\IndexServlet1.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\CartaCreditoServlet.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerCancellaUser.java
@@ -49,6 +48,7 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\utilities\P
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerPagamentoCC.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\CartaDiCredito.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryRegistrazioneOk.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\DownloadServletG1.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\ModificaRivistaServlet.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\bean\GiornaleBean.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\database\CartaCreditoDao.java
@@ -68,6 +68,7 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\Main.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\bean\DownloadBean.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\DownloadServlet.java
+C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\DownloadServletR1.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\raccolta\Rivista.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerAggiungiPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\controller\ControllerHomePageAfterLogin.java
@@ -103,7 +104,6 @@ C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\database\Pa
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\InserisciOggettoServletGiornale.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\model\TempUser.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\bean\SystemBean.java
-C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\DownloadServletR.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryPagamentoCC.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\laptop\view\BoundaryUserPage.java
 C:\Users\dani\eclipse-workspace\2022\IspwFinale\src\main\java\web\servlet\ModificaLibroServlet.java

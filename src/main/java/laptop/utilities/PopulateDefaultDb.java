@@ -67,7 +67,7 @@ public class PopulateDefaultDb {
 		return state;
 	}
 
-	private static boolean createRivista() throws FileNotFoundException
+	public static boolean createRivista() throws FileNotFoundException
 	{
 		java.util.logging.Logger.getLogger("Test create riviste").log(Level.INFO,"---------Chiamo stored insRiviste---------\n\n");
 

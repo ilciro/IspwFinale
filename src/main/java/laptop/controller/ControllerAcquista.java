@@ -29,7 +29,7 @@ public class ControllerAcquista {
 	private String name;
 	private int disp;
 	private float costo;//aggiunto per costo (vedere metodo in fondo ((getCosto()))
-	int rimanenza = 0;//usato per vedee nr copie 
+	private int rimanenza = 0;//usato per vedee nr copie 
 	private static String stringaErrore="errore nella quantita desiderata .";
 	private static final String LIBRO = "libro";  
 	private static final String RIVISTA="rivista";
@@ -245,7 +245,7 @@ public class ControllerAcquista {
 	 * ogni singolo elemento(giornale,rivista o lbro)
 	 */
 	 
-	public float getCosto() throws SQLException
+	public float 	getCosto() throws SQLException
 	{
 		String type=vis.getType();
 		int id = vis.getId();

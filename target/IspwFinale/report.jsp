@@ -47,7 +47,7 @@ raccolta
 
 <label for="tArea"></label>
 <textarea rows="100" cols="145" name="tArea" id="tArea" placeholder="tArea" class="tArea">
-${bean.getS() }
+${bean.getScrivi() }
 </textarea>
 
 </div>

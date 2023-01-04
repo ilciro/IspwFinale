@@ -20,6 +20,7 @@ public class ControllerVisualizza {
 	private RivistaDao rD;
 	private GiornaleDao gD;
 	
+	
 	private ControllerSystemState vis = ControllerSystemState.getIstance() ;
 	
 	public ControllerVisualizza()
