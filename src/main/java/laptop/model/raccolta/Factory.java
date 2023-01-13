@@ -1,6 +1,9 @@
 package laptop.model.raccolta;
 
 import java.time.LocalDate;
+import java.util.logging.Level;
+
+import laptop.exception.IdException;
 
 
 
@@ -106,6 +109,14 @@ public class Factory {
 				return new Rivista(r.getInfoGenerali(), r.getDescrizione(), r.getDataPubb(),r.getDisp(),r.getPrezzo() ,r.getCopieRim(),r.getId());
 		
 			default:
+				try {
+					
+					throw new IdException("id null -> object not created");
+				}catch(IdException e)
+				{
+					java.util.logging.Logger.getLogger("report libro").log(Level.SEVERE,"\n eccezione ottenuta .",e);
+
+				}
 				return null;
 		}
 	}
