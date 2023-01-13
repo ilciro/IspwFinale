@@ -12,16 +12,22 @@ public class ControllerHomePageAfterLogin {
 
 	// qui ci va la funzione di logout
 	
-	public static boolean logout() throws LogoutException 
+	public static boolean logout() 
 	{	
-		
+		boolean state=false;
 		String n = u.getNome();
 		java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "stai sloggando come {0}" ,n);
 		
 		if (n==null)
 		{
+			try {
 			throw new LogoutException("Errore Logout");
-
+			}catch(LogoutException e)
+			{
+				
+				java.util.logging.Logger.getLogger("Test logout").log(Level.INFO, "errore nel logout",e);
+				
+			}
 		}
 		else {
 		u.setId(-1);
@@ -35,8 +41,9 @@ public class ControllerHomePageAfterLogin {
 		
 		java.util.logging.Logger.getLogger("Test Eccezione").log(Level.INFO, "stai sloggando {0}",u.getEmail());
 			vis.setIsLogged(false);
-			return true;
+			state=true;
 		}
+		return state;
 
 	}
 	private ControllerHomePageAfterLogin()
